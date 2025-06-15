@@ -122,7 +122,7 @@
         <section id="donate" class="py-20 md:py-28 pattern-bg">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-4xl mx-auto">{{donation_section_heading}}</div>
-                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="grid lg:grid-cols-2 gap-12 items-start mt-12">
                     <div class="bg-white p-8 rounded-xl shadow-2xl text-center">
                         <h3 class="text-2xl font-semibold text-gray-800 mb-2">Direct Donation</h3>
                         <p class="text-gray-600 mb-4">You can scan the QR code below with any UPI app to contribute.</p>
@@ -154,7 +154,7 @@
             </div>
         </section>
 
-        <!-- Other Sections Remain Unchanged -->
+        <!-- Admissions Section -->
         <section id="admissions" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto bg-gray-50 p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100">
@@ -171,10 +171,45 @@
         </section>
 
     </main>
-    <footer id="contact" class="bg-gray-900 text-white"><!-- Footer remains the same --></footer>
+    
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula, Murbad</h3>
+                    <p class="text-gray-400 text-sm">{{footer_description}}</p>
+                    <p class="text-gray-400 text-sm mt-2">{{footer_address}}</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li>
+                        <li><a href="#admissions" class="text-gray-400 hover:text-white transition">Admission</a></li>
+                        <li><a href="#donate" class="text-gray-400 hover:text-white transition">Donate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="{{youtube_link}}" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a href="{{instagram_link}}" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="{{facebook_link}}" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                    </div>
+                    <p class="text-sm text-gray-300">Email: <a href="mailto:{{contact_email}}" class="hover:text-white">{{contact_email}}</a></p>
+                    <p class="text-sm text-gray-300">Phone: {{contact_phone}}</p>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; <span id="year"></span> {{copyright_note}}</p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        // All JavaScript remains the same
         lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
