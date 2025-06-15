@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Website Pages"
+    files:
+      - label: "Homepage"
+        name: "home"
+        file: "index.html"
+        fields:
+          - {label: "Inspiration Text (Prabhupada)", name: "prabhupada_text", widget: "text"}
+          - {label: "Dedication Text (Guru Maharaj)", name: "maharaj_text", widget: "text"}
+          - {label: "Guide Text (Das Prabhu)", name: "das_prabhu_text", widget: "text"}
