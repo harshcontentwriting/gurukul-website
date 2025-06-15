@@ -1,15 +1,15 @@
 backend:
   name: git-gateway
-  branch: main # Or master, if that's your default branch
+  branch: main 
 
-media_folder: "images" # This is where images will be saved in your project
-public_folder: "/images" # This is how the website will find the images
+media_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "pages"
     label: "Website Pages"
     files:
-      - label: "Homepage"
+      - label: "Homepage Content"
         name: "home"
         file: "index.html"
         fields:
@@ -19,12 +19,10 @@ collections:
           - {label: "Prabhupada Name", name: "prabhupada_name", widget: "string"}
           - {label: "Prabhupada Title", name: "prabhupada_title", widget: "string"}
           - {label: "Prabhupada Text", name: "prabhupada_text", widget: "text"}
-          
           - {label: "Guru Maharaj Image", name: "maharaj_image", widget: "image"}
           - {label: "Guru Maharaj Name", name: "maharaj_name", widget: "string"}
           - {label: "Guru Maharaj Title", name: "maharaj_title", widget: "string"}
           - {label: "Guru Maharaj Text", name: "maharaj_text", widget: "text"}
-          
           - {label: "Das Prabhu Image", name: "das_prabhu_image", widget: "image"}
           - {label: "Das Prabhu Name", name: "das_prabhu_name", widget: "string"}
           - {label: "Das Prabhu Title", name: "das_prabhu_title", widget: "string"}
@@ -44,3 +42,14 @@ collections:
           - {label: "UPI Donation Note", name: "upi_note", widget: "string"}
           - {label: "In-Kind Donation Note", name: "inkind_note", widget: "text"}
           - {label: "Gurukul Address", name: "gurukul_address", widget: "text"}
+          
+          # Footer Section
+          - {label: "Footer", name: "footer_section_heading", widget: "markdown", buttons: [], editor_components: [], modes: [raw]}
+          - {label: "Footer Description", name: "footer_description", widget: "text"}
+          - {label: "Footer Address", name: "footer_address", widget: "string"}
+          - {label: "YouTube Link", name: "youtube_link", widget: "string"}
+          - {label: "Instagram Link", name: "instagram_link", widget: "string"}
+          - {label: "Facebook Link", name: "facebook_link", widget: "string"}
+          - {label: "Contact Email", name: "contact_email", widget: "string"}
+          - {label: "Contact Phone", name: "contact_phone", widget: "string"}
+          - {label: "Copyright Note", name: "copyright_note", widget: "string"}
