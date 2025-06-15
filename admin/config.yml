@@ -1,9 +1,9 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main # Or master, if that's your default branch
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "images" # This is where images will be saved in your project
+public_folder: "/images" # This is how the website will find the images
 
 collections:
   - name: "pages"
@@ -13,6 +13,34 @@ collections:
         name: "home"
         file: "index.html"
         fields:
-          - {label: "Inspiration Text (Prabhupada)", name: "prabhupada_text", widget: "text"}
-          - {label: "Dedication Text (Guru Maharaj)", name: "maharaj_text", widget: "text"}
-          - {label: "Guide Text (Das Prabhu)", name: "das_prabhu_text", widget: "text"}
+          # Lineage & Inspiration Section
+          - {label: "Lineage & Inspiration", name: "lineage_section_heading", widget: "markdown", buttons: [], editor_components: [], modes: [raw]}
+          - {label: "Prabhupada Image", name: "prabhupada_image", widget: "image"}
+          - {label: "Prabhupada Name", name: "prabhupada_name", widget: "string"}
+          - {label: "Prabhupada Title", name: "prabhupada_title", widget: "string"}
+          - {label: "Prabhupada Text", name: "prabhupada_text", widget: "text"}
+          
+          - {label: "Guru Maharaj Image", name: "maharaj_image", widget: "image"}
+          - {label: "Guru Maharaj Name", name: "maharaj_name", widget: "string"}
+          - {label: "Guru Maharaj Title", name: "maharaj_title", widget: "string"}
+          - {label: "Guru Maharaj Text", name: "maharaj_text", widget: "text"}
+          
+          - {label: "Das Prabhu Image", name: "das_prabhu_image", widget: "image"}
+          - {label: "Das Prabhu Name", name: "das_prabhu_name", widget: "string"}
+          - {label: "Das Prabhu Title", name: "das_prabhu_title", widget: "string"}
+          - {label: "Das Prabhu Text", name: "das_prabhu_text", widget: "text"}
+
+          # Our Team Section
+          - {label: "Our Team", name: "team_section_heading", widget: "markdown", buttons: [], editor_components: [], modes: [raw]}
+          - {label: "Team Main Image", name: "team_image", widget: "image"}
+          - {label: "Team Member 1", name: "team_member_1", widget: "string"}
+          - {label: "Team Member 2", name: "team_member_2", widget: "string"}
+          - {label: "Team Member 3", name: "team_member_3", widget: "string"}
+          - {label: "Team Member 4", name: "team_member_4", widget: "string"}
+
+          # Donation Section
+          - {label: "Donation", name: "donation_section_heading", widget: "markdown", buttons: [], editor_components: [], modes: [raw]}
+          - {label: "UPI QR Code Image", name: "upi_qr_image", widget: "image"}
+          - {label: "UPI Donation Note", name: "upi_note", widget: "string"}
+          - {label: "In-Kind Donation Note", name: "inkind_note", widget: "text"}
+          - {label: "Gurukul Address", name: "gurukul_address", widget: "text"}
