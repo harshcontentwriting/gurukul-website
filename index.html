@@ -132,9 +132,18 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white"><!-- Footer content remains the same --></footer>
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="md:col-span-2"><h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula, Murbad</h3><p id="footer_description" class="text-gray-400 text-sm"></p><p id="footer_address" class="text-gray-400 text-sm mt-2"></p></div>
+                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3><ul class="space-y-2 text-sm"><li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li><li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li><li><a href="#admissions" class="text-gray-400 hover:text-white transition">Admission</a></li><li><a href="#donate" class="text-gray-400 hover:text-white transition">Donate</a></li></ul></div>
+                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3><div class="flex space-x-4 mb-4"><a id="youtube_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a><a id="instagram_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a><a id="facebook_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a></div><p class="text-sm text-gray-300">Email: <a id="contact_email_link" href="#"><span id="contact_email"></span></a></p><p id="contact_phone" class="text-sm text-gray-300"></p></div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500"><p>&copy; <span id="year"></span> <span id="copyright_note"></span></p></div>
+        </div>
+    </footer>
     
-    <!-- SCRIPT SECTION -->
+    <!-- THE COMPLETE, CORRECTED SCRIPT SECTION -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
           fetch('/_data/content.json?v=' + new Date().getTime())
@@ -146,26 +155,29 @@
       });
 
       function populateContent(data) {
-          const simpleFields = ['lineage_section_heading', 'prabhupada_name', 'prabhupada_title', 'prabhupada_text', 'maharaj_name', 'maharaj_title', 'maharaj_text', 'das_prabhu_name', 'das_prabhu_title', 'das_prabhu_text', 'vision_section_heading', 'vision_1', 'vision_2', 'vision_3', 'team_section_heading', 'glimpses_section_heading', 'donation_section_heading', 'upi_note', 'inkind_note', 'gurukul_address', 'bank_donation_info', 'admissions_section_heading', 'admissions_intro', 'footer_description', 'footer_address', 'contact_email', 'contact_phone', 'copyright_note'];
-          simpleFields.forEach(id => {
-              const el = document.getElementById(id);
-              if (el) el.innerHTML = data[id] || '';
-          });
-
-          const imageFields = ['logo_image', 'prabhupada_image', 'maharaj_image', 'das_prabhu_image', 'upi_qr_image'];
-          imageFields.forEach(id => {
-              const el = document.getElementById(id);
-              if (el) el.src = data[id] || '';
-          });
-
-          const linkFields = ['youtube_link', 'instagram_link', 'facebook_link'];
-          linkFields.forEach(id => {
-              const el = document.getElementById(id);
-              if (el) el.href = data[id] || '#';
-          });
-          const emailLink = document.getElementById('contact_email_link');
-          if(emailLink) emailLink.href = `mailto:${data.contact_email || ''}`;
-
+          const setContent = (id, value) => { const el = document.getElementById(id); if (el) el.innerHTML = value || ''; };
+          const setImage = (id, src, alt) => { const el = document.getElementById(id); if (el) { el.src = src || ''; el.alt = alt || ''; } };
+          const setLink = (id, href) => { const el = document.getElementById(id); if (el) el.href = href || '#'; };
+          
+          for (const key in data) {
+              if (Object.hasOwnProperty.call(data, key)) {
+                  const value = data[key];
+                  const el = document.getElementById(key);
+                  if (el) {
+                      if (key.includes('_image')) setImage(key, value, key);
+                      else if (key.includes('_link')) setLink(key, value);
+                      else if (key === 'contact_email') {
+                          setContent('contact_email', value);
+                          setLink('contact_email_link', `mailto:${value}`);
+                      } else if (key === 'contact_phone') {
+                          setContent('contact_phone', `Phone: ${value}`);
+                      } else {
+                          setContent(key, value);
+                      }
+                  }
+              }
+          }
+          
           if(data.slideshow) populateSlideshow(data.slideshow);
           if(data.team_members) populateTeam(data.team_members);
           if(data.gallery_images) populateGallery(data.gallery_images);
