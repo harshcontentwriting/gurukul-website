@@ -1,6 +1,17 @@
 {
   "upi_note": "Please note: Our trust formation is currently in process. These donations are directed to the personal UPI of the Gurukul's principal.",
   "glimpses_section_heading": "Glimpses of Gurukula Life\n",
+  "gallery_images": [
+    "/images/whatsapp-image-2025-06-15-at-12.30.39-pm.jpeg",
+    "/images/whatsapp-image-2025-06-15-at-12.30.41-pm.jpeg",
+    "/images/whatsapp-image-2025-06-15-at-12.30.42-pm-1-.jpeg",
+    "/images/whatsapp-image-2025-06-15-at-12.30.43-pm-2-.jpeg",
+    "/images/whatsapp-image-2025-06-15-at-12.30.43-pm.jpeg",
+    "/images/whatsapp-image-2025-06-15-at-12.30.39-pm-2-.jpeg",
+    "/images/whatsapp-image-2025-06-15-at-12.30.42-pm.jpeg",
+    "/images/whatsapp-image-2025-06-15-at-12.30.44-pm.jpeg",
+    "/images/whatsapp-image-2025-06-15-at-12.30.46-pm.jpeg"
+  ],
   "gurukul_address": "Bhaktivedanta Vidyabhavan Gurukula,\n",
   "team_section_heading": "Our Dedicated Team\n",
   "instagram_link": "-",
@@ -30,12 +41,32 @@
   "team_member_4": "BH Prasad Barakade",
   "das_prabhu_title": "Our Guide",
   "facebook_link": "-",
-  "admissions_section_heading": "-",
+  "admissions_section_heading": "Admissions Inquiry",
   "das_prabhu_text": "Under the expert guidance of our Shiksha Guru, we provide a nurturing ashram environment where boys build a foundation of character, competence, and lifelong devotion.\n\n",
   "lineage_section_heading": "Our Lineage & Inspiration\n",
   "das_prabhu_image": "/images/whatsapp-image-2025-06-15-at-12.30.40-pm.jpeg",
   "youtube_link": "-",
+  "team_members": [
+    {
+      "photo": "/images/whatsapp-image-2025-06-12-at-10.19.35-am.jpeg",
+      "name": "HG Sarvabhuta Devi Dasi"
+    },
+    {
+      "photo": "/images/whatsapp-image-2025-06-12-at-10.19.35-am.jpeg",
+      "name": "HG Rasnath Das"
+    },
+    {
+      "photo": "/images/whatsapp-image-2025-06-12-at-10.19.35-am.jpeg",
+      "name": "HG Bada Jagannath Das"
+    },
+    {
+      "photo": "/images/whatsapp-image-2025-06-12-at-10.19.35-am.jpeg",
+      "name": "BH Prasad Barakade"
+    }
+  ],
   "prabhupada_title": "Our Inspiration",
+  "admissions_intro": "Take the first step in your child's transformative education. Fill out the form below to connect with us.",
+  "bank_donation_info": "Bank name - Indian overseas Bank ,kamre,Ranchi.\nAccount name - Bhakti vedanta Vidyabhavan Trust\nA/C no - 379101000001800\nIFSC code -IOBA0003791",
   "inkind_note": "We gratefully accept donations of grains, vegetables, and other essential supplies for the students. Your contribution helps us provide nutritious prasadam daily.\n\n",
   "footer_description": "Bhaktivedanta Vidyabhavan Gurukula, Murbad\n",
   "team_image": "/images/whatsapp-image-2025-06-15-at-12.30.39-pm.jpeg",
