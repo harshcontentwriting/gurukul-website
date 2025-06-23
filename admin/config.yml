@@ -24,7 +24,8 @@ collections:
               - {label: "Button Text", name: "button_text", widget: "string"}
               - {label: "Button Link", name: "button_link", widget: "string"}
               - {label: "Background Image", name: "background_image", widget: "image"}
-          - {label: "Lineage Section Heading", name: "lineage_section_heading", widget: "markdown", buttons: [], editor_components: [], modes: [raw]}
+
+          - {label: "Lineage Section Heading", name: "lineage_section_heading", widget: "string"}
           - {label: "Prabhupada Image", name: "prabhupada_image", widget: "image"}
           - {label: "Prabhupada Name", name: "prabhupada_name", widget: "string"}
           - {label: "Prabhupada Title", name: "prabhupada_title", widget: "string"}
@@ -38,36 +39,53 @@ collections:
           - {label: "Das Prabhu Title", name: "das_prabhu_title", widget: "string"}
           - {label: "Das Prabhu Text", name: "das_prabhu_text", widget: "text"}
 
-          # NEW: Vision Section Fields
-          - {label: "Vision Section Heading", name: "vision_section_heading", widget: "markdown", buttons: [], editor_components: [], modes: [raw]}
+          - {label: "Vision Section Heading", name: "vision_section_heading", widget: "string"}
           - {label: "Vision Statement 1", name: "vision_1", widget: "text"}
           - {label: "Vision Statement 2", name: "vision_2", widget: "text"}
           - {label: "Vision Statement 3", name: "vision_3", widget: "text"}
 
-          - {label: "Our Team Section Heading", name: "team_section_heading", widget: "markdown", buttons: [], editor_components: [], modes: [raw]}
-          - {label: "Team Main Image", name: "team_image", widget: "image"}
-          - {label: "Team Member 1", name: "team_member_1", widget: "string"}
-          - {label: "Team Member 2", name: "team_member_2", widget: "string"}
-          - {label: "Team Member 3", name: "team_member_3", widget: "string"}
-          - {label: "Team Member 4", name: "team_member_4", widget: "string"}
-          
-          # NEW: Glimpses Section Fields
-          - {label: "Glimpses Section Heading", name: "glimpses_section_heading", widget: "markdown", buttons: [], editor_components: [], modes: [raw]}
+          - {label: "Our Team Section Heading", name: "team_section_heading", widget: "string"}
+          - label: "Team Members"
+            name: "team_members"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - {label: "Photo", name: "photo", widget: "image"}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
 
-          - {label: "Donation Section Heading", name: "donation_section_heading", widget: "markdown", buttons: [], editor_components: [], modes: [raw]}
+          - {label: "Glimpses Section Heading", name: "glimpses_section_heading", widget: "string"}
+          - label: "Gallery Images"
+            name: "gallery_images"
+            widget: "list"
+            summary: "Image"
+            field: {label: "Image", name: "image", widget: "image"}
+
+          - {label: "Donation Section Heading", name: "donation_section_heading", widget: "string"}
           - {label: "UPI QR Code Image", name: "upi_qr_image", widget: "image"}
           - {label: "UPI Donation Note", name: "upi_note", widget: "string"}
           - {label: "In-Kind Donation Note", name: "inkind_note", widget: "text"}
           - {label: "Gurukul Address", name: "gurukul_address", widget: "text"}
-          
-          # NEW: Admissions Section Fields
-          - {label: "Admissions Section Heading", name: "admissions_section_heading", widget: "markdown", buttons: [], editor_components: [], modes: [raw]}
+          - {label: "Bank Donation Info", name: "bank_donation_info", widget: "text", hint: "Enter bank details for 80G receipt."}
+
+          - {label: "Admissions Section Heading", name: "admissions_section_heading", widget: "string"}
+          - {label: "Admissions Intro Text", name: "admissions_intro", widget: "string"}
+          - label: "Child Standard Options"
+            name: "child_standard_options"
+            widget: "list"
+            summary: "{{fields.option}}"
+            field: {label: "Standard", name: "option", widget: "string"}
+          - label: "Child Board Options"
+            name: "child_board_options"
+            widget: "list"
+            summary: "{{fields.option}}"
+            field: {label: "Board", name: "option", widget: "string"}
 
           - {label: "Footer Description", name: "footer_description", widget: "text"}
           - {label: "Footer Address", name: "footer_address", widget: "string"}
-          - {label: "YouTube Link", name: "youtube_link", widget: "string", hint: "Enter the full URL"}
-          - {label: "Instagram Link", name: "instagram_link", widget: "string", hint: "Enter the full URL"}
-          - {label: "Facebook Link", name: "facebook_link", widget: "string", hint: "Enter the full URL"}
+          - {label: "YouTube Link", name: "youtube_link", widget: "string"}
+          - {label: "Instagram Link", name: "instagram_link", widget: "string"}
+          - {label: "Facebook Link", name: "facebook_link", widget: "string"}
           - {label: "Contact Email", name: "contact_email", widget: "string"}
           - {label: "Contact Phone", name: "contact_phone", widget: "string"}
           - {label: "Copyright Note", name: "copyright_note", widget: "string"}
