@@ -157,7 +157,7 @@
           fetch('/_data/content.json?v=' + new Date().getTime())
               .then(response => response.ok ? response.json() : Promise.reject('Failed to load content.json'))
               .then(data => { if (data) populateContent(data); })
-              .catch(err => console.error("Error loading content.json:", err));
+              .catch(err => console.error("Error loading content:", err));
       });
 
       function populateContent(data) {
@@ -182,7 +182,7 @@
           
           if(data.slideshow) populateSlideshow(data.slideshow);
           if(data.team_members) populateTeam(data.team_members);
-          if(data.gallery_items) populateGallery(data.gallery_items); // Corrected from gallery_images
+          if(data.gallery_items) populateGallery(data.gallery_items);
           if(data.child_standard_options) populateDropdowns('child-standard', data.child_standard_options);
           if(data.child_board_options) populateDropdowns('child-board', data.child_board_options);
       }
@@ -253,6 +253,7 @@
           dotsContainer.innerHTML = '';
           let currentIndex = 0;
           let slideInterval = null;
+
           slides.forEach((_, index) => {
               const dot = document.createElement('button');
               dot.classList.add('w-2.5', 'h-2.5', 'rounded-full', 'bg-white/50', 'hover:bg-white', 'transition-all');
@@ -260,6 +261,7 @@
               dotsContainer.appendChild(dot);
           });
           const dots = Array.from(dotsContainer.children);
+          
           function goToSlide(index) {
               sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
               dots.forEach(d => d.classList.remove('bg-white', 'w-3.5', 'h-3.5'));
