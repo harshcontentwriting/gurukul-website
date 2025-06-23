@@ -28,15 +28,15 @@ collections:
           - {label: "Lineage Section Heading", name: "lineage_section_heading", widget: "string", required: false}
           - {label: "Prabhupada Image", name: "prabhupada_image", widget: "image", required: false}
           - {label: "Prabhupada Name", name: "prabhupada_name", widget: "string", required: false}
-          - {label: "Prabhupada Title", name: "prabhupada_title", widget: "string", required: false}
+          - {label: "Prabhupada Title / Role", name: "prabhupada_title", widget: "string", required: false}
           - {label: "Prabhupada Text", name: "prabhupada_text", widget: "text", required: false}
           - {label: "Guru Maharaj Image", name: "maharaj_image", widget: "image", required: false}
           - {label: "Guru Maharaj Name", name: "maharaj_name", widget: "string", required: false}
-          - {label: "Guru Maharaj Title", name: "maharaj_title", widget: "string", required: false}
+          - {label: "Guru Maharaj Title / Role", name: "maharaj_title", widget: "string", required: false}
           - {label: "Guru Maharaj Text", name: "maharaj_text", widget: "text", required: false}
           - {label: "Das Prabhu Image", name: "das_prabhu_image", widget: "image", required: false}
           - {label: "Das Prabhu Name", name: "das_prabhu_name", widget: "string", required: false}
-          - {label: "Das Prabhu Title", name: "das_prabhu_title", widget: "string", required: false}
+          - {label: "Das Prabhu Title / Role", name: "das_prabhu_title", widget: "string", required: false}
           - {label: "Das Prabhu Text", name: "das_prabhu_text", widget: "text", required: false}
           - {label: "Vision Section Heading", name: "vision_section_heading", widget: "string", required: false}
           - {label: "Vision Statement 1", name: "vision_1", widget: "text", required: false}
@@ -52,13 +52,19 @@ collections:
               - {label: "Photo", name: "photo", widget: "image", required: false}
               - {label: "Name", name: "name", widget: "string", required: false}
               - {label: "Description", name: "description", widget: "text", required: false}
+          
+          # UPDATED GALLERY SECTION
           - {label: "Glimpses Section Heading", name: "glimpses_section_heading", widget: "string", required: false}
-          - label: "Gallery Images"
-            name: "gallery_images"
+          - {label: "Glimpses Section Sub-heading", name: "glimpses_subheading", widget: "string", required: false}
+          - label: "Gallery Images (Max 9)"
+            name: "gallery_items"
             widget: "list"
-            required: false
-            summary: "Image"
-            field: {label: "Image", name: "image", widget: "image", required: false}
+            max: 9
+            summary: "{{fields.caption}}"
+            fields:
+              - {label: "Image", name: "image", widget: "image", required: false}
+              - {label: "Caption (Text on image)", name: "caption", widget: "string", required: false}
+
           - {label: "Donation Section Heading", name: "donation_section_heading", widget: "string", required: false}
           - {label: "UPI QR Code Image", name: "upi_qr_image", widget: "image", required: false}
           - {label: "UPI Donation Note", name: "upi_note", widget: "string", required: false}
