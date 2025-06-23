@@ -16,12 +16,11 @@
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
         .pattern-bg { background-color: #ffffff; opacity: 1; background-image:  linear-gradient(30deg, #fefce8 12%, transparent 12.5%, transparent 87%, #fefce8 87.5%, #fefce8), linear-gradient(150deg, #fefce8 12%, transparent 12.5%, transparent 87%, #fefce8 87.5%, #fefce8), linear-gradient(30deg, #fefce8 12%, transparent 12.5%, transparent 87%, #fefce8 87.5%, #fefce8), linear-gradient(150deg, #fefce8 12%, transparent 12.5%, transparent 87%, #fefce8 87.5%, #fefce8), linear-gradient(60deg, #fefce877 25%, transparent 25.5%, transparent 75%, #fefce877 75%, #fefce877), linear-gradient(60deg, #fefce877 25%, transparent 25.5%, transparent 75%, #fefce877 75%, #fefce877); background-size: 80px 140px; background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px; }
         .slide { background-size: cover; background-position: center; }
-        body.loading { visibility: hidden; }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out; }
-        .accordion-content.open { max-height: 1000px; /* Large enough for content */ padding-top: 1rem; padding-bottom: 1rem; }
+        .accordion-content.open { max-height: 1000px; padding-top: 1rem; padding-bottom: 1rem; }
     </style>
 </head>
-<body class="loading">
+<body class="antialiased">
 
     <!-- Header -->
     <header id="home" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
@@ -78,9 +77,7 @@
         <section id="team" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                  <h2 id="team_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
-                <div id="team-accordion-wrapper" class="space-y-4 max-w-4xl mx-auto">
-                    <!-- Team members will be dynamically inserted here -->
-                </div>
+                <div id="team-accordion-wrapper" class="space-y-4 max-w-4xl mx-auto"></div>
             </div>
         </section>
         
@@ -88,9 +85,7 @@
         <section id="gallery" class="py-20 md:py-28 pattern-bg">
             <div class="container mx-auto px-6">
                 <h2 id="glimpses_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
-                <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <!-- Gallery images will be dynamically inserted here -->
-                </div>
+                <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
             </div>
         </section>
 
@@ -137,11 +132,156 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white"><!-- Footer content here --></footer>
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="md:col-span-2"><h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula, Murbad</h3><p id="footer_description" class="text-gray-400 text-sm"></p><p id="footer_address" class="text-gray-400 text-sm mt-2"></p></div>
+                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3><ul class="space-y-2 text-sm"><li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li><li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li><li><a href="#admissions" class="text-gray-400 hover:text-white transition">Admission</a></li><li><a href="#donate" class="text-gray-400 hover:text-white transition">Donate</a></li></ul></div>
+                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3><div class="flex space-x-4 mb-4"><a id="youtube_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a><a id="instagram_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a><a id="facebook_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a></div><p class="text-sm text-gray-300">Email: <a id="contact_email_link" href="#"><span id="contact_email"></span></a></p><p id="contact_phone" class="text-sm text-gray-300"></p></div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500"><p>&copy; <span id="year"></span> <span id="copyright_note"></span></p></div>
+        </div>
+    </footer>
     
-    <!-- SCRIPT SECTION -->
     <script>
-      // All the JavaScript logic goes here
+      document.addEventListener('DOMContentLoaded', function() {
+          fetch('/_data/content.json?v=' + new Date().getTime())
+              .then(response => response.ok ? response.json() : Promise.reject('Failed to load'))
+              .then(data => {
+                  if (data) populateContent(data);
+              })
+              .catch(err => {
+                  console.error("Error loading content:", err);
+              });
+      });
+
+      function populateContent(data) {
+          const setContent = (id, value) => { const el = document.getElementById(id); if (el) el.innerHTML = value || ''; };
+          const setImage = (id, src, alt) => { const el = document.getElementById(id); if (el) { el.src = src || ''; el.alt = alt || ''; } };
+          const setLink = (id, href) => { const el = document.getElementById(id); if (el) el.href = href || '#'; };
+          
+          for (const key in data) {
+              if (Object.hasOwnProperty.call(data, key)) {
+                  const value = data[key];
+                  if (key.includes('_image')) setImage(key, value, key);
+                  else if (key.includes('_link')) setLink(key, value);
+                  else if (key === 'contact_email') {
+                      setContent('contact_email', value);
+                      setLink('contact_email_link', `mailto:${value}`);
+                  } else if (key === 'contact_phone') {
+                      setContent('contact_phone', `Phone: ${value}`);
+                  } else setContent(key, value);
+              }
+          }
+          
+          if(data.slideshow) populateSlideshow(data.slideshow);
+          if(data.team_members) populateTeam(data.team_members);
+          if(data.gallery_images) populateGallery(data.gallery_images);
+          if(data.child_standard_options) populateDropdowns('child-standard', data.child_standard_options);
+          if(data.child_board_options) populateDropdowns('child-board', data.child_board_options);
+      }
+
+      function populateSlideshow(slides) {
+          const wrapper = document.getElementById('slider-wrapper');
+          if (!wrapper) return;
+          wrapper.innerHTML = '';
+          slides.forEach(slide => {
+              const slideEl = document.createElement('div');
+              slideEl.className = 'slide min-w-full h-full relative flex items-center justify-center text-center text-white';
+              slideEl.style.backgroundImage = `url('${slide.background_image}')`;
+              slideEl.innerHTML = `<div class="absolute inset-0 bg-black/50"></div><div class="container mx-auto px-6 z-10"><h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4" style="text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">${slide.headline}</h1><p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.7);">${slide.subheadline}</p><a href="${slide.button_link}" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-2xl">${slide.button_text}</a></div>`;
+              wrapper.appendChild(slideEl);
+          });
+          initializeSlider();
+      }
+
+      function populateTeam(members) {
+          const wrapper = document.getElementById('team-accordion-wrapper');
+          if (!wrapper) return;
+          wrapper.innerHTML = '';
+          members.forEach(member => {
+              const memberEl = document.createElement('div');
+              memberEl.className = 'bg-white rounded-lg shadow-md';
+              memberEl.innerHTML = `<button class="accordion-button w-full flex items-center justify-between p-4 text-left"><div class="flex items-center space-x-4"><img loading="lazy" src="${member.photo}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover"><span class="text-lg font-semibold text-gray-800">${member.name}</span></div><i data-lucide="chevron-down" class="w-6 h-6 text-teal-600 transition-transform transform"></i></button><div class="accordion-content px-4 text-gray-600">${member.description}</div>`;
+              wrapper.appendChild(memberEl);
+          });
+          lucide.createIcons();
+          addAccordionListeners();
+      }
+
+      function populateGallery(images) {
+          const grid = document.getElementById('gallery-grid');
+          if (!grid) return;
+          grid.innerHTML = '';
+          images.forEach(item => {
+              const imgContainer = document.createElement('div');
+              imgContainer.innerHTML = `<img loading="lazy" class="h-auto max-w-full rounded-lg shadow-md hover:opacity-90 transition-opacity" src="${item.image}" alt="Gurukula Glimpse">`;
+              grid.appendChild(imgContainer);
+          });
+      }
+
+      function populateDropdowns(selectId, options) {
+          const select = document.getElementById(selectId);
+          if (!select || !options) return;
+          select.innerHTML = '<option value="" disabled selected>Select an option</option>';
+          options.forEach(opt => {
+              const optionEl = document.createElement('option');
+              optionEl.value = opt.option;
+              optionEl.textContent = opt.option;
+              select.appendChild(optionEl);
+          });
+      }
+      
+      function initializeSlider() {
+          const sliderWrapper = document.getElementById('slider-wrapper');
+          if (!sliderWrapper) return;
+          const slides = Array.from(sliderWrapper.children);
+          const dotsContainer = document.getElementById('slider-dots');
+          if (!dotsContainer || slides.length <= 1) return;
+          dotsContainer.innerHTML = '';
+          let currentIndex = 0;
+          let slideInterval = null;
+
+          slides.forEach((_, index) => {
+              const dot = document.createElement('button');
+              dot.classList.add('w-2.5', 'h-2.5', 'rounded-full', 'bg-white/50', 'hover:bg-white', 'transition-all');
+              dot.addEventListener('click', () => { goToSlide(index); resetInterval(); });
+              dotsContainer.appendChild(dot);
+          });
+          const dots = Array.from(dotsContainer.children);
+          
+          function goToSlide(index) {
+              sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
+              dots.forEach(d => d.classList.remove('bg-white', 'w-3.5', 'h-3.5'));
+              dots[index].classList.add('bg-white', 'w-3.5', 'h-3.5');
+              currentIndex = index;
+          }
+          function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; goToSlide(currentIndex); }
+          function startInterval() { slideInterval = setInterval(nextSlide, 5000); }
+          function resetInterval() { clearInterval(slideInterval); startInterval(); }
+          goToSlide(0);
+          startInterval();
+      }
+
+      function addAccordionListeners() {
+          const buttons = document.querySelectorAll('.accordion-button');
+          buttons.forEach(button => {
+              button.addEventListener('click', () => {
+                  const content = button.nextElementSibling;
+                  const icon = button.querySelector('i');
+                  content.classList.toggle('open');
+                  icon.classList.toggle('rotate-180');
+              });
+          });
+      }
+      
+      lucide.createIcons();
+      document.getElementById('year').textContent = new Date().getFullYear();
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
+        });
+      }
     </script>
 </body>
 </html>
