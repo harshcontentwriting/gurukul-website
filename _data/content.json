@@ -1,4 +1,5 @@
 {
+  "child_board_options": [],
   "upi_note": "Please note: Our trust formation is currently in process. These donations are directed to the personal UPI of the Gurukul's principal.",
   "glimpses_section_heading": "Glimpses of Gurukula Life\n",
   "gallery_images": [
@@ -19,6 +20,13 @@
       "button_text": "Inquire About Admissions",
       "button_link": "#admissions",
       "background_image": "/images/whatsapp-image-2025-06-15-at-12.30.40-pm-1-.jpeg"
+    },
+    {
+      "headline": "Bhaktivedanta Vidyabhavan Gurukul, Murbad-Maharashtra",
+      "subheadline": "Seva | Shiksha | Saadhana",
+      "button_text": "Contact",
+      "button_link": "#Contact",
+      "background_image": "/images/whatsapp-image-2025-06-12-at-10.19.35-am.jpeg"
     }
   ],
   "prabhupada_text": "The divine vision for our Gurukula comes from our Founder-Ācārya, who established ISKCON and envisioned schools that expertly balance spiritual values with modern academics.\n\n",
@@ -86,7 +94,7 @@
   "admissions_intro": "Take the first step in your child's transformative education. Fill out the form below to connect with us.",
   "bank_donation_info": "Bank name - Indian overseas Bank ,kamre,Ranchi.\nAccount name - Bhakti vedanta Vidyabhavan Trust\nA/C no - 379101000001800\nIFSC code -IOBA0003791",
   "inkind_note": "We gratefully accept donations of grains, vegetables, and other essential supplies for the students. Your contribution helps us provide nutritious prasadam daily.\n\n",
-  "footer_description": "Bhaktivedanta Vidyabhavan Gurukula, Murbad\n",
+  "footer_description": "Bhaktivedanta Vidyabhavan Gurukula, Murbad - Maharashtra\n",
   "team_image": "/images/whatsapp-image-2025-06-15-at-12.30.39-pm.jpeg",
   "vision_1": "We believe that education should be available to all and should be devoid of any forceful cost.\n",
   "prabhupada_image": "/images/prabhupada.jpeg",
@@ -95,5 +103,11 @@
   "maharaj_name": "HH Bhakti Raghava Swami Maharaj",
   "vision_3": "We believe that education should develop a character who is selfless, compassionate and sees every living being with equal vision.",
   "contact_email": "-",
-  "maharaj_text": "Our Gurukula is dedicated in service to our revered Guru Maharaj, whose teachings and blessings are the foundation of our mission to nurture the next generation of devotees.\n\n"
+  "maharaj_text": "Our Gurukula is dedicated in service to our revered Guru Maharaj, whose teachings and blessings are the foundation of our mission to nurture the next generation of devotees.\n\n",
+  "child_standard_options": [
+    "5th - Standard",
+    "6th - Standard",
+    "7th - Standard",
+    "8th - Standard"
+  ]
 }
