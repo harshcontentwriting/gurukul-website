@@ -15,9 +15,7 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
         .pattern-bg { background-color: #fafafa; }
-        .slide { background-size: cover; background-position: center; }
-        .gallery-slide { display: flex; align-items: center; justify-content: center; background-color: #111; }
-        .gallery-slide img, .gallery-slide video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+        .slide, .gallery-slide { background-size: cover; background-position: center; } /* CORRECTED GALLERY STYLE */
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out; }
         .accordion-content.open { max-height: 1000px; padding-top: 1rem; padding-bottom: 1rem; }
         .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1.5rem; text-align: center; font-family: 'Lora', serif; font-size: 1.25rem; transition: opacity 0.3s ease; }
@@ -170,6 +168,7 @@
     </div>
     
     <script>
+      // SCRIPT WILL BE UPDATED IN A LATER STEP
       document.addEventListener('DOMContentLoaded', function() {
           fetch('/_data/content.json?v=' + new Date().getTime())
               .then(response => response.ok ? response.json() : Promise.reject('Failed to load content.json'))
