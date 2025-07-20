@@ -2,12 +2,12 @@ backend:
   name: git-gateway
   branch: main
 
-# Add this new section to allow PDF and MP4 files
 media_folder: "images"
 public_folder: "/images"
 media_library:
+  name: uploadcare
   config:
-    media_folder: "images"
+    publicKey: YOUR_PUBLIC_KEY # Add your Uploadcare public key here
 
 collections:
   - name: "homepage"
