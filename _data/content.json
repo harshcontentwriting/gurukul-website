@@ -1,5 +1,7 @@
 {
   "child_board_options": [],
+  "newsletter_section_heading": "Our Newsletters",
+  "label_phone": "Phone Number",
   "upi_note": "Please note: Our trust formation is currently in process. These donations are directed to the personal UPI of the Gurukul's principal.",
   "glimpses_section_heading": "Glimpses of Gurukula Life",
   "gurukul_address": "Bhaktivedanta Vidyabhavan Gurukula,",
@@ -9,6 +11,7 @@
   "maharaj_title": "Dedicated To",
   "maharaj_image": "/images/whatsapp-image-2025-06-15-at-12.30.38-pm.jpeg",
   "copyright_note": "Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved. Education for life, grounded in devotion.",
+  "label_child_standard": "Child's Current Standard",
   "prabhupada_name": "HDG Śrīla Prabhupāda",
   "slideshow": [
     {
@@ -32,21 +35,15 @@
   "footer_address": "ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401",
   "das_prabhu_name": "HG Das Gadadhar Das Prabhu",
   "vision_section_heading": "Our Vision",
+  "label_email": "Email Address",
   "das_prabhu_title": "Dedicated To",
-  "gallery_items": [
-    {
-      "image": "/images/whatsapp-image-2025-06-15-at-12.30.38-pm-2-.jpeg",
-      "caption": "spiritual trips"
-    },
-    {
-      "image": "/images/whatsapp-image-2025-06-15-at-12.30.39-pm.jpeg",
-      "caption": "Our Faculty"
-    }
-  ],
+  "gallery_items": [],
+  "about_us_heading": "About Our Gurukula",
   "facebook_link": "-",
   "admissions_section_heading": "Admissions Inquiry",
   "das_prabhu_text": "Under the expert guidance of our Shiksha Guru, we provide a nurturing ashram environment where boys build a foundation of character, competence, and lifelong devotion.\n\n",
   "lineage_section_heading": "Our Lineage & Inspiration",
+  "label_parent_name": "Parent's Name",
   "das_prabhu_image": "/images/whatsapp-image-2025-06-15-at-12.30.40-pm.jpeg",
   "youtube_link": "-",
   "team_members": [
@@ -62,14 +59,23 @@
   "prabhupada_title": "Our Inspiration",
   "admissions_intro": "Take the first step in your child's transformative education. Fill out the form below to connect with us.",
   "bank_donation_info": "Bank name - Indian overseas Bank ,kamre,Ranchi.\nAccount name - Bhakti vedanta Vidyabhavan Trust\nA/C no - 379101000001800\nIFSC code -IOBA0003791",
+  "label_child_board": "Board of Education",
   "inkind_note": "We gratefully accept donations of grains, vegetables, and other essential supplies for the students. Your contribution helps us provide nutritious prasadam daily.\n\n",
   "footer_description": "Bhaktivedanta Vidyabhavan Gurukula, Murbad - Maharashtra\n",
   "vision_1": "We believe that education should be available to all and should be devoid of any forceful cost.\n",
   "prabhupada_image": "/images/prabhupada.jpeg",
+  "newsletters": [
+    {
+      "pdf": "/images/bvg-newsletter.pdf",
+      "title": "bvg-newsletter",
+      "cover_image": "/images/img-20250707-wa0002.jpg"
+    }
+  ],
   "vision_2": "The kind of education one receives must impart a sense of duty towards elders, family and should be beneficial for human society at large.\n",
   "donation_section_heading": "Support Our Seva",
   "maharaj_name": "HH Bhakti Raghava Swami Maharaj",
   "vision_3": "We believe that education should develop a character who is selfless, compassionate and sees every living being with equal vision.",
+  "about_us_text": "We provide spiritual and material education, following the NIOS curriculum to nurture the body, mind, and soul of our students.",
   "contact_email": "-",
   "maharaj_text": "Our Gurukula is dedicated in service to our revered Guru Maharaj, whose teachings and blessings are the foundation of our mission to nurture the next generation of devotees.\n\n",
   "child_standard_options": [
@@ -77,14 +83,5 @@
     "6th - Standard",
     "7th - Standard",
     "8th - Standard"
-  ],
-  "about_us_heading": "About Our Gurukula",
-  "about_us_text": "We provide spiritual and material education, following the NIOS curriculum to nurture the body, mind, and soul of our students.",
-  "newsletter_section_heading": "Our Newsletters",
-  "newsletters": [],
-  "label_parent_name": "Parent's Name",
-  "label_email": "Email Address",
-  "label_phone": "Phone Number",
-  "label_child_standard": "Child's Current Standard",
-  "label_child_board": "Board of Education"
+  ]
 }
