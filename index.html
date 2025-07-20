@@ -9,15 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Additional styles for accordion */
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .rotate-180 { transform: rotate(180deg); }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -26,22 +20,15 @@
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-4">
-                <img id="logo" src="" alt="BVG Murbad Logo" class="h-12 w-12" data-section="logo" data-field="logoImage">
-                <span class="text-xl font-bold text-gray-800" data-section="logo" data-field="logoText">BVG Murbad</span>
+                <img data-field="logo_image" src="https://placehold.co/48x48/ccc/FFFFFF?text=Logo" alt="BVG Murbad Logo" class="h-12 w-12">
+                <span data-field="logo_text" class="text-xl font-bold text-gray-800">BVG Murbad</span>
             </div>
-            
-            <!-- Mobile Menu Button -->
             <div class="lg:hidden">
                 <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
-
-            <!-- Desktop Navigation -->
             <div class="hidden lg:flex items-center">
-                <!-- Navigation Links -->
                 <ul class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 items-center">
                     <li><a href="#about" class="hover:text-yellow-500">About Us</a></li>
                     <li><a href="#admission" class="hover:text-yellow-500">Admission</a></li>
@@ -50,391 +37,241 @@
                 </ul>
             </div>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
             <ul class="flex flex-col space-y-4 items-start">
-                <li><a href="#about" class="hover:text-yellow-500">About Us</a></li>
-                <li><a href="#admission" class="hover:text-yellow-500">Admission</a></li>
-                <li><a href="#contact" class="hover:text-yellow-500">Contact Us</a></li>
-                <li><a href="https://rzp.io/l/bvgdonate" target="_blank" class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Donate</a></li>
+                 <li><a href="#about" class="hover:text-yellow-500">About Us</a></li>
+                 <li><a href="#admission" class="hover:text-yellow-500">Admission</a></li>
+                 <li><a href="#contact" class="hover:text-yellow-500">Contact Us</a></li>
+                 <li><a href="https://rzp.io/l/bvgdonate" target="_blank" class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Donate</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="relative h-screen bg-cover bg-center text-white flex items-center justify-center" style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Loading...')">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative text-center z-10">
-            <div data-section="hero" data-type="slideshow">
-                <!-- Slideshow content will be loaded here -->
+    <!-- Main Content Area -->
+    <main>
+        <section id="hero" class="relative h-screen bg-cover bg-center text-white flex items-center justify-center" style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Loading...')">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="relative text-center z-10" id="hero-content">
+                <!-- Hero content will be loaded here -->
             </div>
-            <a href="#admission" class="mt-8 inline-block bg-yellow-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-600 transition duration-300" data-section="hero" data-field="ctaButton">Inquire About Admissions</a>
-        </div>
-    </section>
+        </section>
 
-    <!-- Lineage Section -->
-    <section id="lineage" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-2" data-section="lineage" data-field="heading">Our Lineage & Inspiration</h2>
-            <p class="text-gray-600 mb-12" data-section="lineage" data-field="subheading">Guiding lights of our institution</p>
-            <div class="grid md:grid-cols-3 gap-8" data-section="lineage" data-type="cards">
-                <!-- Lineage cards will be loaded here -->
+        <section id="lineage" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 data-field="lineage_heading" class="text-3xl font-bold mb-2"></h2>
+                <p data-field="lineage_subheading" class="text-gray-600 mb-12"></p>
+                <div id="lineage-cards" class="grid md:grid-cols-3 gap-8"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Vision Section -->
-    <section id="vision" class="py-16 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12" data-section="vision" data-field="heading">Our Vision</h2>
-            <div class="grid md:grid-cols-3 gap-8" data-section="vision" data-type="cards">
-                <!-- Vision cards will be loaded here -->
+        <section id="vision" class="py-16 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 data-field="vision_heading" class="text-3xl font-bold mb-12"></h2>
+                <div id="vision-cards" class="grid md:grid-cols-3 gap-8"></div>
             </div>
-        </div>
-    </section> <!-- End of Vision Section -->
+        </section>
 
-    <!-- About Us & Team Section -->
-    <section id="about" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4" data-section="about" data-field="heading">About Us</h2>
-            <p class="max-w-3xl mx-auto mb-12 text-gray-600" data-section="about" data-field="description">
-                <!-- About us description will load here -->
-            </p>
-            
-            <!-- Team Section moved here -->
-            <div id="team" class="text-left">
-                <h3 class="text-2xl font-bold mb-8 text-center" data-section="team" data-field="heading">Our Dedicated Team</h3>
-                <div class="space-y-4 max-w-4xl mx-auto" data-section="team" data-type="accordion">
-                    <!-- Team members will be loaded here by JavaScript -->
+        <section id="about" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 data-field="about_us_heading" class="text-3xl font-bold mb-4"></h2>
+                <p data-field="about_us_description" class="max-w-3xl mx-auto mb-12 text-gray-600"></p>
+                <div id="team" class="text-left">
+                    <h3 data-field="team_section_heading" class="text-2xl font-bold mb-8 text-center"></h3>
+                    <div id="team-accordion" class="space-y-4 max-w-4xl mx-auto"></div>
                 </div>
             </div>
-            <!-- End of moved Team Section -->
+        </section>
 
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-16 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-8" data-section="gallery" data-field="heading">Glimpses of Gurukula Life</h2>
-            <div class="relative max-w-4xl mx-auto" data-section="gallery" data-type="carousel">
-                <!-- Carousel will be loaded here -->
+        <section id="gallery" class="py-16 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 data-field="gallery_heading" class="text-3xl font-bold mb-8"></h2>
+                <div id="gallery-carousel-container" class="relative max-w-4xl mx-auto"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Donation Section -->
-    <section id="donation" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12" data-section="donation" data-field="heading">Support Our Seva</h2>
-            <div class="grid md:grid-cols-2 gap-8 text-left" data-section="donation" data-type="donation-options">
-                <!-- Donation options will be loaded here -->
+        <section id="donation" class="py-16 bg-gray-50">
+             <div class="container mx-auto px-6 text-center">
+                <h2 data-field="donation_heading" class="text-3xl font-bold mb-12"></h2>
+                <div id="donation-options" class="grid md:grid-cols-2 gap-8 text-left"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Admission Section -->
-    <section id="admission" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-4" data-section="admission" data-field="heading">Admissions Inquiry</h2>
-                <p class="text-gray-600 mb-8" data-section="admission" data-field="subheading">Take the first step in your child's transformative education. Fill out the form below to connect with us.</p>
-                <form id="admission-form" class="space-y-6 text-left">
-                    <!-- Form fields will be loaded here by JavaScript -->
-                    <button type="submit" class="w-full bg-teal-500 text-white px-6 py-3 rounded-md hover:bg-teal-600 transition duration-300">Submit Inquiry</button>
-                </form>
-                 <div id="form-submission-message" class="mt-4 text-green-600 font-semibold"></div>
+        <section id="admission" class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl text-center">
+                <h2 data-field="admission_heading" class="text-3xl font-bold mb-4"></h2>
+                <p data-field="admission_subheading" class="text-gray-600 mb-8"></p>
+                <form id="admission-form" class="space-y-6 text-left"></form>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+        </section>
+    </main>
+    
     <footer id="contact" class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Footer content will be loaded here -->
-            </div>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm" data-section="footer" data-field="copyright">
-                <!-- Copyright will be loaded here -->
-            </div>
-        </div>
+        <div id="footer-content" class="container mx-auto px-6 py-12"></div>
+        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm" data-field="copyright_note"></div>
     </footer>
 
     <script>
-    // Mobile menu toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
+    document.addEventListener('DOMContentLoaded', async () => {
+        // --- Mobile Menu ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-    // Function to fetch and render content
-    async function loadContent() {
         try {
             const response = await fetch('./data/content.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const content = await response.json();
-            const homepageData = content.homepage;
+            if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
+            const data = await response.json();
+            if (!data) throw new Error('Data file is empty or malformed.');
 
-            // Helper function to set text content
-            const setText = (selector, value) => {
-                const element = document.querySelector(selector);
-                if (element && value) element.textContent = value;
+            // --- Helper Functions ---
+            const setText = (field, value) => {
+                const el = document.querySelector(`[data-field="${field}"]`);
+                if (el && value) el.textContent = value;
             };
-            
-            // Helper function to set inner HTML
-            const setHTML = (selector, value) => {
-                const element = document.querySelector(selector);
-                if (element && value) element.innerHTML = value;
-            };
-
-            // Helper function to set image source
-            const setImgSrc = (selector, value) => {
-                const element = document.querySelector(selector);
-                if (element && value) element.src = value;
+            const setImg = (field, value, alt = '') => {
+                const el = document.querySelector(`[data-field="${field}"]`);
+                if (el && value) {
+                    el.src = value;
+                    el.alt = alt;
+                }
             };
 
-            // Logo
-            if (homepageData.logo) {
-                setImgSrc('[data-section="logo"][data-field="logoImage"]', homepageData.logo.logoImage);
-                setText('[data-section="logo"][data-field="logoText"]', homepageData.logo.logoText);
-            }
+            // --- Populate All Simple Text/Image Fields ---
+            Object.keys(data).forEach(key => setText(key, data[key]));
+            setImg('logo_image', data.logo_image, 'BVG Murbad Logo');
 
-            // Hero Section Slideshow
-            if (homepageData.hero && homepageData.hero.slideshow && homepageData.hero.slideshow.length > 0) {
-                const heroSection = document.getElementById('hero');
-                const heroSlideshowContainer = document.querySelector('[data-section="hero"][data-type="slideshow"]');
+            // --- Hero Slideshow ---
+            if (data.slideshow && data.slideshow.length > 0) {
+                const hero = document.getElementById('hero');
+                const heroContent = document.getElementById('hero-content');
                 let currentSlide = 0;
-                const slides = homepageData.hero.slideshow;
-
-                function updateHero() {
-                    heroSection.style.backgroundImage = `url('${slides[currentSlide].image || 'https://placehold.co/1920x1080/000000/FFFFFF?text=Image'}')`;
-                    heroSlideshowContainer.innerHTML = `
-                        <h1 class="text-5xl md:text-7xl font-black mb-4">${slides[currentSlide].heading}</h1>
-                        <p class="text-xl md:text-2xl">${slides[currentSlide].subheading}</p>
+                const updateHero = () => {
+                    const slide = data.slideshow[currentSlide];
+                    if (!slide) return;
+                    hero.style.backgroundImage = `url('${slide.background_image || ''}')`;
+                    heroContent.innerHTML = `
+                        <h1 class="text-5xl md:text-7xl font-black mb-4">${slide.headline || ''}</h1>
+                        <p class="text-xl md:text-2xl">${slide.subheadline || ''}</p>
+                        <a href="#admission" class="mt-8 inline-block bg-yellow-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-600">${slide.button_text || ''}</a>
                     `;
-                    currentSlide = (currentSlide + 1) % slides.length;
-                }
+                    currentSlide = (currentSlide + 1) % data.slideshow.length;
+                };
                 updateHero();
-                setInterval(updateHero, 5000); // Change slide every 5 seconds
-                setText('[data-section="hero"][data-field="ctaButton"]', homepageData.hero.ctaButton);
-            }
-
-            // Lineage Section
-            if (homepageData.lineage) {
-                setText('[data-section="lineage"][data-field="heading"]', homepageData.lineage.heading);
-                setText('[data-section="lineage"][data-field="subheading"]', homepageData.lineage.subheading);
-                const lineageContainer = document.querySelector('[data-section="lineage"][data-type="cards"]');
-                if (lineageContainer && homepageData.lineage.cards) {
-                    lineageContainer.innerHTML = homepageData.lineage.cards.map(card => `
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <img src="${card.image}" alt="${card.name}" class="w-24 h-24 rounded-full mx-auto mb-4">
-                            <h3 class="text-xl font-bold">${card.name}</h3>
-                            <p class="text-yellow-500 mb-2">${card.title}</p>
-                            <p class="text-gray-600">${card.description}</p>
-                        </div>
-                    `).join('');
-                }
-            }
-
-            // Vision Section
-            if (homepageData.vision) {
-                setText('[data-section="vision"][data-field="heading"]', homepageData.vision.heading);
-                const visionContainer = document.querySelector('[data-section="vision"][data-type="cards"]');
-                if(visionContainer && homepageData.vision.cards) {
-                    visionContainer.innerHTML = homepageData.vision.cards.map(card => `
-                        <div class="border border-gray-200 rounded-lg p-8">
-                            <div class="flex justify-center items-center h-16 w-16 rounded-full mx-auto mb-6" style="background-color: ${card.iconBgColor};">
-                                <img src="${card.icon}" alt="" class="h-8 w-8">
-                            </div>
-                            <p class="text-gray-600">${card.text}</p>
-                        </div>
-                    `).join('');
-                }
+                setInterval(updateHero, 5000);
             }
             
-            // About Us Section
-            if (homepageData.about) {
-                setText('[data-section="about"][data-field="heading"]', homepageData.about.heading);
-                setHTML('[data-section="about"][data-field="description"]', homepageData.about.description);
+            // --- Lineage Cards ---
+            if (data.lineage_cards && data.lineage_cards.length > 0) {
+                document.getElementById('lineage-cards').innerHTML = data.lineage_cards.map(card => `
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <img src="${card.image || ''}" alt="${card.name || ''}" class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <h3 class="text-xl font-bold">${card.name || ''}</h3>
+                        <p class="text-yellow-500 mb-2">${card.title || ''}</p>
+                        <p class="text-gray-600">${card.description || ''}</p>
+                    </div>
+                `).join('');
             }
 
-            // Team Section
-            if (homepageData.team) {
-                setText('[data-section="team"][data-field="heading"]', homepageData.team.heading);
-                const teamContainer = document.querySelector('[data-section="team"][data-type="accordion"]');
-                if(teamContainer && homepageData.team.members) {
-                    teamContainer.innerHTML = homepageData.team.members.map((member, index) => `
-                        <div class="bg-white rounded-lg shadow-md">
-                            <button class="accordion-button w-full flex justify-between items-center p-4 font-semibold text-left">
-                                <span>${member.name}</span>
-                                <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </button>
-                            <div class="accordion-content px-4 pb-4 text-gray-600">
-                                <p>${member.role}</p>
-                            </div>
+            // --- Vision Cards ---
+            if (data.vision_cards && data.vision_cards.length > 0) {
+                document.getElementById('vision-cards').innerHTML = data.vision_cards.map(card => `
+                     <div class="border border-gray-200 rounded-lg p-8">
+                        <div class="flex justify-center items-center h-16 w-16 rounded-full mx-auto mb-6" style="background-color: ${card.icon_bg_color || '#FFFBEB'};">
+                            <img src="${card.icon || ''}" alt="" class="h-8 w-8">
                         </div>
-                    `).join('');
-
-                    // Accordion functionality
-                    document.querySelectorAll('.accordion-button').forEach(button => {
-                        button.addEventListener('click', () => {
-                            const content = button.nextElementSibling;
-                            const icon = button.querySelector('svg');
-                            
-                            if (content.style.maxHeight) {
-                                content.style.maxHeight = null;
-                                icon.style.transform = 'rotate(0deg)';
-                            } else {
-                                document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
-                                document.querySelectorAll('.accordion-button svg').forEach(i => i.style.transform = 'rotate(0deg)');
-                                content.style.maxHeight = content.scrollHeight + "px";
-                                icon.style.transform = 'rotate(180deg)';
-                            }
-                        });
-                    });
-                }
+                        <p class="text-gray-600">${card.text || ''}</p>
+                    </div>
+                `).join('');
             }
 
-            // Gallery Section
-            if (homepageData.gallery && homepageData.gallery.images && homepageData.gallery.images.length > 0) {
-                setText('[data-section="gallery"][data-field="heading"]', homepageData.gallery.heading);
-                const galleryContainer = document.querySelector('[data-section="gallery"][data-type="carousel"]');
-                galleryContainer.innerHTML = `
-                    <div id="image-carousel" class="overflow-hidden relative">
+            // --- Team Accordion ---
+            if (data.team_members && data.team_members.length > 0) {
+                const accordionContainer = document.getElementById('team-accordion');
+                accordionContainer.innerHTML = data.team_members.map(member => `
+                    <div class="bg-white rounded-lg shadow-md">
+                        <button class="accordion-button w-full flex justify-between items-center p-4 font-semibold text-left">
+                            <span>${member.name || ''}</span>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content px-4 pb-4 text-gray-600"><p>${member.role || ''}</p></div>
+                    </div>
+                `).join('');
+                accordionContainer.querySelectorAll('.accordion-button').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const content = button.nextElementSibling;
+                        button.querySelector('svg').classList.toggle('rotate-180');
+                        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+                    });
+                });
+            }
+
+            // --- Gallery Carousel ---
+            if (data.gallery_images && data.gallery_images.length > 0) {
+                const container = document.getElementById('gallery-carousel-container');
+                container.innerHTML = `
+                    <div class="overflow-hidden relative">
                         <div id="carousel-inner" class="flex transition-transform duration-500 ease-in-out">
-                            ${homepageData.gallery.images.map(img => `
-                                <div class="w-full flex-shrink-0"><img src="${img.src}" alt="${img.alt}" class="w-full h-auto rounded-lg"></div>
-                            `).join('')}
+                            ${data.gallery_images.map(img => `<div class="w-full flex-shrink-0"><img src="${img.image || ''}" alt="Gallery image" class="w-full h-auto rounded-lg"></div>`).join('')}
                         </div>
                     </div>
                     <button id="prevBtn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full">&lt;</button>
                     <button id="nextBtn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full">&gt;</button>
                 `;
-                
                 const inner = document.getElementById('carousel-inner');
                 let currentIndex = 0;
-                const totalImages = homepageData.gallery.images.length;
-                
+                const total = data.gallery_images.length;
                 document.getElementById('nextBtn').addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % totalImages;
-                    inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    currentIndex = (currentIndex + 1) % total;
+                    inner.style.transform = \`translateX(-\${currentIndex * 100}%)\`;
                 });
-                
                 document.getElementById('prevBtn').addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-                    inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    currentIndex = (currentIndex - 1 + total) % total;
+                    inner.style.transform = \`translateX(-\${currentIndex * 100}%)\`;
                 });
             }
-
-            // Donation Section
-            if (homepageData.donation) {
-                setText('[data-section="donation"][data-field="heading"]', homepageData.donation.heading);
-                const donationContainer = document.querySelector('[data-section="donation"][data-type="donation-options"]');
-                if(donationContainer && homepageData.donation.options) {
-                    donationContainer.innerHTML = homepageData.donation.options.map(option => `
-                        <div class="bg-white p-8 rounded-lg shadow-md">
-                            <h3 class="text-2xl font-bold mb-4">${option.title}</h3>
-                            ${option.type === 'qr' ? `<img src="${option.qrCode}" alt="QR Code" class="mx-auto mb-4 w-48 h-48">` : ''}
-                            <p class="text-gray-600">${option.description}</p>
-                            ${option.details ? `<div class="mt-4 text-gray-700">${option.details.map(d => `<p><strong>${d.label}:</strong> ${d.value}</p>`).join('')}</div>` : ''}
-                        </div>
-                    `).join('');
-                }
+            
+            // --- Donation Options ---
+            if(data.donation_options && data.donation_options.length > 0) {
+                document.getElementById('donation-options').innerHTML = data.donation_options.map(option => `
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-4">${option.title || ''}</h3>
+                        ${option.type === 'qr' ? `<img src="${option.qr_code || ''}" alt="QR Code" class="mx-auto mb-4 w-48 h-48">` : ''}
+                        <p class="text-gray-600">${option.description || ''}</p>
+                        ${option.details ? `<div class="mt-4 text-gray-700">${option.details.map(d => `<p><strong>${d.label || ''}:</strong> ${d.value || ''}</p>`).join('')}</div>` : ''}
+                    </div>
+                `).join('');
             }
-
-            // Admission Section
-            if (homepageData.admission) {
-                setText('[data-section="admission"][data-field="heading"]', homepageData.admission.heading);
-                setText('[data-section="admission"][data-field="subheading"]', homepageData.admission.subheading);
-                const form = document.getElementById('admission-form');
-                if(form && homepageData.admission.fields) {
-                    const fieldsContainer = document.createDocumentFragment();
-                    homepageData.admission.fields.forEach(field => {
-                        const div = document.createElement('div');
-                        const label = document.createElement('label');
-                        label.className = 'block text-gray-700 font-medium mb-2';
-                        label.htmlFor = field.id;
-                        label.textContent = field.label;
-                        div.appendChild(label);
-
-                        if (field.type === 'select') {
-                            const select = document.createElement('select');
-                            select.id = field.id;
-                            select.name = field.id;
-                            select.className = 'w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500';
-                            select.required = field.required;
-                            
-                            field.options.forEach(opt => {
-                                const option = document.createElement('option');
-                                option.value = opt.value;
-                                option.textContent = opt.label;
-                                if (opt.value === "") option.disabled = true;
-                                option.selected = opt.value === "";
-                                select.appendChild(option);
-                            });
-                            div.appendChild(select);
-                        } else {
-                            const input = document.createElement('input');
-                            input.type = field.type;
-                            input.id = field.id;
-                            input.name = field.id;
-                            input.placeholder = field.placeholder;
-                            input.className = 'w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500';
-                            input.required = field.required;
-                            div.appendChild(input);
-                        }
-                        fieldsContainer.appendChild(div);
-                    });
-                    form.prepend(fieldsContainer);
-
-                    form.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        const messageDiv = document.getElementById('form-submission-message');
-                        messageDiv.textContent = 'Thank you for your inquiry! We will get back to you soon.';
-                        form.reset();
-                        setTimeout(() => messageDiv.textContent = '', 5000);
-                    });
-                }
-            }
-
-            // Footer
-            if (homepageData.footer) {
-                const footerContainer = document.querySelector('.grid.md\\:grid-cols-3');
-                if(footerContainer) {
-                    footerContainer.innerHTML = `
+            
+            // --- Footer ---
+            if(data.footer_address) {
+                document.getElementById('footer-content').innerHTML = `
+                    <div class="grid md:grid-cols-3 gap-8">
                         <div>
-                            <h3 class="text-lg font-bold mb-4">${homepageData.footer.about.title}</h3>
-                            <p class="text-gray-400">${homepageData.footer.about.address}</p>
+                            <h3 class="text-lg font-bold mb-4">Bhaktivedanta Vidyabhavan Gurukula, Murbad</h3>
+                            <p class="text-gray-400">${data.footer_address}</p>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold mb-4">${homepageData.footer.navigate.title}</h3>
+                            <h3 class="text-lg font-bold mb-4">Navigate</h3>
                             <ul class="space-y-2">
-                                ${homepageData.footer.navigate.links.map(link => `<li><a href="${link.url}" class="text-gray-400 hover:text-white">${link.text}</a></li>`).join('')}
+                                <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                                <li><a href="#admission" class="text-gray-400 hover:text-white">Admission</a></li>
+                                <li><a href="#donation" class="text-gray-400 hover:text-white">Donate</a></li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold mb-4">${homepageData.footer.connect.title}</h3>
-                            <div class="flex space-x-4 mb-4">
-                                ${homepageData.footer.connect.social.map(s => `<a href="${s.url}" target="_blank" class="text-gray-400 hover:text-white"><img src="${s.icon}" class="h-6 w-6"></a>`).join('')}
-                            </div>
-                            ${homepageData.footer.connect.contact.map(c => `<p class="text-gray-400">${c.type}: ${c.value}</p>`).join('')}
+                            <h3 class="text-lg font-bold mb-4">Connect With Us</h3>
+                            <p class="text-gray-400">Email: ${data.email_address || ''}</p>
+                            <p class="text-gray-400">Phone: ${data.contact_phone || ''}</p>
                         </div>
-                    `;
-                }
-                setText('[data-section="footer"][data-field="copyright"]', homepageData.footer.copyright);
+                    </div>
+                `;
             }
 
         } catch (error) {
-            console.error('Failed to load content:', error);
-            document.body.innerHTML = '<div class="text-center p-8">Sorry, the website content could not be loaded. Please try again later.</div>';
+            console.error('CRITICAL ERROR:', error);
+            document.body.innerHTML = '<div class="text-center p-8 bg-red-100 text-red-700">Sorry, the website content could not be loaded. A critical error occurred. Please check the browser console for details.</div>';
         }
-    }
-
-    document.addEventListener('DOMContentLoaded', loadContent);
-
+    });
     </script>
 </body>
 </html>
