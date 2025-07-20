@@ -42,6 +42,11 @@ collections:
           - {label: "Vision Statement 1", name: "vision_1", widget: "text", required: false}
           - {label: "Vision Statement 2", name: "vision_2", widget: "text", required: false}
           - {label: "Vision Statement 3", name: "vision_3", widget: "text", required: false}
+
+          # New About Us Fields
+          - {label: "About Us Heading", name: "about_us_heading", widget: "string", required: false}
+          - {label: "About Us Text", name: "about_us_text", widget: "text", required: false}
+
           - {label: "Our Team Section Heading", name: "team_section_heading", widget: "string", required: false}
           - label: "Team Members"
             name: "team_members"
