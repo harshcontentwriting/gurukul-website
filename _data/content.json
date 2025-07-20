@@ -37,7 +37,12 @@
   "vision_section_heading": "Our Vision",
   "label_email": "Email Address",
   "das_prabhu_title": "Dedicated To",
-  "gallery_items": [],
+  "gallery_items": [
+    {
+      "image": "/images/1000075153.jpg",
+      "media_type": "Image"
+    }
+  ],
   "about_us_heading": "About Our Gurukula",
   "facebook_link": "-",
   "admissions_section_heading": "Admissions Inquiry",
