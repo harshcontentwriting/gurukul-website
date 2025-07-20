@@ -43,6 +43,16 @@
                 <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
             </div>
         </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="flex flex-col items-center space-y-4 p-4">
+                <a href="#about" class="nav-link text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                <a href="#newsletter" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Newsletter</a>
+                <a href="#gallery" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Gallery</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Contact Us</a>
+                <a href="#donate" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -133,7 +143,8 @@
                 <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100">
                     <h2 id="admissions_section_heading" class="text-3xl font-bold text-gray-900 mb-2 text-center"></h2>
                     <p id="admissions_intro" class="text-gray-600 mb-8 text-center"></p>
-                    <form id="admissionForm" action="#" method="POST" class="space-y-6">
+                    <!-- UPDATED FORM TAG FOR NETLIFY -->
+                    <form name="admissions" method="POST" data-netlify="true" class="space-y-6">
                         <div><label id="label_parent_name" for="name" class="block text-sm font-medium text-gray-700"></label><input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
                         <div><label id="label_email" for="email" class="block text-sm font-medium text-gray-700"></label><input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
                         <div><label id="label_phone" for="phone" class="block text-sm font-medium text-gray-700"></label><input type="tel" id="phone" name="phone" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
@@ -171,6 +182,13 @@
     
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+          // --- Mobile Menu Toggle ---
+          const mobileMenuButton = document.getElementById('mobile-menu-button');
+          const mobileMenu = document.getElementById('mobile-menu');
+          mobileMenuButton.addEventListener('click', () => {
+              mobileMenu.classList.toggle('hidden');
+          });
+
           fetch('/_data/content.json?v=' + new Date().getTime())
               .then(response => response.ok ? response.json() : Promise.reject('Failed to load content.json'))
               .then(data => { if (data) populateContent(data); })
@@ -197,7 +215,6 @@
               }
           });
           
-          // Populate new editable admission form labels
           setContent('label_parent_name', data.label_parent_name);
           setContent('label_email', data.label_email);
           setContent('label_phone', data.label_phone);
@@ -332,7 +349,6 @@
               dots[index].classList.add('bg-white', isGallery ? 'scale-125' : 'w-3.5', 'h-3.5');
               currentIndex = index;
 
-              // Handle video playback in gallery
               if (isGallery) {
                   slides.forEach((slide, i) => {
                       const video = slide.querySelector('video');
