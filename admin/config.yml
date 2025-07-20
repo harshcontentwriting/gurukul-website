@@ -42,11 +42,8 @@ collections:
           - {label: "Vision Statement 1", name: "vision_1", widget: "text", required: false}
           - {label: "Vision Statement 2", name: "vision_2", widget: "text", required: false}
           - {label: "Vision Statement 3", name: "vision_3", widget: "text", required: false}
-
-          # New About Us Fields
           - {label: "About Us Heading", name: "about_us_heading", widget: "string", required: false}
           - {label: "About Us Text", name: "about_us_text", widget: "text", required: false}
-
           - {label: "Our Team Section Heading", name: "team_section_heading", widget: "string", required: false}
           - label: "Team Members"
             name: "team_members"
@@ -57,18 +54,30 @@ collections:
               - {label: "Photo", name: "photo", widget: "image", required: false}
               - {label: "Name", name: "name", widget: "string", required: false}
               - {label: "Description", name: "description", widget: "text", required: false}
-          
+
+          # NEW NEWSLETTER SECTION
+          - {label: "Newsletter Section Heading", name: "newsletter_section_heading", widget: "string", default: "Our Newsletters"}
+          - label: "Newsletters"
+            name: "newsletters"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "PDF File", name: "pdf", widget: "file"}
+              - {label: "Cover Image", name: "cover_image", widget: "image"}
+
           # UPDATED GALLERY SECTION
-          - {label: "Glimpses Section Heading", name: "glimpses_section_heading", widget: "string", required: false}
-          - {label: "Glimpses Section Sub-heading", name: "glimpses_subheading", widget: "string", required: false}
-          - label: "Gallery Images (Max 9)"
+          - {label: "Gallery Section Heading", name: "glimpses_section_heading", widget: "string", required: false}
+          - {label: "Gallery Section Sub-heading", name: "glimpses_subheading", widget: "string", required: false}
+          - label: "Gallery Items"
             name: "gallery_items"
             widget: "list"
-            max: 9
-            summary: "{{fields.caption}}"
+            summary: "{{fields.caption}} ({{fields.media_type}})"
             fields:
-              - {label: "Image", name: "image", widget: "image", required: false}
-              - {label: "Caption (Text on image)", name: "caption", widget: "string", required: false}
+              - {label: "Media Type", name: "media_type", widget: "select", options: ["Image", "Video"]}
+              - {label: "Image File", name: "image", widget: "image", required: false}
+              - {label: "Video File (MP4)", name: "video", widget: "file", required: false}
+              - {label: "Caption", name: "caption", widget: "string", required: false}
 
           - {label: "Donation Section Heading", name: "donation_section_heading", widget: "string", required: false}
           - {label: "UPI QR Code Image", name: "upi_qr_image", widget: "image", required: false}
@@ -76,8 +85,15 @@ collections:
           - {label: "In-Kind Donation Note", name: "inkind_note", widget: "text", required: false}
           - {label: "Gurukul Address", name: "gurukul_address", widget: "text", required: false}
           - {label: "Bank Donation Info", name: "bank_donation_info", widget: "text", hint: "Enter bank details for 80G receipt.", required: false}
+          
+          # UPDATED ADMISSIONS SECTION
           - {label: "Admissions Section Heading", name: "admissions_section_heading", widget: "string", required: false}
           - {label: "Admissions Intro Text", name: "admissions_intro", widget: "string", required: false}
+          - {label: "Label for Parent's Name", name: "label_parent_name", widget: "string", default: "Parent's Name"}
+          - {label: "Label for Email", name: "label_email", widget: "string", default: "Email Address"}
+          - {label: "Label for Phone", name: "label_phone", widget: "string", default: "Phone Number"}
+          - {label: "Label for Child's Standard", name: "label_child_standard", widget: "string", default: "Child's Current Standard"}
+          - {label: "Label for Board of Education", name: "label_child_board", widget: "string", default: "Board of Education"}
           - label: "Child Standard Options"
             name: "child_standard_options"
             widget: "list"
@@ -90,6 +106,7 @@ collections:
             required: false
             summary: "{{fields.option}}"
             field: {label: "Board", name: "option", widget: "string", required: false}
+
           - {label: "Footer Description", name: "footer_description", widget: "text", required: false}
           - {label: "Footer Address", name: "footer_address", widget: "string", required: false}
           - {label: "YouTube Link", name: "youtube_link", widget: "string", required: false}
