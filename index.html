@@ -15,7 +15,9 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
         .pattern-bg { background-color: #fafafa; }
-        .slide, .gallery-slide { background-size: cover; background-position: center; } /* CORRECTED GALLERY STYLE */
+        .slide { background-size: cover; background-position: center; }
+        .gallery-slide { display: flex; align-items: center; justify-content: center; background-color: #111; }
+        .gallery-slide img, .gallery-slide video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out; }
         .accordion-content.open { max-height: 1000px; padding-top: 1rem; padding-bottom: 1rem; }
         .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1.5rem; text-align: center; font-family: 'Lora', serif; font-size: 1.25rem; transition: opacity 0.3s ease; }
@@ -157,18 +159,17 @@
     </footer>
 
     <!-- Fullscreen PDF Viewer Modal -->
-    <div id="pdf-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center">
-        <div class="bg-white w-11/12 h-5/6 flex flex-col rounded-lg">
+    <div id="pdf-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white w-full max-w-4xl h-full max-h-[90vh] flex flex-col rounded-lg shadow-2xl">
             <div class="flex justify-between items-center p-4 border-b">
-                <h3 id="pdf-title" class="text-lg font-bold"></h3>
-                <button id="close-pdf-modal" class="text-gray-500 hover:text-gray-800">&times;</button>
+                <h3 id="pdf-title" class="text-lg font-bold text-gray-800"></h3>
+                <button id="close-pdf-modal" class="text-gray-500 hover:text-gray-800"><i data-lucide="x" class="w-6 h-6"></i></button>
             </div>
             <iframe id="pdf-iframe" class="w-full h-full" src=""></iframe>
         </div>
     </div>
     
     <script>
-      // SCRIPT WILL BE UPDATED IN A LATER STEP
       document.addEventListener('DOMContentLoaded', function() {
           fetch('/_data/content.json?v=' + new Date().getTime())
               .then(response => response.ok ? response.json() : Promise.reject('Failed to load content.json'))
@@ -196,9 +197,17 @@
               }
           });
           
+          // Populate new editable admission form labels
+          setContent('label_parent_name', data.label_parent_name);
+          setContent('label_email', data.label_email);
+          setContent('label_phone', data.label_phone);
+          setContent('label_child_standard', data.label_child_standard);
+          setContent('label_child_board', data.label_child_board);
+
           if(data.slideshow) populateSlideshow(data.slideshow);
           if(data.team_members) populateTeam(data.team_members);
           if(data.gallery_items) populateGallery(data.gallery_items);
+          if(data.newsletters) populateNewsletters(data.newsletters);
           if(data.child_standard_options) populateDropdowns('child-standard', data.child_standard_options);
           if(data.child_board_options) populateDropdowns('child-board', data.child_board_options);
       }
@@ -214,7 +223,7 @@
               slideEl.innerHTML = `<div class="absolute inset-0 bg-black/50"></div><div class="container mx-auto px-6 z-10"><h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4" style="text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">${slide.headline}</h1><p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.7);">${slide.subheadline}</p><a href="${slide.button_link}" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-2xl">${slide.button_text}</a></div>`;
               wrapper.appendChild(slideEl);
           });
-          initializeSlider();
+          initializeSlider('slider-wrapper', 'slider-dots', 5000);
       }
 
       function populateTeam(members) {
@@ -231,22 +240,48 @@
           addAccordionListeners();
       }
       
+      function populateNewsletters(newsletters) {
+          const wrapper = document.getElementById('newsletter-list');
+          if (!wrapper || !newsletters) return;
+          wrapper.innerHTML = '';
+          newsletters.forEach(item => {
+              const card = document.createElement('div');
+              card.className = 'bg-gray-50 rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:-translate-y-1 transition-transform';
+              card.innerHTML = `
+                  <img src="${item.cover_image}" alt="${item.title}" class="w-full h-48 object-cover">
+                  <div class="p-4">
+                      <h3 class="font-bold text-lg text-gray-800">${item.title}</h3>
+                  </div>
+              `;
+              card.addEventListener('click', () => openPdfModal(item.pdf, item.title));
+              wrapper.appendChild(card);
+          });
+      }
+
       function populateGallery(items) {
           const wrapper = document.getElementById('gallery-slider-wrapper');
           if (!wrapper || !items) return;
           wrapper.innerHTML = '';
           items.forEach(item => {
-              if (item && item.image) {
-                  const slideEl = document.createElement('div');
-                  slideEl.className = 'gallery-slide min-w-full h-full relative flex items-center justify-center';
-                  slideEl.style.backgroundImage = `url('${item.image}')`;
-                  if (item.caption) {
-                      slideEl.innerHTML = `<div class="gallery-caption">${item.caption}</div>`;
-                  }
-                  wrapper.appendChild(slideEl);
+              const slideEl = document.createElement('div');
+              slideEl.className = 'gallery-slide min-w-full h-full relative';
+              
+              if (item.media_type === 'Video' && item.video) {
+                  slideEl.innerHTML = `<video controls muted loop class="w-full h-full object-contain"><source src="${item.video}" type="video/mp4">Your browser does not support the video tag.</video>`;
+              } else if (item.image) {
+                  slideEl.innerHTML = `<img src="${item.image}" alt="${item.caption || 'Gallery Image'}">`;
               }
+
+              if (item.caption) {
+                  const captionEl = document.createElement('div');
+                  captionEl.className = 'gallery-caption opacity-0 group-hover:opacity-100';
+                  captionEl.textContent = item.caption;
+                  slideEl.classList.add('group');
+                  slideEl.appendChild(captionEl);
+              }
+              wrapper.appendChild(slideEl);
           });
-          initializeSlideshowGallery();
+          initializeSlider('gallery-slider-wrapper', 'gallery-slider-dots', 8000, true);
       }
 
       function populateDropdowns(selectId, options) {
@@ -264,46 +299,14 @@
           });
       }
       
-      function initializeSlider() {
-          const sliderWrapper = document.getElementById('slider-wrapper');
-          if (!sliderWrapper) return;
-          const slides = Array.from(sliderWrapper.children);
-          const dotsContainer = document.getElementById('slider-dots');
-          if (!dotsContainer || slides.length <= 1) { if(dotsContainer) dotsContainer.innerHTML = ''; return; }
-          dotsContainer.innerHTML = '';
-          let currentIndex = 0;
-          let slideInterval = null;
-
-          slides.forEach((_, index) => {
-              const dot = document.createElement('button');
-              dot.classList.add('w-2.5', 'h-2.5', 'rounded-full', 'bg-white/50', 'hover:bg-white', 'transition-all');
-              dot.addEventListener('click', () => { goToSlide(index); resetInterval(); });
-              dotsContainer.appendChild(dot);
-          });
-          const dots = Array.from(dotsContainer.children);
-          
-          function goToSlide(index) {
-              sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
-              dots.forEach(d => d.classList.remove('bg-white', 'w-3.5', 'h-3.5'));
-              dots[index].classList.add('bg-white', 'w-3.5', 'h-3.5');
-              currentIndex = index;
-          }
-          function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; goToSlide(currentIndex); }
-          function startInterval() { slideInterval = setInterval(nextSlide, 5000); }
-          function resetInterval() { clearInterval(slideInterval); startInterval(); }
-          goToSlide(0);
-          startInterval();
-      }
-      
-      function initializeSlideshowGallery() {
-          const slider = document.getElementById('gallery-slider');
-          const wrapper = document.getElementById('gallery-slider-wrapper');
-          const dotsContainer = document.getElementById('gallery-slider-dots');
-          const prevBtn = document.getElementById('gallery-prev');
-          const nextBtn = document.getElementById('gallery-next');
-
-          if (!slider || !wrapper) return;
+      function initializeSlider(wrapperId, dotsId, interval, isGallery = false) {
+          const wrapper = document.getElementById(wrapperId);
+          if (!wrapper) return;
           const slides = Array.from(wrapper.children);
+          const dotsContainer = document.getElementById(dotsId);
+          const prevBtn = isGallery ? document.getElementById('gallery-prev') : null;
+          const nextBtn = isGallery ? document.getElementById('gallery-next') : null;
+
           if (slides.length <= 1) {
               if (dotsContainer) dotsContainer.style.display = 'none';
               if (prevBtn) prevBtn.style.display = 'none';
@@ -314,12 +317,10 @@
           dotsContainer.innerHTML = '';
           let currentIndex = 0;
           let slideInterval = null;
-          let touchstartX = 0;
-          let touchendX = 0;
 
           slides.forEach((_, index) => {
               const dot = document.createElement('button');
-              dot.classList.add('w-2', 'h-2', 'rounded-full', 'bg-white/60', 'hover:bg-white', 'transition-all');
+              dot.className = isGallery ? 'w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all' : 'w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all';
               dot.addEventListener('click', () => { goToSlide(index); resetInterval(); });
               dotsContainer.appendChild(dot);
           });
@@ -327,25 +328,30 @@
           
           function goToSlide(index) {
               wrapper.style.transform = `translateX(-${index * 100}%)`;
-              dots.forEach(d => d.classList.remove('bg-white', 'scale-125'));
-              dots[index].classList.add('bg-white', 'scale-125');
+              dots.forEach(d => d.classList.remove('bg-white', isGallery ? 'scale-125' : 'w-3.5', 'h-3.5'));
+              dots[index].classList.add('bg-white', isGallery ? 'scale-125' : 'w-3.5', 'h-3.5');
               currentIndex = index;
+
+              // Handle video playback in gallery
+              if (isGallery) {
+                  slides.forEach((slide, i) => {
+                      const video = slide.querySelector('video');
+                      if (video) {
+                          if (i === index) { video.play(); } else { video.pause(); video.currentTime = 0; }
+                      }
+                  });
+              }
           }
 
           function nextSlide() { goToSlide((currentIndex + 1) % slides.length); }
           function prevSlide() { goToSlide((currentIndex - 1 + slides.length) % slides.length); }
-          function startInterval() { slideInterval = setInterval(nextSlide, 5000); }
+          function startInterval() { slideInterval = setInterval(nextSlide, interval); }
           function resetInterval() { clearInterval(slideInterval); startInterval(); }
-
-          function handleGesture() {
-              if (touchendX < touchstartX - 50) nextSlide();
-              if (touchendX > touchstartX + 50) prevSlide();
+          
+          if (isGallery) {
+              nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+              prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
           }
-
-          nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
-          prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
-          slider.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; });
-          slider.addEventListener('touchend', e => { touchendX = e.changedTouches[0].screenX; handleGesture(); resetInterval(); });
           
           goToSlide(0);
           startInterval();
@@ -361,6 +367,29 @@
               });
           });
       }
+      
+      function openPdfModal(pdfUrl, title) {
+          const modal = document.getElementById('pdf-modal');
+          const iframe = document.getElementById('pdf-iframe');
+          const pdfTitle = document.getElementById('pdf-title');
+          if (modal && iframe && pdfTitle) {
+              pdfTitle.textContent = title;
+              iframe.src = pdfUrl;
+              modal.classList.remove('hidden');
+              modal.classList.add('flex');
+          }
+      }
+
+      function closePdfModal() {
+          const modal = document.getElementById('pdf-modal');
+          const iframe = document.getElementById('pdf-iframe');
+          if (modal && iframe) {
+              iframe.src = '';
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+          }
+      }
+      document.getElementById('close-pdf-modal').addEventListener('click', closePdfModal);
       
       lucide.createIcons();
       document.getElementById('year').textContent = new Date().getFullYear();
