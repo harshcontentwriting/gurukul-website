@@ -11,7 +11,7 @@
   "logo_image": "/images/img-20250707-wa0002.jpg",
   "maharaj_title": "Dedicated To",
   "maharaj_image": "/images/whatsapp-image-2025-06-15-at-12.30.38-pm.jpeg",
-  "copyright_note": "Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved.  Education for life, grounded in devotion.",
+  "copyright_note": "Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved.  Education for life, grounded in devotion.",
   "prabhupada_name": "HDG Śrīla Prabhupāda",
   "slideshow": [
     {
@@ -151,5 +151,7 @@
     "6th - Standard",
     "7th - Standard",
     "8th - Standard"
-  ]
+  ],
+  "about_us_heading": "About Our Gurukula",
+  "about_us_text": "We provide spiritual and material education, following the NIOS curriculum to nurture the body, mind, and soul of our students."
 }
