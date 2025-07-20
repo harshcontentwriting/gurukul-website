@@ -1,277 +1,358 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhaktivedanta Vidyabhavan Gurukula, Murbad</title>
+    <title>Bhaktivedanta Vidyabhavan Gurukula, Murbad | BVG Murbad</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .rotate-180 { transform: rotate(180deg); }
+        :root { --bg-color: #FFFBEB; --text-color: #374151; --primary-color: #0D9488; --primary-hover: #0F766E; --accent-color: #F59E0B; --accent-hover: #D97706; --dark-bg: #111827; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
+        .pattern-bg { background-color: #fafafa; }
+        .slide, .gallery-slide { background-size: cover; background-position: center; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out; }
+        .accordion-content.open { max-height: 1000px; padding-top: 1rem; padding-bottom: 1rem; }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1.5rem; text-align: center; font-family: 'Lora', serif; font-size: 1.25rem; transition: opacity 0.3s ease; }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="antialiased">
 
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img data-field="logo_image" src="https://placehold.co/48x48/ccc/FFFFFF?text=Logo" alt="BVG Murbad Logo" class="h-12 w-12">
-                <span data-field="logo_text" class="text-xl font-bold text-gray-800">BVG Murbad</span>
+    <header id="home" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img id="logo_image" src="" alt="BVG Logo" class="h-12 w-12 rounded-full">
+                    <a href="#home" class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight hover:text-teal-600 transition-colors">BVG Murbad</a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#about" class="nav-link text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                    <a href="#team" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Our Team</a>
+                    <a href="#admissions" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Admission</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Contact Us</a>
+                    <a href="#donate" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
             </div>
-            <div class="lg:hidden">
-                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-            <div class="hidden lg:flex items-center">
-                <ul class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 items-center">
-                    <li><a href="#about" class="hover:text-yellow-500">About Us</a></li>
-                    <li><a href="#admission" class="hover:text-yellow-500">Admission</a></li>
-                    <li><a href="#contact" class="hover:text-yellow-500">Contact Us</a></li>
-                    <li><a href="https://rzp.io/l/bvgdonate" target="_blank" class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Donate</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
-            <ul class="flex flex-col space-y-4 items-start">
-                 <li><a href="#about" class="hover:text-yellow-500">About Us</a></li>
-                 <li><a href="#admission" class="hover:text-yellow-500">Admission</a></li>
-                 <li><a href="#contact" class="hover:text-yellow-500">Contact Us</a></li>
-                 <li><a href="https://rzp.io/l/bvgdonate" target="_blank" class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Donate</a></li>
-            </ul>
         </div>
     </header>
 
-    <!-- Main Content Area -->
     <main>
-        <section id="hero" class="relative h-screen bg-cover bg-center text-white flex items-center justify-center" style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Loading...')">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-            <div class="relative text-center z-10" id="hero-content">
-                <!-- Hero content will be loaded here -->
-            </div>
+        <!-- Hero Slideshow -->
+        <section id="hero-slider" class="relative w-full h-[70vh] md:h-[90vh] overflow-hidden">
+            <div id="slider-wrapper" class="flex h-full transition-transform duration-700 ease-in-out"></div>
+            <div id="slider-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20"></div>
         </section>
 
-        <section id="lineage" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-6 text-center">
-                <h2 data-field="lineage_heading" class="text-3xl font-bold mb-2"></h2>
-                <p data-field="lineage_subheading" class="text-gray-600 mb-12"></p>
-                <div id="lineage-cards" class="grid md:grid-cols-3 gap-8"></div>
-            </div>
-        </section>
-
-        <section id="vision" class="py-16 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 data-field="vision_heading" class="text-3xl font-bold mb-12"></h2>
-                <div id="vision-cards" class="grid md:grid-cols-3 gap-8"></div>
-            </div>
-        </section>
-
-        <section id="about" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-6 text-center">
-                <h2 data-field="about_us_heading" class="text-3xl font-bold mb-4"></h2>
-                <p data-field="about_us_description" class="max-w-3xl mx-auto mb-12 text-gray-600"></p>
-                <div id="team" class="text-left">
-                    <h3 data-field="team_section_heading" class="text-2xl font-bold mb-8 text-center"></h3>
-                    <div id="team-accordion" class="space-y-4 max-w-4xl mx-auto"></div>
+        <!-- Lineage Section -->
+        <section id="about" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 id="lineage_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg"><img id="prabhupada_image" loading="lazy" src="" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover"><h3 id="prabhupada_name" class="text-2xl font-semibold text-gray-800"></h3><p id="prabhupada_title" class="text-teal-600 font-semibold mt-1"></p><p id="prabhupada_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p></div>
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg"><img id="maharaj_image" loading="lazy" src="" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover"><h3 id="maharaj_name" class="text-2xl font-semibold text-gray-800"></h3><p id="maharaj_title" class="text-teal-600 font-semibold mt-1"></p><p id="maharaj_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p></div>
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg"><img id="das_prabhu_image" loading="lazy" src="" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover"><h3 id="das_prabhu_name" class="text-2xl font-semibold text-gray-800"></h3><p id="das_prabhu_title" class="text-teal-600 font-semibold mt-1"></p><p id="das_prabhu_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p></div>
                 </div>
             </div>
         </section>
 
-        <section id="gallery" class="py-16 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 data-field="gallery_heading" class="text-3xl font-bold mb-8"></h2>
-                <div id="gallery-carousel-container" class="relative max-w-4xl mx-auto"></div>
+        <!-- Vision Section -->
+        <section id="vision" class="py-20 md:py-28 pattern-bg">
+            <div class="container mx-auto px-6">
+                <h2 id="vision_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500"><div class="flex justify-center mb-5"><div class="bg-amber-100 p-4 rounded-full"><i data-lucide="hand-heart" class="text-amber-600 w-8 h-8"></i></div></div><p id="vision_1" class="text-gray-700 text-lg"></p></div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-teal-500"><div class="flex justify-center mb-5"><div class="bg-teal-100 p-4 rounded-full"><i data-lucide="users" class="text-teal-600 w-8 h-8"></i></div></div><p id="vision_2" class="text-gray-700 text-lg"></p></div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-rose-500"><div class="flex justify-center mb-5"><div class="bg-rose-100 p-4 rounded-full"><i data-lucide="gem" class="text-rose-600 w-8 h-8"></i></div></div><p id="vision_3" class="text-gray-700 text-lg"></p></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Team Section -->
+        <section id="team" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                 <h2 id="team_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
+                <div id="team-accordion-wrapper" class="space-y-4 max-w-4xl mx-auto"></div>
+            </div>
+        </section>
+        
+        <!-- Glimpses Slideshow Section -->
+        <section id="gallery" class="py-20 md:py-28 pattern-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 id="glimpses_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-3"></h2>
+                    <p id="glimpses_subheading" class="text-lg text-gray-600 max-w-3xl mx-auto"></p>
+                </div>
+                <div id="gallery-slider" class="relative w-full max-w-4xl mx-auto h-[60vh] overflow-hidden rounded-xl shadow-2xl">
+                    <div id="gallery-slider-wrapper" class="flex h-full transition-transform duration-700 ease-in-out"></div>
+                    <button id="gallery-prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full z-20 shadow-md"><i data-lucide="chevron-left" class="w-6 h-6 text-gray-800"></i></button>
+                    <button id="gallery-next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full z-20 shadow-md"><i data-lucide="chevron-right" class="w-6 h-6 text-gray-800"></i></button>
+                    <div id="gallery-slider-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20"></div>
+                </div>
             </div>
         </section>
 
-        <section id="donation" class="py-16 bg-gray-50">
-             <div class="container mx-auto px-6 text-center">
-                <h2 data-field="donation_heading" class="text-3xl font-bold mb-12"></h2>
-                <div id="donation-options" class="grid md:grid-cols-2 gap-8 text-left"></div>
+        <!-- Donation Section -->
+        <section id="donate" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 id="donation_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
+                <div class="grid lg:grid-cols-2 gap-12 items-start mt-12">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg text-center">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Direct UPI Donation</h3>
+                        <p class="text-gray-600 mb-4">You can scan the QR code below with any UPI app to contribute.</p>
+                        <div class="flex justify-center mb-4"><img id="upi_qr_image" loading="lazy" src="" alt="UPI QR Code" class="w-56 h-56 rounded-lg shadow-md border"></div>
+                        <p id="upi_note" class="text-sm text-gray-500"></p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">In-Kind & Bank Donations</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4"><div class="bg-amber-100 p-3 rounded-full mt-1"><i data-lucide="package-check" class="w-6 h-6 text-amber-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">Foodstuff & Supplies</h4><p id="inkind_note" class="text-gray-600"></p></div></div>
+                            <div class="flex items-start space-x-4"><div class="bg-teal-100 p-3 rounded-full mt-1"><i data-lucide="map-pin" class="w-6 h-6 text-teal-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">Deliver or Post</h4><p id="gurukul_address" class="mt-2 font-medium text-gray-800 bg-gray-100 p-3 rounded-md"></p></div></div>
+                            <div class="flex items-start space-x-4"><div class="bg-indigo-100 p-3 rounded-full mt-1"><i data-lucide="landmark" class="w-6 h-6 text-indigo-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">For 80G Receipt</h4><p id="bank_donation_info" class="text-gray-600 whitespace-pre-wrap"></p></div></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="admission" class="py-16 bg-white">
-            <div class="container mx-auto px-6 max-w-3xl text-center">
-                <h2 data-field="admission_heading" class="text-3xl font-bold mb-4"></h2>
-                <p data-field="admission_subheading" class="text-gray-600 mb-8"></p>
-                <form id="admission-form" class="space-y-6 text-left"></form>
+        <!-- Admissions Section -->
+        <section id="admissions" class="py-20 md:py-28 pattern-bg">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100">
+                    <h2 id="admissions_section_heading" class="text-3xl font-bold text-gray-900 mb-2 text-center"></h2>
+                    <p id="admissions_intro" class="text-gray-600 mb-8 text-center"></p>
+                    <form id="admissionForm" action="#" method="POST" class="space-y-6">
+                        <div><label for="name" class="block text-sm font-medium text-gray-700">Parent's Name</label><input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                        <div><label for="email" class="block text-sm font-medium text-gray-700">Email Address</label><input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                        <div><label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label><input type="tel" id="phone" name="phone" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                        <div><label for="child-standard" class="block text-sm font-medium text-gray-700">Child's Current Standard</label><select id="child-standard" name="child-standard" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></select></div>
+                        <div><label for="child-board" class="block text-sm font-medium text-gray-700">Board of Education</label><select id="child-board" name="child-board" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></select></div>
+                        <div><button type="submit" class="cta-button w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg">Submit Inquiry</button></div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
-    
-    <footer id="contact" class="bg-gray-800 text-white">
-        <div id="footer-content" class="container mx-auto px-6 py-12"></div>
-        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm" data-field="copyright_note"></div>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="md:col-span-2"><h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula, Murbad</h3><p id="footer_description" class="text-gray-400 text-sm"></p><p id="footer_address" class="text-gray-400 text-sm mt-2"></p></div>
+                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3><ul class="space-y-2 text-sm"><li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li><li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li><li><a href="#admissions" class="text-gray-400 hover:text-white transition">Admission</a></li><li><a href="#donate" class="text-gray-400 hover:text-white transition">Donate</a></li></ul></div>
+                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3><div class="flex space-x-4 mb-4"><a id="youtube_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a><a id="instagram_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a><a id="facebook_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a></div><p class="text-sm text-gray-300">Email: <a id="contact_email_link" href="#"><span id="contact_email"></span></a></p><p id="contact_phone" class="text-sm text-gray-300"></p></div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500"><p>&copy; <span id="year"></span> <span id="copyright_note"></span></p></div>
+        </div>
     </footer>
-
+    
+    <!-- THE COMPLETE, CORRECTED SCRIPT SECTION -->
     <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-        // --- Mobile Menu ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      document.addEventListener('DOMContentLoaded', function() {
+          fetch('/_data/content.json?v=' + new Date().getTime())
+              .then(response => response.ok ? response.json() : Promise.reject('Failed to load content.json'))
+              .then(data => { if (data) populateContent(data); })
+              .catch(err => console.error("Error loading content:", err));
+      });
 
-        try {
-            const response = await fetch('./data/content.json');
-            if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
-            const data = await response.json();
-            if (!data) throw new Error('Data file is empty or malformed.');
+      function populateContent(data) {
+          const setContent = (id, value) => { const el = document.getElementById(id); if (el) el.innerHTML = value || ''; };
+          const setImage = (id, src, alt) => { const el = document.getElementById(id); if (el) { el.src = src || ''; el.alt = alt || ''; } };
+          const setLink = (id, href) => { const el = document.getElementById(id); if (el) el.href = href || '#'; };
+          
+          Object.keys(data).forEach(key => {
+              const value = data[key];
+              const el = document.getElementById(key);
+              if (el) {
+                  if (key.includes('_image')) setImage(key, value, key);
+                  else if (key.includes('_link')) setLink(key, value);
+                  else if (key === 'contact_email') {
+                      setContent('contact_email', value);
+                      setLink('contact_email_link', `mailto:${value}`);
+                  } else if (key === 'contact_phone') {
+                      setContent('contact_phone', `Phone: ${value}`);
+                  } else setContent(key, value);
+              }
+          });
+          
+          if(data.slideshow) populateSlideshow(data.slideshow);
+          if(data.team_members) populateTeam(data.team_members);
+          if(data.gallery_items) populateGallery(data.gallery_items);
+          if(data.child_standard_options) populateDropdowns('child-standard', data.child_standard_options);
+          if(data.child_board_options) populateDropdowns('child-board', data.child_board_options);
+      }
 
-            // --- Helper Functions ---
-            const setText = (field, value) => {
-                const el = document.querySelector(`[data-field="${field}"]`);
-                if (el && value) el.textContent = value;
-            };
-            const setImg = (field, value, alt = '') => {
-                const el = document.querySelector(`[data-field="${field}"]`);
-                if (el && value) {
-                    el.src = value;
-                    el.alt = alt;
-                }
-            };
+      function populateSlideshow(slides) {
+          const wrapper = document.getElementById('slider-wrapper');
+          if (!wrapper || !slides) return;
+          wrapper.innerHTML = '';
+          slides.forEach(slide => {
+              const slideEl = document.createElement('div');
+              slideEl.className = 'slide min-w-full h-full relative flex items-center justify-center text-center text-white';
+              slideEl.style.backgroundImage = `url('${slide.background_image}')`;
+              slideEl.innerHTML = `<div class="absolute inset-0 bg-black/50"></div><div class="container mx-auto px-6 z-10"><h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4" style="text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">${slide.headline}</h1><p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.7);">${slide.subheadline}</p><a href="${slide.button_link}" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-2xl">${slide.button_text}</a></div>`;
+              wrapper.appendChild(slideEl);
+          });
+          initializeSlider();
+      }
 
-            // --- Populate All Simple Text/Image Fields ---
-            Object.keys(data).forEach(key => setText(key, data[key]));
-            setImg('logo_image', data.logo_image, 'BVG Murbad Logo');
+      function populateTeam(members) {
+          const wrapper = document.getElementById('team-accordion-wrapper');
+          if (!wrapper || !members) return;
+          wrapper.innerHTML = '';
+          members.forEach(member => {
+              const memberEl = document.createElement('div');
+              memberEl.className = 'bg-white rounded-lg shadow-md';
+              memberEl.innerHTML = `<button class="accordion-button w-full flex items-center justify-between p-4 text-left"><div class="flex items-center space-x-4"><img loading="lazy" src="${member.photo}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover"><span class="text-lg font-semibold text-gray-800">${member.name}</span></div><i data-lucide="chevron-down" class="w-6 h-6 text-teal-600 transition-transform transform"></i></button><div class="accordion-content px-4 text-gray-600">${member.description}</div>`;
+              wrapper.appendChild(memberEl);
+          });
+          lucide.createIcons();
+          addAccordionListeners();
+      }
+      
+      function populateGallery(items) {
+          const wrapper = document.getElementById('gallery-slider-wrapper');
+          if (!wrapper || !items) return;
+          wrapper.innerHTML = '';
+          items.forEach(item => {
+              if (item && item.image) {
+                  const slideEl = document.createElement('div');
+                  slideEl.className = 'gallery-slide min-w-full h-full relative flex items-center justify-center';
+                  slideEl.style.backgroundImage = `url('${item.image}')`;
+                  if (item.caption) {
+                      slideEl.innerHTML = `<div class="gallery-caption">${item.caption}</div>`;
+                  }
+                  wrapper.appendChild(slideEl);
+              }
+          });
+          initializeSlideshowGallery();
+      }
 
-            // --- Hero Slideshow ---
-            if (data.slideshow && data.slideshow.length > 0) {
-                const hero = document.getElementById('hero');
-                const heroContent = document.getElementById('hero-content');
-                let currentSlide = 0;
-                const updateHero = () => {
-                    const slide = data.slideshow[currentSlide];
-                    if (!slide) return;
-                    hero.style.backgroundImage = `url('${slide.background_image || ''}')`;
-                    heroContent.innerHTML = `
-                        <h1 class="text-5xl md:text-7xl font-black mb-4">${slide.headline || ''}</h1>
-                        <p class="text-xl md:text-2xl">${slide.subheadline || ''}</p>
-                        <a href="#admission" class="mt-8 inline-block bg-yellow-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-600">${slide.button_text || ''}</a>
-                    `;
-                    currentSlide = (currentSlide + 1) % data.slideshow.length;
-                };
-                updateHero();
-                setInterval(updateHero, 5000);
-            }
-            
-            // --- Lineage Cards ---
-            if (data.lineage_cards && data.lineage_cards.length > 0) {
-                document.getElementById('lineage-cards').innerHTML = data.lineage_cards.map(card => `
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <img src="${card.image || ''}" alt="${card.name || ''}" class="w-24 h-24 rounded-full mx-auto mb-4">
-                        <h3 class="text-xl font-bold">${card.name || ''}</h3>
-                        <p class="text-yellow-500 mb-2">${card.title || ''}</p>
-                        <p class="text-gray-600">${card.description || ''}</p>
-                    </div>
-                `).join('');
-            }
+      function populateDropdowns(selectId, options) {
+          const select = document.getElementById(selectId);
+          if (!select || !options) return;
+          select.innerHTML = '<option value="" disabled selected>Select an option</option>';
+          options.forEach(opt => {
+              if (opt && opt.option) {
+                  const optionEl = document.createElement('option');
+                  optionEl.value = opt.option;
+                  optionEl.textContent = opt.option;
+                  select.appendChild(optionEl);
+              }
+          });
+      }
+      
+      function initializeSlider() {
+          const sliderWrapper = document.getElementById('slider-wrapper');
+          if (!sliderWrapper) return;
+          const slides = Array.from(sliderWrapper.children);
+          const dotsContainer = document.getElementById('slider-dots');
+          if (!dotsContainer || slides.length <= 1) { if(dotsContainer) dotsContainer.innerHTML = ''; return; }
+          dotsContainer.innerHTML = '';
+          let currentIndex = 0;
+          let slideInterval = null;
 
-            // --- Vision Cards ---
-            if (data.vision_cards && data.vision_cards.length > 0) {
-                document.getElementById('vision-cards').innerHTML = data.vision_cards.map(card => `
-                     <div class="border border-gray-200 rounded-lg p-8">
-                        <div class="flex justify-center items-center h-16 w-16 rounded-full mx-auto mb-6" style="background-color: ${card.icon_bg_color || '#FFFBEB'};">
-                            <img src="${card.icon || ''}" alt="" class="h-8 w-8">
-                        </div>
-                        <p class="text-gray-600">${card.text || ''}</p>
-                    </div>
-                `).join('');
-            }
+          slides.forEach((_, index) => {
+              const dot = document.createElement('button');
+              dot.classList.add('w-2.5', 'h-2.5', 'rounded-full', 'bg-white/50', 'hover:bg-white', 'transition-all');
+              dot.addEventListener('click', () => { goToSlide(index); resetInterval(); });
+              dotsContainer.appendChild(dot);
+          });
+          const dots = Array.from(dotsContainer.children);
+          
+          function goToSlide(index) {
+              sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
+              dots.forEach(d => d.classList.remove('bg-white', 'w-3.5', 'h-3.5'));
+              dots[index].classList.add('bg-white', 'w-3.5', 'h-3.5');
+              currentIndex = index;
+          }
+          function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; goToSlide(currentIndex); }
+          function startInterval() { slideInterval = setInterval(nextSlide, 5000); }
+          function resetInterval() { clearInterval(slideInterval); startInterval(); }
+          goToSlide(0);
+          startInterval();
+      }
+      
+      function initializeSlideshowGallery() {
+          const slider = document.getElementById('gallery-slider');
+          const wrapper = document.getElementById('gallery-slider-wrapper');
+          const dotsContainer = document.getElementById('gallery-slider-dots');
+          const prevBtn = document.getElementById('gallery-prev');
+          const nextBtn = document.getElementById('gallery-next');
 
-            // --- Team Accordion ---
-            if (data.team_members && data.team_members.length > 0) {
-                const accordionContainer = document.getElementById('team-accordion');
-                accordionContainer.innerHTML = data.team_members.map(member => `
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="accordion-button w-full flex justify-between items-center p-4 font-semibold text-left">
-                            <span>${member.name || ''}</span>
-                            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content px-4 pb-4 text-gray-600"><p>${member.role || ''}</p></div>
-                    </div>
-                `).join('');
-                accordionContainer.querySelectorAll('.accordion-button').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const content = button.nextElementSibling;
-                        button.querySelector('svg').classList.toggle('rotate-180');
-                        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
-                    });
-                });
-            }
+          if (!slider || !wrapper) return;
+          const slides = Array.from(wrapper.children);
+          if (slides.length <= 1) {
+              if (dotsContainer) dotsContainer.style.display = 'none';
+              if (prevBtn) prevBtn.style.display = 'none';
+              if (nextBtn) nextBtn.style.display = 'none';
+              return;
+          }
 
-            // --- Gallery Carousel ---
-            if (data.gallery_images && data.gallery_images.length > 0) {
-                const container = document.getElementById('gallery-carousel-container');
-                container.innerHTML = `
-                    <div class="overflow-hidden relative">
-                        <div id="carousel-inner" class="flex transition-transform duration-500 ease-in-out">
-                            ${data.gallery_images.map(img => `<div class="w-full flex-shrink-0"><img src="${img.image || ''}" alt="Gallery image" class="w-full h-auto rounded-lg"></div>`).join('')}
-                        </div>
-                    </div>
-                    <button id="prevBtn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full">&lt;</button>
-                    <button id="nextBtn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full">&gt;</button>
-                `;
-                const inner = document.getElementById('carousel-inner');
-                let currentIndex = 0;
-                const total = data.gallery_images.length;
-                document.getElementById('nextBtn').addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % total;
-                    inner.style.transform = \`translateX(-\${currentIndex * 100}%)\`;
-                });
-                document.getElementById('prevBtn').addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + total) % total;
-                    inner.style.transform = \`translateX(-\${currentIndex * 100}%)\`;
-                });
-            }
-            
-            // --- Donation Options ---
-            if(data.donation_options && data.donation_options.length > 0) {
-                document.getElementById('donation-options').innerHTML = data.donation_options.map(option => `
-                    <div class="bg-white p-8 rounded-lg shadow-md">
-                        <h3 class="text-2xl font-bold mb-4">${option.title || ''}</h3>
-                        ${option.type === 'qr' ? `<img src="${option.qr_code || ''}" alt="QR Code" class="mx-auto mb-4 w-48 h-48">` : ''}
-                        <p class="text-gray-600">${option.description || ''}</p>
-                        ${option.details ? `<div class="mt-4 text-gray-700">${option.details.map(d => `<p><strong>${d.label || ''}:</strong> ${d.value || ''}</p>`).join('')}</div>` : ''}
-                    </div>
-                `).join('');
-            }
-            
-            // --- Footer ---
-            if(data.footer_address) {
-                document.getElementById('footer-content').innerHTML = `
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div>
-                            <h3 class="text-lg font-bold mb-4">Bhaktivedanta Vidyabhavan Gurukula, Murbad</h3>
-                            <p class="text-gray-400">${data.footer_address}</p>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold mb-4">Navigate</h3>
-                            <ul class="space-y-2">
-                                <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
-                                <li><a href="#admission" class="text-gray-400 hover:text-white">Admission</a></li>
-                                <li><a href="#donation" class="text-gray-400 hover:text-white">Donate</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold mb-4">Connect With Us</h3>
-                            <p class="text-gray-400">Email: ${data.email_address || ''}</p>
-                            <p class="text-gray-400">Phone: ${data.contact_phone || ''}</p>
-                        </div>
-                    </div>
-                `;
-            }
+          dotsContainer.innerHTML = '';
+          let currentIndex = 0;
+          let slideInterval = null;
+          let touchstartX = 0;
+          let touchendX = 0;
 
-        } catch (error) {
-            console.error('CRITICAL ERROR:', error);
-            document.body.innerHTML = '<div class="text-center p-8 bg-red-100 text-red-700">Sorry, the website content could not be loaded. A critical error occurred. Please check the browser console for details.</div>';
-        }
-    });
+          slides.forEach((_, index) => {
+              const dot = document.createElement('button');
+              dot.classList.add('w-2', 'h-2', 'rounded-full', 'bg-white/60', 'hover:bg-white', 'transition-all');
+              dot.addEventListener('click', () => { goToSlide(index); resetInterval(); });
+              dotsContainer.appendChild(dot);
+          });
+          const dots = Array.from(dotsContainer.children);
+          
+          function goToSlide(index) {
+              wrapper.style.transform = `translateX(-${index * 100}%)`;
+              dots.forEach(d => d.classList.remove('bg-white', 'scale-125'));
+              dots[index].classList.add('bg-white', 'scale-125');
+              currentIndex = index;
+          }
+
+          function nextSlide() { goToSlide((currentIndex + 1) % slides.length); }
+          function prevSlide() { goToSlide((currentIndex - 1 + slides.length) % slides.length); }
+          function startInterval() { slideInterval = setInterval(nextSlide, 5000); }
+          function resetInterval() { clearInterval(slideInterval); startInterval(); }
+
+          function handleGesture() {
+              if (touchendX < touchstartX - 50) nextSlide();
+              if (touchendX > touchstartX + 50) prevSlide();
+          }
+
+          nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+          prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+          slider.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; });
+          slider.addEventListener('touchend', e => { touchendX = e.changedTouches[0].screenX; handleGesture(); resetInterval(); });
+          
+          goToSlide(0);
+          startInterval();
+      }
+
+      function addAccordionListeners() {
+          document.querySelectorAll('.accordion-button').forEach(button => {
+              button.addEventListener('click', () => {
+                  const content = button.nextElementSibling;
+                  const icon = button.querySelector('i');
+                  content.classList.toggle('open');
+                  icon.classList.toggle('rotate-180');
+              });
+          });
+      }
+      
+      lucide.createIcons();
+      document.getElementById('year').textContent = new Date().getFullYear();
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
+        });
+      }
     </script>
 </body>
 </html>
