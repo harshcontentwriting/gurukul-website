@@ -32,8 +32,8 @@
                     <a href="#home" class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight hover:text-teal-600 transition-colors">BVG Murbad</a>
                 </div>
                 <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#lineage" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Lineage</a>
                     <a href="#about" class="nav-link text-gray-600 hover:text-teal-600 font-medium">About Us</a>
-                    <a href="#team" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Our Team</a>
                     <a href="#admissions" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Admission</a>
                     <a href="#contact" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Contact Us</a>
                     <a href="#donate" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
@@ -51,7 +51,7 @@
         </section>
 
         <!-- Lineage Section -->
-        <section id="about" class="py-20 md:py-28 bg-white">
+        <section id="lineage" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <h2 id="lineage_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
                 <div class="grid md:grid-cols-3 gap-10">
@@ -74,11 +74,20 @@
             </div>
         </section>
         
-        <!-- Our Team Section -->
-        <section id="team" class="py-20 md:py-28 bg-white">
+        <!-- NEW About Us & Team Section -->
+        <section id="about" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
-                 <h2 id="team_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
-                <div id="team-accordion-wrapper" class="space-y-4 max-w-4xl mx-auto"></div>
+                 <!-- New About Us Content -->
+                <div class="text-center max-w-4xl mx-auto mb-20">
+                    <h2 id="about_us_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6"></h2>
+                    <p id="about_us_text" class="text-lg text-gray-700 leading-relaxed"></p>
+                </div>
+
+                <!-- Existing Our Team Section (now a sub-section) -->
+                <div id="team">
+                    <h2 id="team_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
+                    <div id="team-accordion-wrapper" class="space-y-4 max-w-4xl mx-auto"></div>
+                </div>
             </div>
         </section>
         
@@ -145,7 +154,7 @@
         <div class="container mx-auto px-6 py-16">
             <div class="grid md:grid-cols-4 gap-10">
                 <div class="md:col-span-2"><h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula, Murbad</h3><p id="footer_description" class="text-gray-400 text-sm"></p><p id="footer_address" class="text-gray-400 text-sm mt-2"></p></div>
-                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3><ul class="space-y-2 text-sm"><li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li><li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li><li><a href="#admissions" class="text-gray-400 hover:text-white transition">Admission</a></li><li><a href="#donate" class="text-gray-400 hover:text-white transition">Donate</a></li></ul></div>
+                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3><ul class="space-y-2 text-sm"><li><a href="#lineage" class="text-gray-400 hover:text-white transition">Lineage</a></li><li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li><li><a href="#admissions" class="text-gray-400 hover:text-white transition">Admission</a></li><li><a href="#donate" class="text-gray-400 hover:text-white transition">Donate</a></li></ul></div>
                 <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3><div class="flex space-x-4 mb-4"><a id="youtube_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a><a id="instagram_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a><a id="facebook_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a></div><p class="text-sm text-gray-300">Email: <a id="contact_email_link" href="#"><span id="contact_email"></span></a></p><p id="contact_phone" class="text-sm text-gray-300"></p></div>
             </div>
             <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500"><p>&copy; <span id="year"></span> <span id="copyright_note"></span></p></div>
@@ -209,7 +218,7 @@
           members.forEach(member => {
               const memberEl = document.createElement('div');
               memberEl.className = 'bg-white rounded-lg shadow-md';
-              memberEl.innerHTML = `<button class="accordion-button w-full flex items-center justify-between p-4 text-left"><div class="flex items-center space-x-4"><img loading="lazy" src="${member.photo}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover"><span class="text-lg font-semibold text-gray-800">${member.name}</span></div><i data-lucide="chevron-down" class="w-6 h-6 text-teal-600 transition-transform transform"></i></button><div class="accordion-content px-4 text-gray-600">${member.description}</div>`;
+              memberEl.innerHTML = `<button class="accordion-button w-full flex items-center justify-between p-4 text-left"><div class="flex items-center space-x-4"><img loading="lazy" src="${member.photo}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover"><span class="text-lg font-semibold text-gray-800">${member.name}</span></div><i data-lucide="chevron-down" class="w-6 h-6 text-teal-600 transition-transform transform"></i></button><div class="accordion-content px-4 text-gray-600">${member.description || ''}</div>`;
               wrapper.appendChild(memberEl);
           });
           lucide.createIcons();
@@ -239,10 +248,12 @@
           if (!select || !options) return;
           select.innerHTML = '<option value="" disabled selected>Select an option</option>';
           options.forEach(opt => {
-              if (opt && opt.option) {
+              // Handle both object and string array formats
+              const optionText = typeof opt === 'object' ? opt.option : opt;
+              if (optionText) {
                   const optionEl = document.createElement('option');
-                  optionEl.value = opt.option;
-                  optionEl.textContent = opt.option;
+                  optionEl.value = optionText;
+                  optionEl.textContent = optionText;
                   select.appendChild(optionEl);
               }
           });
