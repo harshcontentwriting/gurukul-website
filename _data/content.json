@@ -36,13 +36,25 @@
       "button_link": "#Contact"
     },
     {
-      "background_image": "/images/img-20250315-wa0008.jpg"
+      "background_image": "/images/img-20250315-wa0008.jpg",
+      "headline": "Bhaktivedanta Vidyabhavan Gurukul, Murbad-Maharashtra",
+      "subheadline": "Farming (Practical Education)",
+      "button_text": "Contact",
+      "button_link": "#Contact"
     },
     {
-      "background_image": "/images/img-20250315-wa0014.jpg"
+      "background_image": "/images/img-20250315-wa0014.jpg",
+      "headline": "Bhaktivedanta Vidyabhavan Gurukul, Murbad-Maharashtra",
+      "subheadline": "Temple Worship (Seva)",
+      "button_text": "Contact",
+      "button_link": "#Contact"
     },
     {
-      "background_image": "/images/img-20250317-wa0004.jpg"
+      "background_image": "/images/img-20250317-wa0004.jpg",
+      "headline": "Bhaktivedanta Vidyabhavan Gurukul, Murbad-Maharashtra",
+      "subheadline": "Physical Fitness",
+      "button_text": "Contact",
+      "button_link": "#Contact"
     }
   ],
   "prabhupada_text": "The divine vision for our Gurukula comes from our Founder-Ācārya, who established ISKCON and envisioned schools that expertly balance spiritual values with modern academics.\n\n",
