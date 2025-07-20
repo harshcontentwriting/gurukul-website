@@ -1,5 +1,10 @@
 {
-  "child_board_options": [],
+  "child_board_options": [
+    "Hindi Medium",
+    "English Medium",
+    "Marathi Medium",
+    "Others"
+  ],
   "newsletter_section_heading": "Our Newsletters",
   "label_phone": "Phone Number",
   "upi_note": "Please note: Our trust formation is currently in process. These donations are directed to the personal UPI of the Gurukul's principal.",
@@ -64,7 +69,7 @@
   "prabhupada_title": "Our Inspiration",
   "admissions_intro": "Take the first step in your child's transformative education. Fill out the form below to connect with us.",
   "bank_donation_info": "Bank name - Indian overseas Bank ,kamre,Ranchi.\nAccount name - Bhakti vedanta Vidyabhavan Trust\nA/C no - 379101000001800\nIFSC code -IOBA0003791",
-  "label_child_board": "Board of Education",
+  "label_child_board": "Medium of Education",
   "inkind_note": "We gratefully accept donations of grains, vegetables, and other essential supplies for the students. Your contribution helps us provide nutritious prasadam daily.\n\n",
   "footer_description": "Bhaktivedanta Vidyabhavan Gurukula, Murbad - Maharashtra\n",
   "vision_1": "We believe that education should be available to all and should be devoid of any forceful cost.\n",
