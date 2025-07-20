@@ -13,104 +13,51 @@ collections:
         name: "homepage"
         file: "data/content.json"
         fields:
-          - { label: "Logo", name: "logo", widget: "object", fields: [
-              { label: "Logo Image", name: "logoImage", widget: "image", required: false },
-              { label: "Logo Text", name: "logoText", widget: "string", default: "BVG Murbad" }
+          - { label: "Logo Image", name: "logo_image", widget: "image", required: false }
+          - { label: "Logo Text", name: "logo_text", widget: "string", required: false }
+          - { label: "Slideshow", name: "slideshow", widget: "list", fields: [
+              { label: "Background Image", name: "background_image", widget: "image" },
+              { label: "Headline", name: "headline", widget: "string" },
+              { label: "Subheadline", name: "subheadline", widget: "string" },
+              { label: "Button Text", name: "button_text", widget: "string" }
             ] }
-          - { label: "Hero Section", name: "hero", widget: "object", fields: [
-              { label: "Hero Slideshow", name: "slideshow", widget: "list", fields: [
-                  { label: "Image", name: "image", widget: "image" },
-                  { label: "Heading", name: "heading", widget: "string" },
-                  { label: "Subheading", name: "subheading", widget: "string" }
-              ] },
-              { label: "CTA Button Text", name: "ctaButton", widget: "string", default: "Inquire About Admissions" }
+          - { label: "Lineage Heading", name: "lineage_heading", widget: "string", default: "Our Lineage & Inspiration" }
+          - { label: "Lineage Subheading", name: "lineage_subheading", widget: "string", default: "Guiding lights of our institution" }
+          - { label: "Lineage Cards", name: "lineage_cards", widget: "list", fields: [
+              { label: "Image", name: "image", widget: "image" },
+              { label: "Name", name: "name", widget: "string" },
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Description", name: "description", widget: "text" }
             ] }
-          - { label: "Lineage Section", name: "lineage", widget: "object", fields: [
-              { label: "Heading", name: "heading", widget: "string", default: "Our Lineage & Inspiration" },
-              { label: "Subheading", name: "subheading", widget: "string", default: "Guiding lights of our institution" },
-              { label: "Cards", name: "cards", widget: "list", fields: [
-                  { label: "Image", name: "image", widget: "image" },
-                  { label: "Name", name: "name", widget: "string" },
-                  { label: "Title", name: "title", widget: "string" },
-                  { label: "Description", name: "description", widget: "text" }
-              ] }
+          - { label: "Vision Heading", name: "vision_heading", widget: "string", default: "Our Vision" }
+          - { label: "Vision Cards", name: "vision_cards", widget: "list", fields: [
+              { label: "Icon", name: "icon", widget: "image" },
+              { label: "Icon Background Color", name: "icon_bg_color", widget: "string", default: "#FFFBEB" },
+              { label: "Text", name: "text", widget: "string" }
             ] }
-          - { label: "Vision Section", name: "vision", widget: "object", fields: [
-              { label: "Heading", name: "heading", widget: "string", default: "Our Vision" },
-              { label: "Cards", name: "cards", widget: "list", fields: [
-                  { label: "Icon", name: "icon", widget: "image" },
-                  { label: "Icon Background Color", name: "iconBgColor", widget: "string", default: "#FFFBEB" },
-                  { label: "Text", name: "text", widget: "string" }
-              ] }
+          - { label: "About Us Heading", name: "about_us_heading", widget: "string", default: "About Us" }
+          - { label: "About Us Description", name: "about_us_description", widget: "markdown", default: "We are dedicated to providing a balanced education that nurtures students both spiritually and materially. Our academic program follows the official NIOS (National Institute of Open Schooling) curriculum, ensuring a comprehensive and recognized educational foundation for all our students." }
+          - { label: "Team Section Heading", name: "team_section_heading", widget: "string", default: "Our Dedicated Team" }
+          - { label: "Team Members", name: "team_members", widget: "list", fields: [
+              { label: "Name", name: "name", widget: "string" },
+              { label: "Role", name: "role", widget: "string" }
             ] }
-          - { label: "About Us Section", name: "about", widget: "object", fields: [
-              { label: "Heading", name: "heading", widget: "string", default: "About Us" },
-              { label: "Description", name: "description", widget: "markdown", default: "We are dedicated to providing a balanced education that nurtures students both spiritually and materially. Our academic program follows the official NIOS (National Institute of Open Schooling) curriculum, ensuring a comprehensive and recognized educational foundation for all our students." }
+          - { label: "Gallery Heading", name: "gallery_heading", widget: "string", default: "Glimpses of Gurukula Life" }
+          - { label: "Gallery Images", name: "gallery_images", widget: "list", fields: [
+              { label: "Image", name: "image", widget: "image" }
             ] }
-          - { label: "Team Section", name: "team", widget: "object", fields: [
-              { label: "Heading", name: "heading", widget: "string", default: "Our Dedicated Team" },
-              { label: "Members", name: "members", widget: "list", fields: [
-                  { label: "Name", name: "name", widget: "string" },
-                  { label: "Role", name: "role", widget: "string" }
-              ] }
-            ] }
-          - { label: "Gallery Section", name: "gallery", widget: "object", fields: [
-              { label: "Heading", name: "heading", widget: "string", default: "Glimpses of Gurukula Life" },
-              { label: "Images", name: "images", widget: "list", fields: [
-                  { label: "Image", name: "src", widget: "image" },
-                  { label: "Alt Text", name: "alt", widget: "string" }
-              ] }
-            ] }
-          - { label: "Donation Section", name: "donation", widget: "object", fields: [
-              { label: "Heading", name: "heading", widget: "string", default: "Support Our Seva" },
-              { label: "Options", name: "options", widget: "list", fields: [
-                  { label: "Title", name: "title", widget: "string" },
-                  { label: "Type", name: "type", widget: "select", options: ["qr", "bank"] },
-                  { label: "QR Code Image", name: "qrCode", widget: "image", required: false },
-                  { label: "Description", name: "description", widget: "text" },
-                  { label: "Details", name: "details", widget: "list", required: false, fields: [
-                      { label: "Label", name: "label", widget: "string" },
-                      { label: "Value", name: "value", widget: "string" }
-                  ] }
-              ] }
-            ] }
-          - { label: "Admission Section", name: "admission", widget: "object", fields: [
-              { label: "Heading", name: "heading", widget: "string", default: "Admissions Inquiry" },
-              { label: "Subheading", name: "subheading", widget: "string", default: "Take the first step in your child's transformative education. Fill out the form below to connect with us." },
-              { label: "Form Fields", name: "fields", widget: "list", fields: [
+          - { label: "Donation Heading", name: "donation_heading", widget: "string", default: "Support Our Seva" }
+          - { label: "Donation Options", name: "donation_options", widget: "list", fields: [
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Type", name: "type", widget: "select", options: ["qr", "bank"] },
+              { label: "QR Code Image", name: "qr_code", widget: "image", required: false },
+              { label: "Description", name: "description", widget: "text" },
+              { label: "Details", name: "details", widget: "list", required: false, fields: [
                   { label: "Label", name: "label", widget: "string" },
-                  { label: "ID", name: "id", widget: "string" },
-                  { label: "Type", name: "type", widget: "select", options: ["text", "email", "tel", "select"] },
-                  { label: "Placeholder", name: "placeholder", widget: "string", required: false },
-                  { label: "Required", name: "required", widget: "boolean", default: true },
-                  { label: "Options (for select)", name: "options", widget: "list", required: false, fields: [
-                      { label: "Label", name: "label", widget: "string" },
-                      { label: "Value", name: "value", widget: "string" }
-                  ] }
+                  { label: "Value", name: "value", widget: "string" }
               ] }
             ] }
-          - { label: "Footer", name: "footer", widget: "object", fields: [
-              { label: "About Column", name: "about", widget: "object", fields: [
-                  { label: "Title", name: "title", widget: "string" },
-                  { label: "Address", name: "address", widget: "text" }
-              ] },
-              { label: "Navigate Column", name: "navigate", widget: "object", fields: [
-                  { label: "Title", name: "title", widget: "string" },
-                  { label: "Links", name: "links", widget: "list", fields: [
-                      { label: "Text", name: "text", widget: "string" },
-                      { label: "URL", name: "url", widget: "string" }
-                  ] }
-              ] },
-              { label: "Connect Column", name: "connect", widget: "object", fields: [
-                  { label: "Title", name: "title", widget: "string" },
-                  { label: "Social Links", name: "social", widget: "list", fields: [
-                      { label: "Icon", name: "icon", widget: "image" },
-                      { label: "URL", name: "url", widget: "string" }
-                  ] },
-                  { label: "Contact Info", name: "contact", widget: "list", fields: [
-                      { label: "Type", name: "type", widget: "string" },
-                      { label: "Value", name: "value", widget: "string" }
-                  ] }
-              ] },
-              { label: "Copyright Text", name: "copyright", widget: "string" }
-            ] }
+          - { label: "Footer Address", name: "footer_address", widget: "string" }
+          - { label: "Email Address", name: "email_address", widget: "string" }
+          - { label: "Contact Phone", name: "contact_phone", widget: "string" }
+          - { label: "Copyright Note", name: "copyright_note", widget: "string" }
