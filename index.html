@@ -16,7 +16,9 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
         .pattern-bg { background-color: #fafafa; }
-        .slide, .gallery-slide { background-size: cover; background-position: center; }
+        .slide { background-size: cover; background-position: center; }
+        .gallery-slide { display: flex; align-items: center; justify-content: center; background-color: #111; }
+        .gallery-slide img, .gallery-slide video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out; }
         .accordion-content.open { max-height: 1000px; padding-top: 1rem; padding-bottom: 1rem; }
         .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1.5rem; text-align: center; font-family: 'Lora', serif; font-size: 1.25rem; transition: opacity 0.3s ease; }
@@ -186,7 +188,6 @@
               .then(data => { if (data) populateContent(data); })
               .catch(err => console.error("Error loading content:", err));
           
-          // Mobile Menu Toggle
           const mobileMenuButton = document.getElementById('mobile-menu-button');
           const mobileMenu = document.getElementById('mobile-menu');
           mobileMenuButton.addEventListener('click', () => {
@@ -282,7 +283,8 @@
               if (item.media_type === 'Video' && item.video) {
                   slideEl.innerHTML = `<video controls muted loop class="w-full h-full object-contain"><source src="${item.video}" type="video/mp4">Your browser does not support the video tag.</video>`;
               } else if (item.image) {
-                  slideEl.innerHTML = `<img src="${item.image}" alt="${item.caption || 'Gallery Image'}">`;
+                  // THIS IS THE CORRECTED LINE
+                  slideEl.innerHTML = `<img src="${item.image}" alt="${item.caption || 'Gallery Image'}" class="w-full h-full object-contain">`;
               }
 
               if (item.caption) {
