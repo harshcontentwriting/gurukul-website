@@ -37,10 +37,6 @@
   "das_prabhu_title": "Dedicated To",
   "gallery_items": [
     {
-      "image": "/images/1000075153.jpg",
-      "media_type": "Image"
-    },
-    {
       "image": "/images/1000074542.jpg",
       "media_type": "Image",
       "caption": "Practical Farming"
@@ -84,6 +80,10 @@
       "media_type": "Image",
       "image": "/images/img20240325093347.jpg",
       "caption": "Festivals"
+    },
+    {
+      "media_type": "Image",
+      "image": "/images/img_20241207_20552034.jpeg"
     }
   ],
   "about_us_heading": "About Our Gurukula",
