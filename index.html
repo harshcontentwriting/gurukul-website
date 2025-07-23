@@ -44,6 +44,16 @@
                 <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
             </div>
         </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="flex flex-col items-center space-y-4 p-4">
+                <a href="#about" class="nav-link text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                <a href="#newsletter" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Newsletter</a>
+                <a href="#gallery" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Gallery</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Contact Us</a>
+                <a href="#donate" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -103,7 +113,7 @@
             </div>
         </section>
 
-        <!-- Other sections -->
+        <!-- Donation Section -->
         <section id="donate" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <h2 id="donation_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
@@ -125,12 +135,14 @@
                 </div>
             </div>
         </section>
+
+        <!-- Admissions Section -->
         <section id="admissions" class="py-20 md:py-28 pattern-bg">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100">
                     <h2 id="admissions_section_heading" class="text-3xl font-bold text-gray-900 mb-2 text-center"></h2>
                     <p id="admissions_intro" class="text-gray-600 mb-8 text-center"></p>
-                    <form id="admissionForm" action="#" method="POST" class="space-y-6">
+                    <form name="admissions" method="POST" data-netlify="true" class="space-y-6">
                         <div><label id="label_parent_name" for="name" class="block text-sm font-medium text-gray-700"></label><input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
                         <div><label id="label_email" for="email" class="block text-sm font-medium text-gray-700"></label><input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
                         <div><label id="label_phone" for="phone" class="block text-sm font-medium text-gray-700"></label><input type="tel" id="phone" name="phone" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
@@ -154,8 +166,8 @@
             <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500"><p>&copy; <span id="year"></span> <span id="copyright_note"></span></p></div>
         </div>
     </footer>
-    
-    <!-- PDF Modal -->
+
+    <!-- Fullscreen PDF Viewer Modal -->
     <div id="pdf-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4">
         <div class="bg-white w-full max-w-4xl h-full max-h-[90vh] flex flex-col rounded-lg shadow-2xl">
             <div class="flex justify-between items-center p-4 border-b">
@@ -165,13 +177,21 @@
             <iframe id="pdf-iframe" class="w-full h-full" src=""></iframe>
         </div>
     </div>
-
+    
+    <!-- COMPLETE SCRIPT SECTION WITH ALL FIXES -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
           fetch('/_data/content.json?v=' + new Date().getTime())
               .then(response => response.ok ? response.json() : Promise.reject('Failed to load content.json'))
               .then(data => { if (data) populateContent(data); })
               .catch(err => console.error("Error loading content:", err));
+          
+          // Mobile Menu Toggle
+          const mobileMenuButton = document.getElementById('mobile-menu-button');
+          const mobileMenu = document.getElementById('mobile-menu');
+          mobileMenuButton.addEventListener('click', () => {
+              mobileMenu.classList.toggle('hidden');
+          });
       });
 
       function populateContent(data) {
@@ -200,7 +220,7 @@
           if(data.slideshow) populateSlideshow(data.slideshow);
           if(data.team_members) populateTeam(data.team_members);
           if(data.gallery_items) populateGallery(data.gallery_items);
-          if(data.newsletters) populateNewsletters(data.newsletters); // ADDED THIS LINE
+          if(data.newsletters) populateNewsletters(data.newsletters);
           if(data.child_standard_options) populateDropdowns('child-standard', data.child_standard_options);
           if(data.child_board_options) populateDropdowns('child-board', data.child_board_options);
       }
@@ -216,7 +236,7 @@
               slideEl.innerHTML = `<div class="absolute inset-0 bg-black/50"></div><div class="container mx-auto px-6 z-10"><h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4" style="text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">${slide.headline}</h1><p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.7);">${slide.subheadline}</p><a href="${slide.button_link}" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-2xl">${slide.button_text}</a></div>`;
               wrapper.appendChild(slideEl);
           });
-          initializeSlider();
+          initializeSlider('slider-wrapper', 'slider-dots', 5000);
       }
 
       function populateTeam(members) {
@@ -232,8 +252,7 @@
           lucide.createIcons();
           addAccordionListeners();
       }
-      
-      // ADDED THIS ENTIRE FUNCTION
+
       function populateNewsletters(newsletters) {
           const wrapper = document.getElementById('newsletter-list');
           if (!wrapper || !newsletters) return;
@@ -257,17 +276,25 @@
           if (!wrapper || !items) return;
           wrapper.innerHTML = '';
           items.forEach(item => {
-              if (item && item.image) {
-                  const slideEl = document.createElement('div');
-                  slideEl.className = 'gallery-slide min-w-full h-full relative flex items-center justify-center';
-                  slideEl.style.backgroundImage = `url('${item.image}')`;
-                  if (item.caption) {
-                      slideEl.innerHTML = `<div class="gallery-caption">${item.caption}</div>`;
-                  }
-                  wrapper.appendChild(slideEl);
+              const slideEl = document.createElement('div');
+              slideEl.className = 'gallery-slide min-w-full h-full relative';
+              
+              if (item.media_type === 'Video' && item.video) {
+                  slideEl.innerHTML = `<video controls muted loop class="w-full h-full object-contain"><source src="${item.video}" type="video/mp4">Your browser does not support the video tag.</video>`;
+              } else if (item.image) {
+                  slideEl.innerHTML = `<img src="${item.image}" alt="${item.caption || 'Gallery Image'}">`;
               }
+
+              if (item.caption) {
+                  const captionEl = document.createElement('div');
+                  captionEl.className = 'gallery-caption opacity-0 group-hover:opacity-100';
+                  captionEl.textContent = item.caption;
+                  slideEl.classList.add('group');
+                  slideEl.appendChild(captionEl);
+              }
+              wrapper.appendChild(slideEl);
           });
-          initializeSlideshowGallery();
+          initializeSlider('gallery-slider-wrapper', 'gallery-slider-dots', 8000, true);
       }
 
       function populateDropdowns(selectId, options) {
@@ -285,11 +312,74 @@
           });
       }
       
-      function initializeSlider() { /* ... same as before ... */ }
-      function initializeSlideshowGallery() { /* ... same as before ... */ }
-      function addAccordionListeners() { /* ... same as before ... */ }
+      function initializeSlider(wrapperId, dotsId, interval, isGallery = false) {
+          const wrapper = document.getElementById(wrapperId);
+          if (!wrapper) return;
+          const slides = Array.from(wrapper.children);
+          const dotsContainer = document.getElementById(dotsId);
+          const prevBtn = isGallery ? document.getElementById('gallery-prev') : null;
+          const nextBtn = isGallery ? document.getElementById('gallery-next') : null;
 
-      // ADDED PDF MODAL FUNCTIONS
+          if (slides.length <= 1) {
+              if (dotsContainer) dotsContainer.style.display = 'none';
+              if (prevBtn) prevBtn.style.display = 'none';
+              if (nextBtn) nextBtn.style.display = 'none';
+              return;
+          }
+
+          dotsContainer.innerHTML = '';
+          let currentIndex = 0;
+          let slideInterval = null;
+
+          slides.forEach((_, index) => {
+              const dot = document.createElement('button');
+              dot.className = isGallery ? 'w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all' : 'w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all';
+              dot.addEventListener('click', () => { goToSlide(index); resetInterval(); });
+              dotsContainer.appendChild(dot);
+          });
+          const dots = Array.from(dotsContainer.children);
+          
+          function goToSlide(index) {
+              wrapper.style.transform = `translateX(-${index * 100}%)`;
+              dots.forEach(d => d.classList.remove('bg-white', isGallery ? 'scale-125' : 'w-3.5', 'h-3.5'));
+              dots[index].classList.add('bg-white', isGallery ? 'scale-125' : 'w-3.5', 'h-3.5');
+              currentIndex = index;
+
+              if (isGallery) {
+                  slides.forEach((slide, i) => {
+                      const video = slide.querySelector('video');
+                      if (video) {
+                          if (i === index) { video.play(); } else { video.pause(); video.currentTime = 0; }
+                      }
+                  });
+              }
+          }
+
+          function nextSlide() { goToSlide((currentIndex + 1) % slides.length); }
+          function prevSlide() { goToSlide((currentIndex - 1 + slides.length) % slides.length); }
+          function startInterval() { slideInterval = setInterval(nextSlide, interval); }
+          function resetInterval() { clearInterval(slideInterval); startInterval(); }
+          
+          if (isGallery) {
+              nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+              prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+          }
+          
+          goToSlide(0);
+          startInterval();
+      }
+
+      function addAccordionListeners() {
+          document.querySelectorAll('.accordion-button').forEach(button => {
+              button.addEventListener('click', () => {
+                  const content = button.nextElementSibling;
+                  const icon = button.querySelector('i');
+                  content.classList.toggle('open');
+                  icon.classList.toggle('rotate-180');
+              });
+          });
+      }
+      
       function openPdfModal(pdfUrl, title) {
           const modal = document.getElementById('pdf-modal');
           const iframe = document.getElementById('pdf-iframe');
