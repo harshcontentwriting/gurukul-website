@@ -42,7 +42,48 @@
     },
     {
       "image": "/images/1000074542.jpg",
-      "media_type": "Image"
+      "media_type": "Image",
+      "caption": "Practical Farming"
+    },
+    {
+      "image": "/images/1000093333.jpg",
+      "media_type": "Image",
+      "caption": "Festivals"
+    },
+    {
+      "image": "/images/img-20241207-wa0025.jpg",
+      "media_type": "Image",
+      "caption": "Adventure trips"
+    },
+    {
+      "image": "/images/img-20250317-wa0004.jpg",
+      "media_type": "Image",
+      "caption": "Morning PT"
+    },
+    {
+      "image": "/images/img-20250719-wa0033.jpg",
+      "media_type": "Image",
+      "caption": "Mridanga Workshop"
+    },
+    {
+      "media_type": "Image",
+      "image": "/images/img-20241207-wa0029.jpg",
+      "caption": "Village Sankirtan"
+    },
+    {
+      "media_type": "Image",
+      "image": "/images/img-20250315-wa0014.jpg",
+      "caption": "Deity Worship"
+    },
+    {
+      "media_type": "Image",
+      "image": "/images/img20240921171935.jpg",
+      "caption": "Wrestling classes"
+    },
+    {
+      "media_type": "Image",
+      "image": "/images/img20240325093347.jpg",
+      "caption": "Festivals"
     }
   ],
   "about_us_heading": "About Our Gurukula",
