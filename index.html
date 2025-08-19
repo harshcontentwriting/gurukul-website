@@ -16,8 +16,7 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
         .pattern-bg { background-color: #fafafa; }
-        .slide { background-size: cover; background-position: center; }
-        .gallery-slide { display: flex; align-items: center; justify-content: center; background-color: #111; }
+        .slide, .gallery-slide { background-size: cover; background-position: center; }
         .gallery-slide img, .gallery-slide video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out; }
         .accordion-content.open { max-height: 1000px; padding-top: 1rem; padding-bottom: 1rem; }
@@ -144,7 +143,8 @@
                 <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100">
                     <h2 id="admissions_section_heading" class="text-3xl font-bold text-gray-900 mb-2 text-center"></h2>
                     <p id="admissions_intro" class="text-gray-600 mb-8 text-center"></p>
-                    <form name="admissions" method="POST" data-netlify="true" class="space-y-6">
+                    <!-- THIS IS THE CHANGED LINE -->
+                    <form name="admissions" method="POST" action="/thank-you.html" data-netlify="true" class="space-y-6">
                         <div><label id="label_parent_name" for="name" class="block text-sm font-medium text-gray-700"></label><input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
                         <div><label id="label_email" for="email" class="block text-sm font-medium text-gray-700"></label><input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
                         <div><label id="label_phone" for="phone" class="block text-sm font-medium text-gray-700"></label><input type="tel" id="phone" name="phone" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
@@ -283,7 +283,6 @@
               if (item.media_type === 'Video' && item.video) {
                   slideEl.innerHTML = `<video controls muted loop class="w-full h-full object-contain"><source src="${item.video}" type="video/mp4">Your browser does not support the video tag.</video>`;
               } else if (item.image) {
-                  // THIS IS THE CORRECTED LINE
                   slideEl.innerHTML = `<img src="${item.image}" alt="${item.caption || 'Gallery Image'}" class="w-full h-full object-contain">`;
               }
 
