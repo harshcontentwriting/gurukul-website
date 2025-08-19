@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! | BVG Murbad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0;400;0;500;0;600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root { --bg-color: #FEFCE8; --text-color: #44403C; --primary-color: #78350F; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+        h1, h2, h3 { font-family: 'Lora', serif; color: var(--primary-color); }
+    </style>
+</head>
+<body class="antialiased flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl text-center max-w-lg w-full border-t-4 border-amber-500">
+        <div class="flex justify-center mb-6">
+            <div class="bg-teal-100 p-4 rounded-full">
+                <i data-lucide="check-circle-2" class="w-12 h-12 text-teal-600"></i>
+            </div>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Thank You!</h1>
+        <p class="text-gray-600 text-lg mb-8">Your inquiry has been successfully submitted. We appreciate you reaching out to us and will be in contact with you shortly.</p>
+        <a href="https://bvgmurbad.org/" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+            &larr; Back to our site
+        </a>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
