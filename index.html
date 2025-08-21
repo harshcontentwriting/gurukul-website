@@ -20,12 +20,8 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
         .pattern-bg { background-color: #fafafa; }
-        .slide, .gallery-slide { background-size: cover; background-position: center; }
-        .gallery-slide img, .gallery-slide video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .slide { background-size: cover; background-position: center; }
+        /* The general object-fit rule is removed from here and applied directly in the javascript for better control */
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out; }
         .accordion-content.open { max-height: 1000px; padding-top: 1rem; padding-bottom: 1rem; }
         .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1.5rem; text-align: center; font-family: 'Lora', serif; font-size: 1.25rem; transition: opacity 0.3s ease; }
@@ -106,7 +102,7 @@
                     <h2 id="glimpses_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-3"></h2>
                     <p id="glimpses_subheading" class="text-lg text-gray-600 max-w-3xl mx-auto"></p>
                 </div>
-                <div id="gallery-slider" class="relative w-full max-w-4xl mx-auto h-[50vh] md:h-[60vh] overflow-hidden rounded-xl shadow-2xl">
+                <div id="gallery-slider" class="relative w-full max-w-4xl mx-auto aspect-video md:aspect-auto md:h-[60vh] overflow-hidden rounded-xl shadow-2xl bg-gray-200">
                     <div id="gallery-slider-wrapper" class="flex h-full transition-transform duration-700 ease-in-out"></div>
                     <button id="gallery-prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full z-20 shadow-md"><i data-lucide="chevron-left" class="w-6 h-6 text-gray-800"></i></button>
                     <button id="gallery-next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full z-20 shadow-md"><i data-lucide="chevron-right" class="w-6 h-6 text-gray-800"></i></button>
@@ -273,12 +269,14 @@
           wrapper.innerHTML = '';
           items.forEach(item => {
               const slideEl = document.createElement('div');
-              slideEl.className = 'gallery-slide min-w-full h-full relative';
+              slideEl.className = 'gallery-slide min-w-full h-full relative flex items-center justify-center'; // Added justify-center
               
               if (item.media_type === 'Video' && item.video) {
-                  slideEl.innerHTML = `<video controls muted loop class="w-full h-full object-cover"><source src="${item.video}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                  // UPDATED: Added responsive object-fit classes for video
+                  slideEl.innerHTML = `<video controls muted loop class="w-full h-full object-contain md:object-cover"><source src="${item.video}" type="video/mp4">Your browser does not support the video tag.</video>`;
               } else if (item.image) {
-                  slideEl.innerHTML = `<img src="${item.image}" alt="${item.caption || 'Gallery Image'}" class="w-full h-full object-cover">`;
+                  // UPDATED: Added responsive object-fit classes for images
+                  slideEl.innerHTML = `<img src="${item.image}" alt="${item.caption || 'Gallery Image'}" class="w-full h-full object-contain md:object-cover">`;
               }
 
               if (item.caption) {
