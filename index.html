@@ -1,420 +1,412 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhaktivedanta Vidyabhavan Gurukula, Murbad | BVG Murbad</title>
-    
-    <!-- ADDED FAVICON LINKS -->
-    <link rel="icon" href="/images/logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="/images/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaktivedanta Vidyabhavan Gurukula, Murbad | BVG Murbad</title>
+    
+        <link rel="icon" href="/images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-        :root { --bg-color: #FFFBEB; --text-color: #374151; --primary-color: #0D9488; --primary-hover: #0F766E; --accent-color: #F59E0B; --accent-hover: #D97706; --dark-bg: #111827; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
-        .pattern-bg { background-color: #fafafa; }
-        .slide, .gallery-slide { background-size: cover; background-position: center; }
-        .gallery-slide img, .gallery-slide video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out; }
-        .accordion-content.open { max-height: 1000px; padding-top: 1rem; padding-bottom: 1rem; }
-        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1.5rem; text-align: center; font-family: 'Lora', serif; font-size: 1.25rem; transition: opacity 0.3s ease; }
-        .formatted-text ul { list-style-type: disc; margin-left: 1.5rem; margin-top: 1rem; margin-bottom: 1rem; }
-        .formatted-text p:not(:last-child) { margin-bottom: 1rem; }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root { --bg-color: #FFFBEB; --text-color: #374151; --primary-color: #0D9488; --primary-hover: #0F766E; --accent-color: #F59E0B; --accent-hover: #D97706; --dark-bg: #111827; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
+        .pattern-bg { background-color: #fafafa; }
+        .slide, .gallery-slide { background-size: cover; background-position: center; }
+        .gallery-slide img, .gallery-slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* CHANGED FROM 'contain' */
+        }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out; }
+        .accordion-content.open { max-height: 1000px; padding-top: 1rem; padding-bottom: 1rem; }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1.5rem; text-align: center; font-family: 'Lora', serif; font-size: 1.25rem; transition: opacity 0.3s ease; }
+        .formatted-text ul { list-style-type: disc; margin-left: 1.5rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .formatted-text p:not(:last-child) { margin-bottom: 1rem; }
+    </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
-    <header id="home" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <img id="logo_image" src="" alt="BVG Logo" class="h-12 w-12 rounded-full">
-                    <a href="#home" class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight hover:text-teal-600 transition-colors">BVG Murbad</a>
-                </div>
-                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="#about" class="nav-link text-gray-600 hover:text-teal-600 font-medium">About Us</a>
-                    <a href="#newsletter" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Newsletter</a>
-                    <a href="#gallery" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Gallery</a>
-                    <a href="#contact" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Contact Us</a>
-                    <a href="#donate" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
-                </nav>
-                <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <nav class="flex flex-col items-center space-y-4 p-4">
-                <a href="#about" class="nav-link text-gray-600 hover:text-teal-600 font-medium">About Us</a>
-                <a href="#newsletter" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Newsletter</a>
-                <a href="#gallery" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Gallery</a>
-                <a href="#contact" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Contact Us</a>
-                <a href="#donate" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
-            </nav>
-        </div>
-    </header>
+        <header id="home" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img id="logo_image" src="" alt="BVG Logo" class="h-12 w-12 rounded-full">
+                    <a href="#home" class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight hover:text-teal-600 transition-colors">BVG Murbad</a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#about" class="nav-link text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                    <a href="#newsletter" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Newsletter</a>
+                    <a href="#gallery" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Gallery</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Contact Us</a>
+                    <a href="#donate" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
+            </div>
+        </div>
+                <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="flex flex-col items-center space-y-4 p-4">
+                <a href="#about" class="nav-link text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                <a href="#newsletter" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Newsletter</a>
+                <a href="#gallery" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Gallery</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-teal-600 font-medium">Contact Us</a>
+                <a href="#donate" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+            </nav>
+        </div>
+    </header>
 
-    <main>
-        <!-- Hero Slideshow -->
-        <section id="hero-slider" class="relative w-full h-[70vh] md:h-[90vh] overflow-hidden">
-            <div id="slider-wrapper" class="flex h-full transition-transform duration-700 ease-in-out"></div>
-            <div id="slider-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20"></div>
-        </section>
+    <main>
+                <section id="hero-slider" class="relative w-full h-[70vh] md:h-[90vh] overflow-hidden">
+            <div id="slider-wrapper" class="flex h-full transition-transform duration-700 ease-in-out"></div>
+            <div id="slider-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20"></div>
+        </section>
 
-        <!-- Lineage Section -->
-        <section id="lineage" class="py-20 md:py-28 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 id="lineage_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
-                <div class="grid md:grid-cols-3 gap-10">
-                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg"><img id="prabhupada_image" loading="lazy" src="" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover"><h3 id="prabhupada_name" class="text-2xl font-semibold text-gray-800"></h3><p id="prabhupada_title" class="text-teal-600 font-semibold mt-1"></p><p id="prabhupada_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p></div>
-                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg"><img id="maharaj_image" loading="lazy" src="" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover"><h3 id="maharaj_name" class="text-2xl font-semibold text-gray-800"></h3><p id="maharaj_title" class="text-teal-600 font-semibold mt-1"></p><p id="maharaj_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p></div>
-                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg"><img id="das_prabhu_image" loading="lazy" src="" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover"><h3 id="das_prabhu_name" class="text-2xl font-semibold text-gray-800"></h3><p id="das_prabhu_title" class="text-teal-600 font-semibold mt-1"></p><p id="das_prabhu_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p></div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- About Us & Team Section -->
-        <section id="about" class="py-20 md:py-28 pattern-bg">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-4xl mx-auto mb-20">
-                    <h2 id="about_us_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6"></h2>
-                    <div id="about_us_text" class="text-lg text-gray-700 leading-relaxed text-left formatted-text"></div>
-                </div>
-                <div id="team">
-                    <h2 id="team_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
-                    <div id="team-accordion-wrapper" class="space-y-4 max-w-4xl mx-auto"></div>
-                </div>
-            </div>
-        </section>
+                <section id="lineage" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 id="lineage_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg"><img id="prabhupada_image" loading="lazy" src="" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover"><h3 id="prabhupada_name" class="text-2xl font-semibold text-gray-800"></h3><p id="prabhupada_title" class="text-teal-600 font-semibold mt-1"></p><p id="prabhupada_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p></div>
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg"><img id="maharaj_image" loading="lazy" src="" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover"><h3 id="maharaj_name" class="text-2xl font-semibold text-gray-800"></h3><p id="maharaj_title" class="text-teal-600 font-semibold mt-1"></p><p id="maharaj_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p></div>
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg"><img id="das_prabhu_image" loading="lazy" src="" alt="" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover"><h3 id="das_prabhu_name" class="text-2xl font-semibold text-gray-800"></h3><p id="das_prabhu_title" class="text-teal-600 font-semibold mt-1"></p><p id="das_prabhu_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p></div>
+                </div>
+            </div>
+        </section>
+        
+                <section id="about" class="py-20 md:py-28 pattern-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-4xl mx-auto mb-20">
+                    <h2 id="about_us_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6"></h2>
+                    <div id="about_us_text" class="text-lg text-gray-700 leading-relaxed text-left formatted-text"></div>
+                </div>
+                <div id="team">
+                    <h2 id="team_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
+                    <div id="team-accordion-wrapper" class="space-y-4 max-w-4xl mx-auto"></div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Newsletter Section -->
-        <section id="newsletter" class="py-20 md:py-28 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 id="newsletter_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
-                <div id="newsletter-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-            </div>
-        </section>
+                <section id="newsletter" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 id="newsletter_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
+                <div id="newsletter-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
 
-        <!-- Gallery Section -->
-        <section id="gallery" class="py-20 md:py-28 pattern-bg">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 id="glimpses_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-3"></h2>
-                    <p id="glimpses_subheading" class="text-lg text-gray-600 max-w-3xl mx-auto"></p>
-                </div>
-                <div id="gallery-slider" class="relative w-full max-w-4xl mx-auto h-[60vh] overflow-hidden rounded-xl shadow-2xl">
-                    <div id="gallery-slider-wrapper" class="flex h-full transition-transform duration-700 ease-in-out"></div>
-                    <button id="gallery-prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full z-20 shadow-md"><i data-lucide="chevron-left" class="w-6 h-6 text-gray-800"></i></button>
-                    <button id="gallery-next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full z-20 shadow-md"><i data-lucide="chevron-right" class="w-6 h-6 text-gray-800"></i></button>
-                    <div id="gallery-slider-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20"></div>
-                </div>
-            </div>
-        </section>
+                <section id="gallery" class="py-20 md:py-28 pattern-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 id="glimpses_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-3"></h2>
+                    <p id="glimpses_subheading" class="text-lg text-gray-600 max-w-3xl mx-auto"></p>
+                </div>
+                <div id="gallery-slider" class="relative w-full max-w-4xl mx-auto h-[60vh] overflow-hidden rounded-xl shadow-2xl">
+                    <div id="gallery-slider-wrapper" class="flex h-full transition-transform duration-700 ease-in-out"></div>
+                    <button id="gallery-prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full z-20 shadow-md"><i data-lucide="chevron-left" class="w-6 h-6 text-gray-800"></i></button>
+                    <button id="gallery-next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full z-20 shadow-md"><i data-lucide="chevron-right" class="w-6 h-6 text-gray-800"></i></button>
+                    <div id="gallery-slider-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20"></div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Donation Section -->
-        <section id="donate" class="py-20 md:py-28 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 id="donation_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
-                <div class="grid lg:grid-cols-2 gap-12 items-start mt-12">
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg text-center">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Direct UPI Donation</h3>
-                        <p class="text-gray-600 mb-4">You can scan the QR code below with any UPI app to contribute.</p>
-                        <div class="flex justify-center mb-4"><img id="upi_qr_image" loading="lazy" src="" alt="UPI QR Code" class="w-56 h-56 rounded-lg shadow-md border"></div>
-                        <p id="upi_note" class="text-sm text-gray-500"></p>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">In-Kind & Bank Donations</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start space-x-4"><div class="bg-amber-100 p-3 rounded-full mt-1"><i data-lucide="package-check" class="w-6 h-6 text-amber-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">Foodstuff & Supplies</h4><p id="inkind_note" class="text-gray-600"></p></div></div>
-                            <div class="flex items-start space-x-4"><div class="bg-teal-100 p-3 rounded-full mt-1"><i data-lucide="map-pin" class="w-6 h-6 text-teal-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">Deliver or Post</h4><p id="gurukul_address" class="mt-2 font-medium text-gray-800 bg-gray-100 p-3 rounded-md"></p></div></div>
-                            <div class="flex items-start space-x-4"><div class="bg-indigo-100 p-3 rounded-full mt-1"><i data-lucide="landmark" class="w-6 h-6 text-indigo-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">For 80G Receipt</h4><p id="bank_donation_info" class="text-gray-600 whitespace-pre-wrap"></p></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <section id="donate" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 id="donation_section_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
+                <div class="grid lg:grid-cols-2 gap-12 items-start mt-12">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg text-center">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Direct UPI Donation</h3>
+                        <p class="text-gray-600 mb-4">You can scan the QR code below with any UPI app to contribute.</p>
+                        <div class="flex justify-center mb-4"><img id="upi_qr_image" loading="lazy" src="" alt="UPI QR Code" class="w-56 h-56 rounded-lg shadow-md border"></div>
+                        <p id="upi_note" class="text-sm text-gray-500"></p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">In-Kind & Bank Donations</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4"><div class="bg-amber-100 p-3 rounded-full mt-1"><i data-lucide="package-check" class="w-6 h-6 text-amber-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">Foodstuff & Supplies</h4><p id="inkind_note" class="text-gray-600"></p></div></div>
+                            <div class="flex items-start space-x-4"><div class="bg-teal-100 p-3 rounded-full mt-1"><i data-lucide="map-pin" class="w-6 h-6 text-teal-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">Deliver or Post</h4><p id="gurukul_address" class="mt-2 font-medium text-gray-800 bg-gray-100 p-3 rounded-md"></p></div></div>
+                            <div class="flex items-start space-x-4"><div class="bg-indigo-100 p-3 rounded-full mt-1"><i data-lucide="landmark" class="w-6 h-6 text-indigo-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">For 80G Receipt</h4><p id="bank_donation_info" class="text-gray-600 whitespace-pre-wrap"></p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Admissions Section -->
-        <section id="admissions" class="py-20 md:py-28 pattern-bg">
-            <div class="container mx-auto px-6">
-                <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100">
-                    <h2 id="admissions_section_heading" class="text-3xl font-bold text-gray-900 mb-2 text-center"></h2>
-                    <p id="admissions_intro" class="text-gray-600 mb-8 text-center"></p>
-                    <form name="admissions" method="POST" action="/thank-you.html" data-netlify="true" class="space-y-6">
-                        <div><label id="label_parent_name" for="name" class="block text-sm font-medium text-gray-700"></label><input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
-                        <div><label id="label_email" for="email" class="block text-sm font-medium text-gray-700"></label><input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
-                        <div><label id="label_phone" for="phone" class="block text-sm font-medium text-gray-700"></label><input type="tel" id="phone" name="phone" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
-                        <div><label id="label_child_standard" for="child-standard" class="block text-sm font-medium text-gray-700"></label><select id="child-standard" name="child-standard" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></select></div>
-                        <div><label id="label_child_board" for="child-board" class="block text-sm font-medium text-gray-700"></label><select id="child-board" name="child-board" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></select></div>
-                        <div><button type="submit" class="cta-button w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg">Submit Inquiry</button></div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+                <section id="admissions" class="py-20 md:py-28 pattern-bg">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100">
+                    <h2 id="admissions_section_heading" class="text-3xl font-bold text-gray-900 mb-2 text-center"></h2>
+                    <p id="admissions_intro" class="text-gray-600 mb-8 text-center"></p>
+                    <form name="admissions" method="POST" action="/thank-you.html" data-netlify="true" class="space-y-6">
+                        <div><label id="label_parent_name" for="name" class="block text-sm font-medium text-gray-700"></label><input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                        <div><label id="label_email" for="email" class="block text-sm font-medium text-gray-700"></label><input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                        <div><label id="label_phone" for="phone" class="block text-sm font-medium text-gray-700"></label><input type="tel" id="phone" name="phone" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                        <div><label id="label_child_standard" for="child-standard" class="block text-sm font-medium text-gray-700"></label><select id="child-standard" name="child-standard" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></select></div>
+                        <div><label id="label_child_board" for="child-board" class="block text-sm font-medium text-gray-700"></label><select id="child-board" name="child-board" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></select></div>
+                        <div><button type="submit" class="cta-button w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg">Submit Inquiry</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white">
-        <div class="container mx-auto px-6 py-16">
-            <div class="grid md:grid-cols-4 gap-10">
-                <div class="md:col-span-2"><h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula, Murbad</h3><p id="footer_description" class="text-gray-400 text-sm"></p><p id="footer_address" class="text-gray-400 text-sm mt-2"></p></div>
-                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3><ul class="space-y-2 text-sm"><li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li><li><a href="#newsletter" class="text-gray-400 hover:text-white transition">Newsletter</a></li><li><a href="#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li><li><a href="#admissions" class="text-gray-400 hover:text-white transition">Admission</a></li><li><a href="#donate" class="text-gray-400 hover:text-white transition">Donate</a></li></ul></div>
-                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3><div class="flex space-x-4 mb-4"><a id="youtube_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a><a id="instagram_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a><a id="facebook_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a></div><p class="text-sm text-gray-300">Email: <a id="contact_email_link" href="#"><span id="contact_email"></span></a></p><p class="text-sm text-gray-300">Phone: <span id="contact_phone"></span></p></div>
-            </div>
-            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500"><p>&copy; <span id="year"></span> <span id="copyright_note"></span></p></div>
-        </div>
-    </footer>
+        <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="md:col-span-2"><h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula, Murbad</h3><p id="footer_description" class="text-gray-400 text-sm"></p><p id="footer_address" class="text-gray-400 text-sm mt-2"></p></div>
+                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3><ul class="space-y-2 text-sm"><li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li><li><a href="#newsletter" class="text-gray-400 hover:text-white transition">Newsletter</a></li><li><a href="#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li><li><a href="#admissions" class="text-gray-400 hover:text-white transition">Admission</a></li><li><a href="#donate" class="text-gray-400 hover:text-white transition">Donate</a></li></ul></div>
+                <div><h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3><div class="flex space-x-4 mb-4"><a id="youtube_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a><a id="instagram_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a><a id="facebook_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a></div><p class="text-sm text-gray-300">Email: <a id="contact_email_link" href="#"><span id="contact_email"></span></a></p><p class="text-sm text-gray-300">Phone: <span id="contact_phone"></span></p></div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500"><p>&copy; <span id="year"></span> <span id="copyright_note"></span></p></div>
+        </div>
+    </footer>
 
-    <!-- Fullscreen PDF Viewer Modal -->
-    <div id="pdf-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4">
-        <div class="bg-white w-full max-w-4xl h-full max-h-[90vh] flex flex-col rounded-lg shadow-2xl">
-            <div class="flex justify-between items-center p-4 border-b">
-                <h3 id="pdf-title" class="text-lg font-bold text-gray-800"></h3>
-                <button id="close-pdf-modal" class="text-gray-500 hover:text-gray-800"><i data-lucide="x" class="w-6 h-6"></i></button>
-            </div>
-            <iframe id="pdf-iframe" class="w-full h-full" src=""></iframe>
-        </div>
-    </div>
-    
-    <!-- COMPLETE SCRIPT SECTION WITH ALL FIXES -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          fetch('/_data/content.json?v=' + new Date().getTime())
-              .then(response => response.ok ? response.json() : Promise.reject('Failed to load content.json'))
-              .then(data => { if (data) populateContent(data); })
-              .catch(err => console.error("Error loading content:", err));
-          
-          const mobileMenuButton = document.getElementById('mobile-menu-button');
-          const mobileMenu = document.getElementById('mobile-menu');
-          mobileMenuButton.addEventListener('click', () => {
-              mobileMenu.classList.toggle('hidden');
-          });
-      });
+        <div id="pdf-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white w-full max-w-4xl h-full max-h-[90vh] flex flex-col rounded-lg shadow-2xl">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 id="pdf-title" class="text-lg font-bold text-gray-800"></h3>
+                <button id="close-pdf-modal" class="text-gray-500 hover:text-gray-800"><i data-lucide="x" class="w-6 h-6"></i></button>
+            </div>
+            <iframe id="pdf-iframe" class="w-full h-full" src=""></iframe>
+        </div>
+    </div>
+    
+        <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          fetch('/_data/content.json?v=' + new Date().getTime())
+              .then(response => response.ok ? response.json() : Promise.reject('Failed to load content.json'))
+              .then(data => { if (data) populateContent(data); })
+              .catch(err => console.error("Error loading content:", err));
+          
+          const mobileMenuButton = document.getElementById('mobile-menu-button');
+          const mobileMenu = document.getElementById('mobile-menu');
+          mobileMenuButton.addEventListener('click', () => {
+              mobileMenu.classList.toggle('hidden');
+          });
+      });
 
-      function populateContent(data) {
-          const setContent = (id, value) => { const el = document.getElementById(id); if (el) el.innerHTML = value || ''; };
-          const setImage = (id, src, alt) => { const el = document.getElementById(id); if (el) { el.src = src || ''; el.alt = alt || ''; } };
-          const setLink = (id, href) => { const el = document.getElementById(id); if (el) el.href = href || '#'; };
-          
-          Object.keys(data).forEach(key => {
-              const value = data[key];
-              const el = document.getElementById(key);
-              if (el) {
-                  if (key === 'about_us_text') {
-                      el.innerHTML = marked.parse(value || '');
-                  }
-                  else if (key.includes('_image')) setImage(key, value, key);
-                  else if (key.includes('_link')) setLink(key, value);
-                  else if (key === 'contact_email') {
-                      setContent('contact_email', value);
-                      setLink('contact_email_link', `mailto:${value}`);
-                  } else if (key === 'contact_phone') {
-                      setContent('contact_phone', value);
-                  } else setContent(key, value);
-              }
-          });
-          
-          if(data.slideshow) populateSlideshow(data.slideshow);
-          if(data.team_members) populateTeam(data.team_members);
-          if(data.gallery_items) populateGallery(data.gallery_items);
-          if(data.newsletters) populateNewsletters(data.newsletters);
-          if(data.child_standard_options) populateDropdowns('child-standard', data.child_standard_options);
-          if(data.child_board_options) populateDropdowns('child-board', data.child_board_options);
-      }
+      function populateContent(data) {
+          const setContent = (id, value) => { const el = document.getElementById(id); if (el) el.innerHTML = value || ''; };
+          const setImage = (id, src, alt) => { const el = document.getElementById(id); if (el) { el.src = src || ''; el.alt = alt || ''; } };
+          const setLink = (id, href) => { const el = document.getElementById(id); if (el) el.href = href || '#'; };
+          
+          Object.keys(data).forEach(key => {
+              const value = data[key];
+              const el = document.getElementById(key);
+              if (el) {
+                  if (key === 'about_us_text') {
+                      el.innerHTML = marked.parse(value || '');
+                  }
+                  else if (key.includes('_image')) setImage(key, value, key);
+                  else if (key.includes('_link')) setLink(key, value);
+                  else if (key === 'contact_email') {
+                      setContent('contact_email', value);
+                      setLink('contact_email_link', `mailto:${value}`);
+                  } else if (key === 'contact_phone') {
+                      setContent('contact_phone', value);
+                  } else setContent(key, value);
+              }
+          });
+          
+          if(data.slideshow) populateSlideshow(data.slideshow);
+          if(data.team_members) populateTeam(data.team_members);
+          if(data.gallery_items) populateGallery(data.gallery_items);
+          if(data.newsletters) populateNewsletters(data.newsletters);
+          if(data.child_standard_options) populateDropdowns('child-standard', data.child_standard_options);
+          if(data.child_board_options) populateDropdowns('child-board', data.child_board_options);
+      }
 
-      function populateSlideshow(slides) {
-          const wrapper = document.getElementById('slider-wrapper');
-          if (!wrapper || !slides) return;
-          wrapper.innerHTML = '';
-          slides.forEach(slide => {
-              const slideEl = document.createElement('div');
-              slideEl.className = 'slide min-w-full h-full relative flex items-center justify-center text-center text-white';
-              slideEl.style.backgroundImage = `url('${slide.background_image}')`;
-              slideEl.innerHTML = `<div class="absolute inset-0 bg-black/50"></div><div class="container mx-auto px-6 z-10"><h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4" style="text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">${slide.headline}</h1><p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.7);">${slide.subheadline}</p><a href="${slide.button_link}" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-2xl">${slide.button_text}</a></div>`;
-              wrapper.appendChild(slideEl);
-          });
-          initializeSlider('slider-wrapper', 'slider-dots', 5000);
-      }
+      function populateSlideshow(slides) {
+          const wrapper = document.getElementById('slider-wrapper');
+          if (!wrapper || !slides) return;
+          wrapper.innerHTML = '';
+          slides.forEach(slide => {
+              const slideEl = document.createElement('div');
+              slideEl.className = 'slide min-w-full h-full relative flex items-center justify-center text-center text-white';
+              slideEl.style.backgroundImage = `url('${slide.background_image}')`;
+              slideEl.innerHTML = `<div class="absolute inset-0 bg-black/50"></div><div class="container mx-auto px-6 z-10"><h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4" style="text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">${slide.headline}</h1><p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.7);">${slide.subheadline}</p><a href="${slide.button_link}" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-2xl">${slide.button_text}</a></div>`;
+              wrapper.appendChild(slideEl);
+          });
+          initializeSlider('slider-wrapper', 'slider-dots', 5000);
+      }
 
-      function populateTeam(members) {
-          const wrapper = document.getElementById('team-accordion-wrapper');
-          if (!wrapper || !members) return;
-          wrapper.innerHTML = '';
-          members.forEach(member => {
-              const memberEl = document.createElement('div');
-              memberEl.className = 'bg-white rounded-lg shadow-md';
-              memberEl.innerHTML = `<button class="accordion-button w-full flex items-center justify-between p-4 text-left"><div class="flex items-center space-x-4"><img loading="lazy" src="${member.photo}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover"><span class="text-lg font-semibold text-gray-800">${member.name}</span></div><i data-lucide="chevron-down" class="w-6 h-6 text-teal-600 transition-transform transform"></i></button><div class="accordion-content px-4 text-gray-600">${member.description || ''}</div>`;
-              wrapper.appendChild(memberEl);
-          });
-          lucide.createIcons();
-          addAccordionListeners();
-      }
+      function populateTeam(members) {
+          const wrapper = document.getElementById('team-accordion-wrapper');
+          if (!wrapper || !members) return;
+          wrapper.innerHTML = '';
+          members.forEach(member => {
+              const memberEl = document.createElement('div');
+              memberEl.className = 'bg-white rounded-lg shadow-md';
+              memberEl.innerHTML = `<button class="accordion-button w-full flex items-center justify-between p-4 text-left"><div class="flex items-center space-x-4"><img loading="lazy" src="${member.photo}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover"><span class="text-lg font-semibold text-gray-800">${member.name}</span></div><i data-lucide="chevron-down" class="w-6 h-6 text-teal-600 transition-transform transform"></i></button><div class="accordion-content px-4 text-gray-600">${member.description || ''}</div>`;
+              wrapper.appendChild(memberEl);
+          });
+          lucide.createIcons();
+          addAccordionListeners();
+      }
 
-      function populateNewsletters(newsletters) {
-          const wrapper = document.getElementById('newsletter-list');
-          if (!wrapper || !newsletters) return;
-          wrapper.innerHTML = '';
-          newsletters.forEach(item => {
-              const card = document.createElement('div');
-              card.className = 'bg-gray-50 rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:-translate-y-1 transition-transform';
-              card.innerHTML = `
-                  <img src="${item.cover_image}" alt="${item.title}" class="w-full h-48 object-cover">
-                  <div class="p-4">
-                      <h3 class="font-bold text-lg text-gray-800">${item.title}</h3>
-                  </div>
-              `;
-              card.addEventListener('click', () => openPdfModal(item.pdf, item.title));
-              wrapper.appendChild(card);
-          });
-      }
+      function populateNewsletters(newsletters) {
+          const wrapper = document.getElementById('newsletter-list');
+          if (!wrapper || !newsletters) return;
+          wrapper.innerHTML = '';
+          newsletters.forEach(item => {
+              const card = document.createElement('div');
+              card.className = 'bg-gray-50 rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:-translate-y-1 transition-transform';
+              card.innerHTML = `
+                  <img src="${item.cover_image}" alt="${item.title}" class="w-full h-48 object-cover">
+                  <div class="p-4">
+                      <h3 class="font-bold text-lg text-gray-800">${item.title}</h3>
+                  </div>
+              `;
+              card.addEventListener('click', () => openPdfModal(item.pdf, item.title));
+              wrapper.appendChild(card);
+          });
+      }
 
-      function populateGallery(items) {
-          const wrapper = document.getElementById('gallery-slider-wrapper');
-          if (!wrapper || !items) return;
-          wrapper.innerHTML = '';
-          items.forEach(item => {
-              const slideEl = document.createElement('div');
-              slideEl.className = 'gallery-slide min-w-full h-full relative';
-              
-              if (item.media_type === 'Video' && item.video) {
-                  slideEl.innerHTML = `<video controls muted loop class="w-full h-full object-contain"><source src="${item.video}" type="video/mp4">Your browser does not support the video tag.</video>`;
-              } else if (item.image) {
-                  slideEl.innerHTML = `<img src="${item.image}" alt="${item.caption || 'Gallery Image'}" class="w-full h-full object-contain">`;
-              }
+      function populateGallery(items) {
+          const wrapper = document.getElementById('gallery-slider-wrapper');
+          if (!wrapper || !items) return;
+          wrapper.innerHTML = '';
+          items.forEach(item => {
+              const slideEl = document.createElement('div');
+              slideEl.className = 'gallery-slide min-w-full h-full relative';
+              
+              if (item.media_type === 'Video' && item.video) {
+                  slideEl.innerHTML = `<video controls muted loop class="w-full h-full object-cover"><source src="${item.video}" type="video/mp4">Your browser does not support the video tag.</video>`;
+              } else if (item.image) {
+                  slideEl.innerHTML = `<img src="${item.image}" alt="${item.caption || 'Gallery Image'}" class="w-full h-full object-cover">`; /* CHANGED FROM 'object-contain' */
+              }
 
-              if (item.caption) {
-                  const captionEl = document.createElement('div');
-                  captionEl.className = 'gallery-caption opacity-0 group-hover:opacity-100';
-                  captionEl.textContent = item.caption;
-                  slideEl.classList.add('group');
-                  slideEl.appendChild(captionEl);
-              }
-              wrapper.appendChild(slideEl);
-          });
-          initializeSlider('gallery-slider-wrapper', 'gallery-slider-dots', 8000, true);
-      }
+              if (item.caption) {
+                  const captionEl = document.createElement('div');
+                  captionEl.className = 'gallery-caption opacity-0 group-hover:opacity-100';
+                  captionEl.textContent = item.caption;
+                  slideEl.classList.add('group');
+                  slideEl.appendChild(captionEl);
+              }
+              wrapper.appendChild(slideEl);
+          });
+          initializeSlider('gallery-slider-wrapper', 'gallery-slider-dots', 8000, true);
+      }
 
-      function populateDropdowns(selectId, options) {
-          const select = document.getElementById(selectId);
-          if (!select || !options) return;
-          select.innerHTML = '<option value="" disabled selected>Select an option</option>';
-          options.forEach(opt => {
-              const optionText = typeof opt === 'object' ? opt.option : opt;
-              if (optionText) {
-                  const optionEl = document.createElement('option');
-                  optionEl.value = optionText;
-                  optionEl.textContent = optionText;
-                  select.appendChild(optionEl);
-              }
-          });
-      }
-      
-      function initializeSlider(wrapperId, dotsId, interval, isGallery = false) {
-          const wrapper = document.getElementById(wrapperId);
-          if (!wrapper) return;
-          const slides = Array.from(wrapper.children);
-          const dotsContainer = document.getElementById(dotsId);
-          const prevBtn = isGallery ? document.getElementById('gallery-prev') : null;
-          const nextBtn = isGallery ? document.getElementById('gallery-next') : null;
+      function populateDropdowns(selectId, options) {
+          const select = document.getElementById(selectId);
+          if (!select || !options) return;
+          select.innerHTML = '<option value="" disabled selected>Select an option</option>';
+          options.forEach(opt => {
+              const optionText = typeof opt === 'object' ? opt.option : opt;
+              if (optionText) {
+                  const optionEl = document.createElement('option');
+                  optionEl.value = optionText;
+                  optionEl.textContent = optionText;
+                  select.appendChild(optionEl);
+              }
+          });
+      }
+      
+      function initializeSlider(wrapperId, dotsId, interval, isGallery = false) {
+          const wrapper = document.getElementById(wrapperId);
+          if (!wrapper) return;
+          const slides = Array.from(wrapper.children);
+          const dotsContainer = document.getElementById(dotsId);
+          const prevBtn = isGallery ? document.getElementById('gallery-prev') : null;
+          const nextBtn = isGallery ? document.getElementById('gallery-next') : null;
 
-          if (slides.length <= 1) {
-              if (dotsContainer) dotsContainer.style.display = 'none';
-              if (prevBtn) prevBtn.style.display = 'none';
-              if (nextBtn) nextBtn.style.display = 'none';
-              return;
-          }
+          if (slides.length <= 1) {
+              if (dotsContainer) dotsContainer.style.display = 'none';
+              if (prevBtn) prevBtn.style.display = 'none';
+              if (nextBtn) nextBtn.style.display = 'none';
+              return;
+          }
 
-          dotsContainer.innerHTML = '';
-          let currentIndex = 0;
-          let slideInterval = null;
+          dotsContainer.innerHTML = '';
+          let currentIndex = 0;
+          let slideInterval = null;
 
-          slides.forEach((_, index) => {
-              const dot = document.createElement('button');
-              dot.className = isGallery ? 'w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all' : 'w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all';
-              dot.addEventListener('click', () => { goToSlide(index); resetInterval(); });
-              dotsContainer.appendChild(dot);
-          });
-          const dots = Array.from(dotsContainer.children);
-          
-          function goToSlide(index) {
-              wrapper.style.transform = `translateX(-${index * 100}%)`;
-              dots.forEach(d => d.classList.remove('bg-white', isGallery ? 'scale-125' : 'w-3.5', 'h-3.5'));
-              dots[index].classList.add('bg-white', isGallery ? 'scale-125' : 'w-3.5', 'h-3.5');
-              currentIndex = index;
+          slides.forEach((_, index) => {
+              const dot = document.createElement('button');
+              dot.className = isGallery ? 'w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all' : 'w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all';
+              dot.addEventListener('click', () => { goToSlide(index); resetInterval(); });
+              dotsContainer.appendChild(dot);
+          });
+          const dots = Array.from(dotsContainer.children);
+          
+          function goToSlide(index) {
+              wrapper.style.transform = `translateX(-${index * 100}%)`;
+              dots.forEach(d => d.classList.remove('bg-white', isGallery ? 'scale-125' : 'w-3.5', 'h-3.5'));
+              dots[index].classList.add('bg-white', isGallery ? 'scale-125' : 'w-3.5', 'h-3.5');
+              currentIndex = index;
 
-              if (isGallery) {
-                  slides.forEach((slide, i) => {
-                      const video = slide.querySelector('video');
-                      if (video) {
-                          if (i === index) { video.play(); } else { video.pause(); video.currentTime = 0; }
-                      }
-                  });
-              }
-          }
+              if (isGallery) {
+                  slides.forEach((slide, i) => {
+                      const video = slide.querySelector('video');
+                      if (video) {
+                          if (i === index) { video.play(); } else { video.pause(); video.currentTime = 0; }
+                      }
+                  });
+              }
+          }
 
-          function nextSlide() { goToSlide((currentIndex + 1) % slides.length); }
-          function prevSlide() { goToSlide((currentIndex - 1 + slides.length) % slides.length); }
-          function startInterval() { slideInterval = setInterval(nextSlide, interval); }
-          function resetInterval() { clearInterval(slideInterval); startInterval(); }
-          
-          if (isGallery) {
-              nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
-              prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
-          }
-          
-          goToSlide(0);
-          startInterval();
-      }
+          function nextSlide() { goToSlide((currentIndex + 1) % slides.length); }
+          function prevSlide() { goToSlide((currentIndex - 1 + slides.length) % slides.length); }
+          function startInterval() { slideInterval = setInterval(nextSlide, interval); }
+          function resetInterval() { clearInterval(slideInterval); startInterval(); }
+          
+          if (isGallery) {
+              nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+              prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+          }
+          
+          goToSlide(0);
+          startInterval();
+      }
 
-      function addAccordionListeners() {
-          document.querySelectorAll('.accordion-button').forEach(button => {
-              button.addEventListener('click', () => {
-                  const content = button.nextElementSibling;
-                  const icon = button.querySelector('i');
-                  content.classList.toggle('open');
-                  icon.classList.toggle('rotate-180');
-              });
-          });
-      }
-      
-      function openPdfModal(pdfUrl, title) {
-          const modal = document.getElementById('pdf-modal');
-          const iframe = document.getElementById('pdf-iframe');
-          const pdfTitle = document.getElementById('pdf-title');
-          if (modal && iframe && pdfTitle) {
-              pdfTitle.textContent = title;
-              iframe.src = pdfUrl;
-              modal.classList.remove('hidden');
-              modal.classList.add('flex');
-          }
-      }
+      function addAccordionListeners() {
+          document.querySelectorAll('.accordion-button').forEach(button => {
+              button.addEventListener('click', () => {
+                  const content = button.nextElementSibling;
+                  const icon = button.querySelector('i');
+          _message_content:
+                content.classList.toggle('open');
+                  icon.classList.toggle('rotate-180');
+              });
+          });
+      }
+      
+      function openPdfModal(pdfUrl, title) {
+          const modal = document.getElementById('pdf-modal');
+          const iframe = document.getElementById('pdf-iframe');
+          const pdfTitle = document.getElementById('pdf-title');
+          if (modal && iframe && pdfTitle) {
+              pdfTitle.textContent = title;
+              iframe.src = pdfUrl;
+              modal.classList.remove('hidden');
+              modal.classList.add('flex');
+          }
+      }
 
-      function closePdfModal() {
-          const modal = document.getElementById('pdf-modal');
-          const iframe = document.getElementById('pdf-iframe');
-          if (modal && iframe) {
-              iframe.src = '';
-              modal.classList.add('hidden');
-              modal.classList.remove('flex');
-          }
-      }
-      document.getElementById('close-pdf-modal').addEventListener('click', closePdfModal);
-      
-      lucide.createIcons();
-      document.getElementById('year').textContent = new Date().getFullYear();
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
-        });
-      }
-    </script>
+      function closePdfModal() {
+          const modal = document.getElementById('pdf-modal');
+          const iframe = document.getElementById('pdf-iframe');
+          if (modal && iframe) {
+              iframe.src = '';
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+          }
+      }
+      document.getElementById('close-pdf-modal').addEventListener('click', closePdfModal);
+      
+      lucide.createIcons();
+      document.getElementById('year').textContent = new Date().getFullYear();
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
+        });
+      }
+    </script>
 </body>
 </html>
