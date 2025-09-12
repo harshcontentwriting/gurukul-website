@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BVG Murbad</title> <!-- This title will be updated later -->
-    <meta name="description" content="">
+    <title id="seo_title_academics">Academics | BVG Murbad</title>
+    <meta id="seo_description_academics" name="description" content="Explore our curriculum and daily life at BVG Murbad.">
     
     <link rel="icon" href="/images/logo.png" type="image/png">
 
@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         :root {
@@ -26,6 +27,8 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
         p, li { text-align: left; line-height: 1.7; }
+        .formatted-text ul { list-style-type: disc; margin-left: 1.5rem; margin-top: 1rem; margin-bottom: 1rem; }
+        .formatted-text p:not(:last-child) { margin-bottom: 1rem; }
     </style>
 </head>
 <body class="antialiased">
@@ -41,7 +44,7 @@
                 <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
                     <a href="/" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
                     <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
-                    <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
+                    <a href="/academics.html" class="text-teal-600 font-semibold">Academics</a>
                     <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
                     <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
                     <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
@@ -51,24 +54,95 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden">
             <nav class="flex flex-col items-center space-y-4 p-4">
-                <a href="/" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
-                <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
-                <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
-                <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
-                <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
-                <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+                 <a href="/" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                 <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                 <a href="/academics.html" class="text-teal-600 font-semibold">Academics</a>
+                 <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
+                 <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
+                 <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
             </nav>
         </div>
     </header>
 
-    <main class="py-20 md:py-28">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl font-bold text-gray-900">Page Coming Soon</h1>
-            <p class="text-lg text-gray-700 mt-4">This section is currently under construction.</p>
-        </div>
+    <main>
+        <!-- Page Header -->
+        <section class="relative bg-gray-700 py-24 text-white text-center">
+            <img id="academics_header_image" src="" alt="Students studying" class="absolute inset-0 w-full h-full object-cover opacity-30">
+            <div class="relative z-10 container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-bold">Our Philosophy & Curriculum</h1>
+                <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mt-4">Discover our unique approach to education, designed to cultivate character, competence, and a lifelong commitment to spiritual values.</p>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Guiding Vision</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 mt-16 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="bg-teal-100 text-teal-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="heart" class="w-8 h-8"></i>
+                        </div>
+                        <p class="text-gray-700">Education should be available to all, devoid of any forceful cost, developing selfless and compassionate character.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="bg-teal-100 text-teal-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="users" class="w-8 h-8"></i>
+                        </div>
+                        <p class="text-gray-700">Education must impart a sense of duty towards elders and family, benefiting human society at large.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="bg-teal-100 text-teal-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="eye" class="w-8 h-8"></i>
+                        </div>
+                        <p class="text-gray-700">Education should foster a character who sees every living being with equal vision.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Curriculum Section -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">A Balanced Curriculum</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">Our curriculum is carefully designed to provide a holistic education, integrating timeless spiritual wisdom with modern academic knowledge.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 mt-16">
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <h3 id="spiritual_curriculum_title" class="text-2xl font-semibold text-gray-800 mb-4"></h3>
+                        <div id="spiritual_curriculum_text" class="text-gray-700 formatted-text"></div>
+                    </div>
+                     <div class="bg-gray-50 p-8 rounded-lg">
+                        <h3 id="academic_curriculum_title" class="text-2xl font-semibold text-gray-800 mb-4"></h3>
+                        <div id="academic_curriculum_text" class="text-gray-700 formatted-text"></div>
+                    </div>
+                     <div class="bg-gray-50 p-8 rounded-lg">
+                        <h3 id="practical_skills_title" class="text-2xl font-semibold text-gray-800 mb-4"></h3>
+                        <div id="practical_skills_text" class="text-gray-700 formatted-text"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Schedule Section -->
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">A Day in the Life at the Gurukula</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">Our daily schedule is thoughtfully structured to create a disciplined, nurturing, and spiritually enlivening atmosphere for our students.</p>
+                </div>
+                <div id="daily_schedule_wrapper" class="mt-16 max-w-2xl mx-auto">
+                    <!-- Schedule will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- UPDATED FOOTER SECTION -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-16">
             <div class="grid md:grid-cols-4 gap-10">
@@ -104,27 +178,62 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
+            lucide.createIcons();
+
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
-            lucide.createIcons();
 
-            // Highlight active navigation link
-            const currentPage = window.location.pathname;
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('text-teal-600', 'font-semibold');
-                    link.classList.remove('text-gray-600');
-                }
-            });
-            
-            // Set current year in footer
             document.getElementById('year').textContent = new Date().getFullYear();
+
+            fetch('/_data/content.json?v=' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    const setContent = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value || ''; };
+                    const setHtmlContent = (id, value) => { const el = document.getElementById(id); if (el) el.innerHTML = marked.parse(value || ''); };
+                    const setImage = (id, src) => { const el = document.getElementById(id); if (el) el.src = src || ''; };
+
+                    // SEO Content
+                    if(data.seo_title_academics) document.title = data.seo_title_academics;
+                    const seoDesc = document.getElementById('seo_description_academics');
+                    if(seoDesc && data.seo_description_academics) seoDesc.setAttribute('content', data.seo_description_academics);
+
+                    // Page Content
+                    setImage('academics_header_image', data.academics_header_image);
+                    setContent('spiritual_curriculum_title', data.spiritual_curriculum_title);
+                    setHtmlContent('spiritual_curriculum_text', data.spiritual_curriculum_text);
+                    setContent('academic_curriculum_title', data.academic_curriculum_title);
+                    setHtmlContent('academic_curriculum_text', data.academic_curriculum_text);
+                    setContent('practical_skills_title', data.practical_skills_title);
+                    setHtmlContent('practical_skills_text', data.practical_skills_text);
+                    
+                    if(data.daily_schedule) {
+                        populateSchedule(data.daily_schedule);
+                    }
+                });
         });
+
+        function populateSchedule(scheduleItems) {
+            const wrapper = document.getElementById('daily_schedule_wrapper');
+            if (!wrapper) return;
+            wrapper.innerHTML = '';
+            scheduleItems.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'flex items-center space-x-4 p-4 border-b border-gray-200 last:border-b-0';
+                itemEl.innerHTML = `
+                    <div class="bg-teal-100 text-teal-600 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="${item.icon.toLowerCase()}" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-gray-800">${item.time}</p>
+                        <p class="text-gray-600">${item.activity}</p>
+                    </div>`;
+                wrapper.appendChild(itemEl);
+            });
+            lucide.createIcons();
+        }
     </script>
 </body>
 </html>
