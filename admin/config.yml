@@ -67,4 +67,22 @@ collections:
             fields:
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Answer", name: "answer", widget: "markdown"}
+      - label: "Donate Page"
+        name: "donate_page"
+        file: "_data/content.json"
+        fields:
+          - {label: "SEO Title", name: "seo_title_donate", widget: "string"}
+          - {label: "SEO Description", name: "seo_description_donate", widget: "string"}
+          - {label: "Header Image", name: "donate_header_image", widget: "image"}
+          - {label: "Intro Title", name: "donate_intro_title", widget: "string"}
+          - {label: "Intro Text", name: "donate_intro_text", widget: "markdown"}
+          - label: "Sponsor a Seva Options"
+            name: "sponsor_options"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "Suggested Amount", name: "amount", widget: "string"}
+              - {label: "Icon", name: "icon", widget: "select", options: ["Utensils", "Book", "UserCheck", "HeartHandshake"]}
 
