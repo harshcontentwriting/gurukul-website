@@ -68,9 +68,38 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- UPDATED FOOTER SECTION -->
     <footer class="bg-gray-900 text-white">
-       <!-- Footer will be a reusable component added later -->
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula</h3>
+                    <p class="text-gray-400 text-sm">ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="/academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
+                        <li><a href="/projects.html" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="/admissions.html" class="text-gray-400 hover:text-white transition">Admissions</a></li>
+                        <li><a href="/donate.html" class="text-gray-400 hover:text-white transition">Donate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                    </div>
+                    <p class="text-sm text-gray-300">Phone: <span id="contact_phone">+91 9920071703</span></p>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; <span id="year"></span> Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -92,7 +121,11 @@
                     link.classList.remove('text-gray-600');
                 }
             });
+            
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
         });
     </script>
 </body>
 </html>
+
