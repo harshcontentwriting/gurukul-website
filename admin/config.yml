@@ -51,4 +51,20 @@ collections:
               - {label: "Time", name: "time", widget: "string"}
               - {label: "Activity", name: "activity", widget: "string"}
               - {label: "Icon", name: "icon", widget: "select", options: ["Sunrise", "BookOpen", "Book", "Utensils", "Wrench", "Play", "Users", "Bed"]}
+      - label: "Admissions Page"
+        name: "admissions_page"
+        file: "_data/content.json"
+        fields:
+          - {label: "SEO Title", name: "seo_title_admissions", widget: "string"}
+          - {label: "SEO Description", name: "seo_description_admissions", widget: "string"}
+          - {label: "Header Image", name: "admissions_header_image", widget: "image"}
+          - {label: "Intro Title", name: "admissions_intro_title", widget: "string"}
+          - {label: "Intro Text", name: "admissions_intro_text", widget: "string"}
+          - label: "FAQ"
+            name: "faq"
+            widget: "list"
+            summary: "{{fields.question}}"
+            fields:
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "markdown"}
 
