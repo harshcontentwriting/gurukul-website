@@ -6,112 +6,95 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "homepage"
-    label: "Page Content"
+  - name: "pages"
+    label: "Website Pages"
     files:
       - label: "Homepage"
         name: "homepage"
         file: "_data/content.json"
         fields:
-          - {label: "Logo Image", name: "logo_image", widget: "image", required: false}
-          - label: "Hero Slideshow"
-            name: "slideshow"
-            widget: "list"
-            required: false
-            summary: "{{fields.headline}}"
-            fields:
-              - {label: "Headline", name: "headline", widget: "string", required: false}
-              - {label: "Sub-headline", name: "subheadline", widget: "string", required: false}
-              - {label: "Button Text", name: "button_text", widget: "string", required: false}
-              - {label: "Button Link", name: "button_link", widget: "string", required: false}
-              - {label: "Background Image", name: "background_image", widget: "image", required: false}
-          - {label: "Lineage Section Heading", name: "lineage_section_heading", widget: "string", required: false}
-          - {label: "Prabhupada Image", name: "prabhupada_image", widget: "image", required: false}
-          - {label: "Prabhupada Name", name: "prabhupada_name", widget: "string", required: false}
-          - {label: "Prabhupada Title / Role", name: "prabhupada_title", widget: "string", required: false}
-          - {label: "Prabhupada Text", name: "prabhupada_text", widget: "text", required: false}
-          - {label: "Guru Maharaj Image", name: "maharaj_image", widget: "image", required: false}
-          - {label: "Guru Maharaj Name", name: "maharaj_name", widget: "string", required: false}
-          - {label: "Guru Maharaj Title / Role", name: "maharaj_title", widget: "string", required: false}
-          - {label: "Guru Maharaj Text", name: "maharaj_text", widget: "text", required: false}
-          - {label: "Das Prabhu Image", name: "das_prabhu_image", widget: "image", required: false}
-          - {label: "Das Prabhu Name", name: "das_prabhu_name", widget: "string", required: false}
-          - {label: "Das Prabhu Title / Role", name: "das_prabhu_title", widget: "string", required: false}
-          - {label: "Das Prabhu Text", name: "das_prabhu_text", widget: "text", required: false}
-          - {label: "Vision Section Heading", name: "vision_section_heading", widget: "string", required: false}
-          - {label: "Vision Statement 1", name: "vision_1", widget: "text", required: false}
-          - {label: "Vision Statement 2", name: "vision_2", widget: "text", required: false}
-          - {label: "Vision Statement 3", name: "vision_3", widget: "text", required: false}
-          - {label: "About Us Heading", name: "about_us_heading", widget: "string", required: false}
-          - {label: "About Us Text", name: "about_us_text", widget: "text", required: false}
-          - {label: "Our Team Section Heading", name: "team_section_heading", widget: "string", required: false}
+          - {label: "SEO Title", name: "seo_title_home", widget: "string", hint: "Title that appears in the browser tab and Google search results for the Homepage."}
+          - {label: "SEO Description", name: "seo_desc_home", widget: "string", hint: "A short description of the Homepage for Google search results."}
+          - {label: "Hero Headline", name: "hero_headline", widget: "string"}
+          - {label: "Hero Subheadline", name: "hero_subheadline", widget: "text"}
+          - {label: "Hero Background Image", name: "hero_bg_image", widget: "image"}
+          - {label: "Philosophy Summary Title", name: "philosophy_title_home", widget: "string"}
+          - {label: "Philosophy Summary Text", name: "philosophy_text_home", widget: "string"}
+          - {label: "Academics Summary Title", name: "academics_title_home", widget: "string"}
+          - {label: "Academics Summary Text", name: "academics_text_home", widget: "text"}
+          - {label: "Academics Summary Image", name: "academics_image_home", widget: "image"}
+          - {label: "Gallery Preview Title", name: "gallery_title_home", widget: "string"}
+          - {label: "Gallery Preview Text", name: "gallery_text_home", widget: "string"}
+          - {label: "Projects Summary Title", name: "projects_title_home", widget: "string"}
+          - {label: "Projects Summary Text", name: "projects_text_home", widget: "text"}
+          - {label: "Projects Summary Image", name: "projects_image_home", widget: "image"}
+          - {label: "Donate CTA Title", name: "donate_title_home", widget: "string"}
+          - {label: "Donate CTA Text", name: "donate_text_home", widget: "text"}
+
+      - label: "About Page"
+        name: "about"
+        file: "_data/about.json" # New file for this page's content
+        fields:
+          - {label: "SEO Title", name: "seo_title_about", widget: "string"}
+          - {label: "SEO Description", name: "seo_desc_about", widget: "string"}
+          - {label: "Page Title", name: "about_title", widget: "string"}
+          - {label: "Page Subtitle", name: "about_subtitle", widget: "text"}
+          - {label: "Lineage Section Heading", name: "lineage_section_heading", widget: "string"}
+          - {label: "Prabhupada Image", name: "prabhupada_image", widget: "image"}
+          - {label: "Prabhupada Name", name: "prabhupada_name", widget: "string"}
+          - {label: "Prabhupada Title / Role", name: "prabhupada_title", widget: "string"}
+          - {label: "Guru Maharaj Image", name: "maharaj_image", widget: "image"}
+          - {label: "Guru Maharaj Name", name: "maharaj_name", widget: "string"}
+          - {label: "Guru Maharaj Title / Role", name: "maharaj_title", widget: "string"}
+          - {label: "Das Prabhu Image", name: "das_prabhu_image", widget: "image"}
+          - {label: "Das Prabhu Name", name: "das_prabhu_name", widget: "string"}
+          - {label: "Das Prabhu Title / Role", name: "das_prabhu_title", widget: "string"}
+          - {label: "Team Section Heading", name: "team_section_heading", widget: "string"}
           - label: "Team Members"
             name: "team_members"
             widget: "list"
-            required: false
             summary: "{{fields.name}}"
             fields:
-              - {label: "Photo", name: "photo", widget: "image", required: false}
-              - {label: "Name", name: "name", widget: "string", required: false}
-              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Photo", name: "photo", widget: "image"}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
 
-          # NEW NEWSLETTER SECTION
-          - {label: "Newsletter Section Heading", name: "newsletter_section_heading", widget: "string", default: "Our Newsletters"}
-          - label: "Newsletters"
-            name: "newsletters"
+      - label: "Projects Page"
+        name: "projects"
+        file: "_data/projects.json" # New file for this page's content
+        fields:
+          - {label: "SEO Title", name: "seo_title_projects", widget: "string"}
+          - {label: "SEO Description", name: "seo_desc_projects", widget: "string"}
+          - {label: "Page Title", name: "projects_title", widget: "string"}
+          - {label: "Page Subtitle", name: "projects_subtitle", widget: "text"}
+          - label: "Priority Projects"
+            name: "priority_projects"
             widget: "list"
             summary: "{{fields.title}}"
             fields:
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "PDF File", name: "pdf", widget: "file"}
-              - {label: "Cover Image", name: "cover_image", widget: "image"}
-
-          # UPDATED GALLERY SECTION
-          - {label: "Gallery Section Heading", name: "glimpses_section_heading", widget: "string", required: false}
-          - {label: "Gallery Section Sub-heading", name: "glimpses_subheading", widget: "string", required: false}
-          - label: "Gallery Items"
-            name: "gallery_items"
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+          - {label: "Other Goals Title", name: "other_goals_title", widget: "string"}
+          - label: "Other Goals"
+            name: "other_goals"
             widget: "list"
-            summary: "{{fields.caption}} ({{fields.media_type}})"
-            fields:
-              - {label: "Media Type", name: "media_type", widget: "select", options: ["Image", "Video"]}
-              - {label: "Image File", name: "image", widget: "image", required: false}
-              - {label: "Video File (MP4)", name: "video", widget: "file", required: false}
-              - {label: "Caption", name: "caption", widget: "string", required: false}
+            summary: "{{fields.name}}"
+            field: {label: "Goal Name", name: "name", widget: "string"}
+  
+  - name: "site_settings"
+    label: "Site-Wide Settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "_data/settings.json" # New file for global settings
+        fields:
+          - {label: "Logo Image", name: "logo_image", widget: "image"}
+          - {label: "Footer Address", name: "footer_address", widget: "string"}
+          - {label: "YouTube Link", name: "youtube_link", widget: "string"}
+          - {label: "Instagram Link", name: "instagram_link", widget: "string"}
+          - {label: "Facebook Link", name: "facebook_link", widget: "string"}
+          - {label: "Contact Email", name: "contact_email", widget: "string"}
+          - {label: "Contact Phone", name: "contact_phone", widget: "string"}
+          - {label: "Copyright Note", name: "copyright_note", widget: "string"}
 
-          - {label: "Donation Section Heading", name: "donation_section_heading", widget: "string", required: false}
-          - {label: "UPI QR Code Image", name: "upi_qr_image", widget: "image", required: false}
-          - {label: "UPI Donation Note", name: "upi_note", widget: "string", required: false}
-          - {label: "In-Kind Donation Note", name: "inkind_note", widget: "text", required: false}
-          - {label: "Gurukul Address", name: "gurukul_address", widget: "text", required: false}
-          - {label: "Bank Donation Info", name: "bank_donation_info", widget: "text", hint: "Enter bank details for 80G receipt.", required: false}
-          
-          # UPDATED ADMISSIONS SECTION
-          - {label: "Admissions Section Heading", name: "admissions_section_heading", widget: "string", required: false}
-          - {label: "Admissions Intro Text", name: "admissions_intro", widget: "string", required: false}
-          - {label: "Label for Parent's Name", name: "label_parent_name", widget: "string", default: "Parent's Name"}
-          - {label: "Label for Email", name: "label_email", widget: "string", default: "Email Address"}
-          - {label: "Label for Phone", name: "label_phone", widget: "string", default: "Phone Number"}
-          - {label: "Label for Child's Standard", name: "label_child_standard", widget: "string", default: "Child's Current Standard"}
-          - {label: "Label for Board of Education", name: "label_child_board", widget: "string", default: "Board of Education"}
-          - label: "Child Standard Options"
-            name: "child_standard_options"
-            widget: "list"
-            required: false
-            summary: "{{fields.option}}"
-            field: {label: "Standard", name: "option", widget: "string", required: false}
-          - label: "Child Board Options"
-            name: "child_board_options"
-            widget: "list"
-            required: false
-            summary: "{{fields.option}}"
-            field: {label: "Board", name: "option", widget: "string", required: false}
-
-          - {label: "Footer Description", name: "footer_description", widget: "text", required: false}
-          - {label: "Footer Address", name: "footer_address", widget: "string", required: false}
-          - {label: "YouTube Link", name: "youtube_link", widget: "string", required: false}
-          - {label: "Instagram Link", name: "instagram_link", widget: "string", required: false}
-          - {label: "Facebook Link", name: "facebook_link", widget: "string", required: false}
-          - {label: "Contact Email", name: "contact_email", widget: "string", required: false}
-          - {label: "Contact Phone", name: "contact_phone", widget: "string", required: false}
-          - {label: "Copyright Note", name: "copyright_note", widget: "string", required: false}
