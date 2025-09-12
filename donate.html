@@ -68,9 +68,38 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- UPDATED FOOTER SECTION -->
     <footer class="bg-gray-900 text-white">
-       <!-- Footer will be a reusable component added later -->
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula</h3>
+                    <p class="text-gray-400 text-sm">ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="/academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
+                        <li><a href="/projects.html" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="/admissions.html" class="text-gray-400 hover:text-white transition">Admissions</a></li>
+                        <li><a href="/donate.html" class="text-gray-400 hover:text-white transition">Donate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                    </div>
+                    <p class="text-sm text-gray-300">Phone: <span id="contact_phone">+91 9920071703</span></p>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; <span id="year"></span> Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -92,7 +121,142 @@
                     link.classList.remove('text-gray-600');
                 }
             });
+            
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
         });
     </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVG Murbad</title> <!-- This title will be updated later -->
+    <meta name="description" content="">
+    
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --bg-color: #fdfaf6;
+            --text-color: #374151;
+            --primary-color: #0D9488;
+            --primary-hover: #0F766E;
+            --accent-color: #F59E0B;
+            --accent-hover: #D97706;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
+        p, li { text-align: left; line-height: 1.7; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img id="logo_image_header" src="/images/logo.png" alt="BVG Logo" class="h-12 w-12 rounded-full">
+                    <a href="/" class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight">BVG Murbad</a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                    <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                    <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
+                    <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
+                    <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
+                    <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="flex flex-col items-center space-y-4 p-4">
+                <a href="/" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
+                <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
+                <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
+                <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-20 md:py-28">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold text-gray-900">Page Coming Soon</h1>
+            <p class="text-lg text-gray-700 mt-4">This section is currently under construction.</p>
+        </div>
+    </main>
+
+    <!-- UPDATED FOOTER SECTION -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula</h3>
+                    <p class="text-gray-400 text-sm">ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="/academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
+                        <li><a href="/projects.html" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="/admissions.html" class="text-gray-400 hover:text-white transition">Admissions</a></li>
+                        <li><a href="/donate.html" class="text-gray-400 hover:text-white transition">Donate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                    </div>
+                    <p class="text-sm text-gray-300">Phone: <span id="contact_phone">+91 9920071703</span></p>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; <span id="year"></span> Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            lucide.createIcons();
+
+            // Highlight active navigation link
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('text-teal-600', 'font-semibold');
+                    link.classList.remove('text-gray-600');
+                }
+            });
+            
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
+
