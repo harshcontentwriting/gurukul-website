@@ -13,88 +13,42 @@ collections:
         name: "homepage"
         file: "_data/content.json"
         fields:
-          - {label: "SEO Title", name: "seo_title_home", widget: "string", hint: "Title that appears in the browser tab and Google search results for the Homepage."}
-          - {label: "SEO Description", name: "seo_desc_home", widget: "string", hint: "A short description of the Homepage for Google search results."}
+          - {label: "SEO Title", name: "seo_title_home", widget: "string"}
+          - {label: "SEO Description", name: "seo_description_home", widget: "string"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
           - {label: "Hero Headline", name: "hero_headline", widget: "string"}
-          - {label: "Hero Subheadline", name: "hero_subheadline", widget: "text"}
-          - {label: "Hero Background Image", name: "hero_bg_image", widget: "image"}
-          - {label: "Philosophy Summary Title", name: "philosophy_title_home", widget: "string"}
-          - {label: "Philosophy Summary Text", name: "philosophy_text_home", widget: "string"}
-          - {label: "Academics Summary Title", name: "academics_title_home", widget: "string"}
-          - {label: "Academics Summary Text", name: "academics_text_home", widget: "text"}
-          - {label: "Academics Summary Image", name: "academics_image_home", widget: "image"}
-          - {label: "Gallery Preview Title", name: "gallery_title_home", widget: "string"}
-          - {label: "Gallery Preview Text", name: "gallery_text_home", widget: "string"}
-          - {label: "Projects Summary Title", name: "projects_title_home", widget: "string"}
-          - {label: "Projects Summary Text", name: "projects_text_home", widget: "text"}
-          - {label: "Projects Summary Image", name: "projects_image_home", widget: "image"}
-          - {label: "Donate CTA Title", name: "donate_title_home", widget: "string"}
-          - {label: "Donate CTA Text", name: "donate_text_home", widget: "text"}
-
-      - label: "About Page"
-        name: "about"
-        file: "_data/about.json" # New file for this page's content
-        fields:
-          - {label: "SEO Title", name: "seo_title_about", widget: "string"}
-          - {label: "SEO Description", name: "seo_desc_about", widget: "string"}
-          - {label: "Page Title", name: "about_title", widget: "string"}
-          - {label: "Page Subtitle", name: "about_subtitle", widget: "text"}
-          - {label: "Lineage Section Heading", name: "lineage_section_heading", widget: "string"}
-          - {label: "Prabhupada Image", name: "prabhupada_image", widget: "image"}
-          - {label: "Prabhupada Name", name: "prabhupada_name", widget: "string"}
-          - {label: "Prabhupada Title / Role", name: "prabhupada_title", widget: "string"}
-          - {label: "Guru Maharaj Image", name: "maharaj_image", widget: "image"}
-          - {label: "Guru Maharaj Name", name: "maharaj_name", widget: "string"}
-          - {label: "Guru Maharaj Title / Role", name: "maharaj_title", widget: "string"}
-          - {label: "Das Prabhu Image", name: "das_prabhu_image", widget: "image"}
-          - {label: "Das Prabhu Name", name: "das_prabhu_name", widget: "string"}
-          - {label: "Das Prabhu Title / Role", name: "das_prabhu_title", widget: "string"}
-          - {label: "Team Section Heading", name: "team_section_heading", widget: "string"}
-          - label: "Team Members"
-            name: "team_members"
-            widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - {label: "Photo", name: "photo", widget: "image"}
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-
+          - {label: "Hero Subheadline", name: "hero_subheadline", widget: "string"}
       - label: "Projects Page"
-        name: "projects"
-        file: "_data/projects.json" # New file for this page's content
+        name: "projects_page"
+        file: "_data/content.json"
         fields:
           - {label: "SEO Title", name: "seo_title_projects", widget: "string"}
-          - {label: "SEO Description", name: "seo_desc_projects", widget: "string"}
-          - {label: "Page Title", name: "projects_title", widget: "string"}
-          - {label: "Page Subtitle", name: "projects_subtitle", widget: "text"}
-          - label: "Priority Projects"
-            name: "priority_projects"
-            widget: "list"
-            summary: "{{fields.title}}"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Image", name: "image", widget: "image"}
-          - {label: "Other Goals Title", name: "other_goals_title", widget: "string"}
-          - label: "Other Goals"
-            name: "other_goals"
-            widget: "list"
-            summary: "{{fields.name}}"
-            field: {label: "Goal Name", name: "name", widget: "string"}
-  
-  - name: "site_settings"
-    label: "Site-Wide Settings"
-    files:
-      - label: "General Settings"
-        name: "general"
-        file: "_data/settings.json" # New file for global settings
+          - {label: "SEO Description", name: "seo_description_projects", widget: "string"}
+      - label: "About Page"
+        name: "about_page"
+        file: "_data/content.json"
         fields:
-          - {label: "Logo Image", name: "logo_image", widget: "image"}
-          - {label: "Footer Address", name: "footer_address", widget: "string"}
-          - {label: "YouTube Link", name: "youtube_link", widget: "string"}
-          - {label: "Instagram Link", name: "instagram_link", widget: "string"}
-          - {label: "Facebook Link", name: "facebook_link", widget: "string"}
-          - {label: "Contact Email", name: "contact_email", widget: "string"}
-          - {label: "Contact Phone", name: "contact_phone", widget: "string"}
-          - {label: "Copyright Note", name: "copyright_note", widget: "string"}
+          - {label: "SEO Title", name: "seo_title_about", widget: "string"}
+          - {label: "SEO Description", name: "seo_description_about", widget: "string"}
+      - label: "Academics Page"
+        name: "academics_page"
+        file: "_data/content.json"
+        fields:
+          - {label: "SEO Title", name: "seo_title_academics", widget: "string"}
+          - {label: "SEO Description", name: "seo_description_academics", widget: "string"}
+          - {label: "Header Image", name: "academics_header_image", widget: "image"}
+          - {label: "Spiritual Curriculum Title", name: "spiritual_curriculum_title", widget: "string"}
+          - {label: "Spiritual Curriculum Text", name: "spiritual_curriculum_text", widget: "markdown"}
+          - {label: "Academic Curriculum Title", name: "academic_curriculum_title", widget: "string"}
+          - {label: "Academic Curriculum Text", name: "academic_curriculum_text", widget: "markdown"}
+          - {label: "Practical Skills Title", name: "practical_skills_title", widget: "string"}
+          - {label: "Practical Skills Text", name: "practical_skills_text", widget: "markdown"}
+          - label: "Daily Schedule"
+            name: "daily_schedule"
+            widget: "list"
+            summary: "{{fields.time}} - {{fields.activity}}"
+            fields:
+              - {label: "Time", name: "time", widget: "string"}
+              - {label: "Activity", name: "activity", widget: "string"}
+              - {label: "Icon", name: "icon", widget: "select", options: ["Sunrise", "BookOpen", "Book", "Utensils", "Wrench", "Play", "Users", "Bed"]}
 
