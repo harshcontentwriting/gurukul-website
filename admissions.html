@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BVG Murbad</title> <!-- This title will be updated later -->
-    <meta name="description" content="">
+    <title id="seo_title_admissions">Admissions | BVG Murbad</title>
+    <meta id="seo_description_admissions" name="description" content="Learn about the admissions process at Bhaktivedanta Vidyabhavan Gurukula.">
     
     <link rel="icon" href="/images/logo.png" type="image/png">
 
@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         :root {
@@ -25,7 +26,8 @@
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
-        p, li { text-align: left; line-height: 1.7; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-content.open { max-height: 1000px; }
     </style>
 </head>
 <body class="antialiased">
@@ -43,7 +45,7 @@
                     <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
                     <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
                     <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
-                    <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
+                    <a href="/admissions.html" class="text-teal-600 font-semibold">Admissions</a>
                     <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
                 </nav>
                 <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
@@ -51,24 +53,57 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden">
             <nav class="flex flex-col items-center space-y-4 p-4">
-                <a href="/" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
-                <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
-                <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
-                <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
-                <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
-                <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+                 <a href="/" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                 <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                 <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
+                 <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
+                 <a href="/admissions.html" class="text-teal-600 font-semibold">Admissions</a>
+                 <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
             </nav>
         </div>
     </header>
 
-    <main class="py-20 md:py-28">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl font-bold text-gray-900">Page Coming Soon</h1>
-            <p class="text-lg text-gray-700 mt-4">This section is currently under construction.</p>
-        </div>
+    <main>
+        <!-- Page Header -->
+        <section class="relative bg-gray-700 py-24 text-white text-center">
+            <img id="admissions_header_image" src="" alt="Students at Gurukul" class="absolute inset-0 w-full h-full object-cover opacity-30">
+            <div class="relative z-10 container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-bold">Admissions</h1>
+                <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mt-4">Learn about our process and how your child can become a part of our Gurukula family.</p>
+            </div>
+        </section>
+        
+        <!-- Main Content Section -->
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
+                
+                <!-- Inquiry Form -->
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100">
+                    <h2 id="admissions_intro_title" class="text-3xl font-bold text-gray-900 mb-2 text-center"></h2>
+                    <p id="admissions_intro_text" class="text-gray-600 mb-8 text-center"></p>
+                    <form name="admissions" method="POST" action="/thank-you.html" data-netlify="true" class="space-y-6">
+                        <input type="hidden" name="form-name" value="admissions" />
+                        <div><label for="name" class="block text-sm font-medium text-gray-700">Parent's Name</label><input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                        <div><label for="email" class="block text-sm font-medium text-gray-700">Email Address</label><input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                        <div><label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label><input type="tel" id="phone" name="phone" required class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                        <div><button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg">Submit Inquiry</button></div>
+                    </form>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="pt-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+                    <div id="faq_wrapper" class="space-y-4">
+                        <!-- FAQs will be loaded here by JavaScript -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
-    <!-- UPDATED FOOTER SECTION -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-16">
             <div class="grid md:grid-cols-4 gap-10">
@@ -104,28 +139,67 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
+            lucide.createIcons();
+
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
-            lucide.createIcons();
 
-            // Highlight active navigation link
-            const currentPage = window.location.pathname;
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('text-teal-600', 'font-semibold');
-                    link.classList.remove('text-gray-600');
-                }
-            });
-            
-            // Set current year in footer
             document.getElementById('year').textContent = new Date().getFullYear();
+
+            fetch('/_data/content.json?v=' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    const setContent = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value || ''; };
+                    const setImage = (id, src) => { const el = document.getElementById(id); if (el) el.src = src || ''; };
+                    
+                    if(data.seo_title_admissions) document.title = data.seo_title_admissions;
+                    const seoDesc = document.getElementById('seo_description_admissions');
+                    if(seoDesc && data.seo_description_admissions) seoDesc.setAttribute('content', data.seo_description_admissions);
+
+                    setImage('admissions_header_image', data.admissions_header_image);
+                    setContent('admissions_intro_title', data.admissions_intro_title);
+                    setContent('admissions_intro_text', data.admissions_intro_text);
+
+                    if(data.faq) {
+                        populateFAQ(data.faq);
+                    }
+                });
         });
+
+        function populateFAQ(faqItems) {
+            const wrapper = document.getElementById('faq_wrapper');
+            if (!wrapper) return;
+            wrapper.innerHTML = '';
+            faqItems.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'border-b border-gray-200 last:border-b-0';
+                itemEl.innerHTML = `
+                    <button class="accordion-button w-full flex justify-between items-center text-left py-4">
+                        <span class="text-lg font-semibold text-gray-800">${item.question}</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 text-teal-600 transition-transform transform"></i>
+                    </button>
+                    <div class="accordion-content overflow-hidden">
+                        <div class="pb-4 text-gray-700">${marked.parse(item.answer)}</div>
+                    </div>`;
+                wrapper.appendChild(itemEl);
+            });
+            lucide.createIcons();
+            addAccordionListeners();
+        }
+
+        function addAccordionListeners() {
+            document.querySelectorAll('.accordion-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('i');
+                    content.classList.toggle('open');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        }
     </script>
 </body>
 </html>
-
