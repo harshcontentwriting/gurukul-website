@@ -90,6 +90,29 @@
       "activity": "Lights Out",
       "icon": "Bed"
     }
+  ],
+  "seo_title_admissions": "Admissions | BVG Murbad",
+  "seo_description_admissions": "Learn about the admissions process at Bhaktivedanta Vidyabhavan Gurukula and find answers to frequently asked questions.",
+  "admissions_header_image": "https://placehold.co/1200x400/0D9488/FFFFFF?text=Admissions",
+  "admissions_intro_title": "Begin Your Child's Journey",
+  "admissions_intro_text": "Take the first step towards a transformative education grounded in spiritual values. Below you will find our inquiry form and answers to common questions about our admissions process.",
+  "faq": [
+    {
+      "question": "What are the fees for the Gurukula?",
+      "answer": "In line with our guiding vision that education should be available to all, we do not charge any mandatory or forceful fees for tuition or boarding. Our Gurukula operates on the principles of seva and heartfelt contributions from the community."
+    },
+    {
+      "question": "How can parents contribute to their child's education?",
+      "answer": "While there are no fixed fees, parents are encouraged to contribute according to their capacity. You can support the Gurukula by sponsoring your child's daily prasadam and other needs, or by offering other forms of seva. We believe this creates a wonderful partnership in the child's upbringing."
+    },
+    {
+      "question": "What is the ideal age for admission?",
+      "answer": "We primarily accept students for the 5th standard, as this is an ideal age to begin foundational spiritual and academic training in a Gurukula environment."
+    },
+    {
+      "question": "Is this a residential (boarding) program?",
+      "answer": "Yes, Bhaktivedanta Vidyabhavan is a full-time residential program. Students live in a nurturing and disciplined ashram environment which is essential for their holistic development."
+    }
   ]
 }
 
