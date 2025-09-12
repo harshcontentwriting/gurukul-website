@@ -113,6 +113,41 @@
       "question": "Is this a residential (boarding) program?",
       "answer": "Yes, Bhaktivedanta Vidyabhavan is a full-time residential program. Students live in a nurturing and disciplined ashram environment which is essential for their holistic development."
     }
-  ]
+  ],
+  "seo_title_donate": "Support Our Seva | BVG Murbad",
+  "seo_description_donate": "Support the students of Bhaktivedanta Vidyabhavan Gurukula. Learn how you can contribute through donations and seva.",
+  "donate_header_image": "https://placehold.co/1200x400/0D9488/FFFFFF?text=Support+Our+Seva",
+  "donate_intro_title": "Empower the Next Generation",
+  "donate_intro_text": "Every contribution, no matter the size, directly supports the students' education, well-being, and spiritual growth. Your generosity allows us to provide a nurturing environment where these future leaders can flourish. By supporting our Gurukula, you are performing a great seva for the upliftment of society.",
+  "sponsor_options": [
+    {
+      "title": "Sponsor a Student's Prasadam",
+      "description": "Your contribution will provide nutritious, sanctified meals for one student.",
+      "amount": "₹501 per day",
+      "icon": "Utensils"
+    },
+    {
+      "title": "Provide Educational Supplies",
+      "description": "Help us provide essential learning materials like books, stationery, and art supplies.",
+      "amount": "₹1,100 per student",
+      "icon": "Book"
+    },
+    {
+      "title": "Support a Teacher's Seva",
+      "description": "Contribute towards the basic needs of our dedicated teachers who have committed their lives to this seva.",
+      "amount": "₹2,100 per month",
+      "icon": "UserCheck"
+    },
+    {
+      "title": "General Contribution",
+      "description": "Offer a general donation to support the overall operational needs of the Gurukula.",
+      "amount": "Any Amount",
+      "icon": "HeartHandshake"
+    }
+  ],
+  "upi_qr_image": "/images/whatsapp-image-2025-06-15-at-12.30.36-pm.jpeg",
+  "upi_note": "Please note: Our trust formation is currently in process. These donations are directed to the personal UPI of the Gurukul's principal.",
+  "bank_donation_info": "Bank name - Indian overseas Bank ,kamre,Ranchi.\nAccount name - Bhakti vedanta Vidyabhavan Trust\nA/C no - 379101000001800\nIFSC code -IOBA0003791",
+  "inkind_note": "We gratefully accept donations of grains, vegetables, and other essential supplies for the students. Your contribution helps us provide nutritious prasadam daily.\n\nYou can also volunteer as per your capacity and interest for following seva:\n1. Teaching (Academics)\n2. Skill Development classes (pottery, carpentry, electrical, farming)\n3. Spoken Language (any Indian language)\n4. Sports training.\n5. Music (vocals, instruments)\n"
 }
 
