@@ -1,20 +1,95 @@
 {
   "seo_title_home": "Bhaktivedanta Vidyabhavan Gurukula, Murbad | BVG Murbad",
-  "seo_desc_home": "A traditional Gurukula providing holistic education that balances modern academics with timeless spiritual wisdom. Nurturing character, competence, and compassion.",
+  "seo_description_home": "Official website for the Bhaktivedanta Vidyabhavan Gurukula (BVG Murbad), a traditional school balancing spiritual values with modern academics.",
+  "hero_image": "/images/1000075158.jpg",
   "hero_headline": "Education for Life, Grounded in Devotion",
-  "hero_subheadline": "Nurturing character, competence, and compassion in the next generation of leaders.",
-  "hero_bg_image": "/images/1000075158.jpg",
-  "philosophy_title_home": "Rooted in a Sacred Lineage",
-  "philosophy_text_home": "Our mission is guided by the timeless wisdom of our revered ācāryas.",
-  "academics_title_home": "A Holistic Education",
-  "academics_text_home": "We expertly balance modern academics (NIOS & MSBOS) with the timeless spiritual wisdom of Vedic literature to build a strong moral and intellectual foundation for our students.",
-  "academics_image_home": "/images/img-20250719-wa0033.jpg",
-  "gallery_title_home": "Life at the Gurukula",
-  "gallery_text_home": "A nurturing environment of learning, seva, and joyful spiritual practice.",
-  "projects_title_home": "Building a Foundation for the Future",
-  "projects_text_home": "To provide the best environment for our students, we are expanding our facilities. Key projects like a new Gaushala, dedicated teachers' rooms, and a sacred Yagyashala are our immediate priorities.",
-  "projects_image_home": "/images/1000074542.jpg",
-  "donate_title_home": "Join Our Mission",
-  "donate_text_home": "Your support helps us provide education, shelter, and spiritual nourishment to our students. Every contribution, big or small, makes a profound difference."
+  "hero_subheadline": "Bhaktivedanta Vidyabhavan Gurukula, Murbad",
+  "team_members": [
+    {
+      "photo": "/images/whatsapp-image-2025-06-12-at-10-19-35-am.jpeg",
+      "name": "HG Sarvabhuta Devi Dasi",
+      "description": "HG Sarvabhuta Devi Dasi (wife of HG Rasanath Das) born and brought up in Kalyan - Maharashtra, Sarvabhuta Mataji is a disciple of HH Bhakti Raghav Swami Maharaj (HDGSP), she is an experienced and trained teacher having more than 15 years of experience in teaching, she has completed her Msc in Environment Science and BEd (Science & Maths) from Mumbai University, \nPrior to working as a teacher, she was working with one of the leading home automation company in the capacity of CDM (clean development management) program manager.\nShe is now serving as the Principal of BVG (Murbad) where she looks after the education and wellbeing of our kids."
+    },
+    {
+      "photo": "/images/whatsapp-image-2025-06-12-at-10-19-35-am.jpeg",
+      "name": "HG Rasanath Das",
+      "description": "Rasanath Das also born and brought up in Kalyan - Maharashtra, is also a disciple of HH Bhakti Raghav Swami Maharaj (HDGSP), he has completed his Graduation in Physics (Mumbai University) and post-graduation in finance (Welingkar institute of Management, Mumbai), he is currently serving in one of the leading investment banks, \nHe takes care of the administrative seva in the Gurukul along with teaching kids spiritual subjects like Srimad Bhagavad Gita and Srila Prabhupada's books."
+    },
+    {
+      "name": "Bhakt Prasad Barakade",
+      "photo": "/images/img-20250720-wa0003.jpg",
+      "description": "Prasad Prabhu hails from Satara - Maharashtra, he is currently pursuing Graduation in Samskrit from IGNOU, he is engaged as a full time teacher in the Gurukul, covering subjects like Marathi and Hindi for students of std-5 to std-8, he is also a district level sportsperson (Wrestling) and looks after the physical fitness of our kids."
+    },
+    {
+      "name": "Bhakt Harsh Sharma",
+      "photo": "/images/whatsapp-image-2025-06-12-at-10-19-35-am.jpeg"
+    }
+  ],
+  "seo_title_academics": "Our Curriculum & Daily Life | BVG Murbad",
+  "seo_description_academics": "Explore the academic and spiritual curriculum at BVG Murbad, including our daily schedule, subjects taught, and practical skills development.",
+  "academics_header_image": "https://placehold.co/1200x400/0D9488/FFFFFF?text=Academic+Excellence",
+  "spiritual_curriculum_title": "Spiritual Syllabus: The Heart of Our Education",
+  "spiritual_curriculum_text": "Our spiritual syllabus is the foundation of our educational philosophy, designed to nurture a student's character, values, and connection to our sacred traditions. The curriculum covers the essential scriptures as commented on by HDG A.C. Bhaktivedanta Swami Srila Prabhupada, including:\n\n* Srimad Bhagavad Gita\n* Srimad Bhagavatam\n* Mahabharata & Ramayan\n* Isopanishad\n* Important Pranam Mantras and Stotras",
+  "academic_curriculum_title": "Academic Syllabus: Preparing for the Future",
+  "academic_curriculum_text": "To ensure our students are well-prepared for modern life and have opportunities for higher education, we follow the curriculum of recognized educational boards:\n\n* **For Std. 5th to Std. 8th:** We follow the MSBOS Board (Maharashtra State Board for Open Schooling).\n* **For Std. 10th:** We follow the NIOS Board (National Institute of Open Schooling).",
+  "practical_skills_title": "Practical Skills: Learning by Doing",
+  "practical_skills_text": "Beyond the classroom, we believe in holistic development through hands-on training. This approach helps students build competence and self-reliance. Practical skills taught at the Gurukul include:\n\n* Practical Farming\n* Sports and Martial Arts\n* Music (Vocals and Instruments)\n* Cooking and Prasadam distribution",
+  "daily_schedule": [
+    {
+      "time": "5:00 AM",
+      "activity": "Mangal Arati & Japa",
+      "icon": "Sunrise"
+    },
+    {
+      "time": "7:30 AM",
+      "activity": "Darshan & Guru Puja",
+      "icon": "Users"
+    },
+    {
+      "time": "8:00 AM",
+      "activity": "Srimad Bhagavatam Class",
+      "icon": "BookOpen"
+    },
+    {
+      "time": "9:30 AM",
+      "activity": "Prasadam (Breakfast)",
+      "icon": "Utensils"
+    },
+    {
+      "time": "10:30 AM",
+      "activity": "Academic Studies",
+      "icon": "Book"
+    },
+    {
+      "time": "1.30 PM",
+      "activity": "Prasadam (Lunch)",
+      "icon": "Utensils"
+    },
+    {
+      "time": "3:00 PM",
+      "activity": "Practical Skills & Seva",
+      "icon": "Wrench"
+    },
+    {
+      "time": "5:00 PM",
+      "activity": "Sports & Recreation",
+      "icon": "Play"
+    },
+    {
+      "time": "7:00 PM",
+      "activity": "Sandhya Arati",
+      "icon": "Users"
+    },
+    {
+      "time": "7:30 PM",
+      "activity": "Evening Study & Revision",
+      "icon": "Book"
+    },
+    {
+      "time": "9:00 PM",
+      "activity": "Lights Out",
+      "icon": "Bed"
+    }
+  ]
 }
 
