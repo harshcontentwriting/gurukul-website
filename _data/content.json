@@ -1,146 +1,20 @@
 {
-  "child_board_options": [
-    "Hindi Medium",
-    "English Medium",
-    "Marathi Medium",
-    "Others"
-  ],
-  "newsletter_section_heading": "Our Newsletters",
-  "label_phone": "Phone Number",
-  "upi_note": "Please note: Our trust formation is currently in process. These donations are directed to the personal UPI of the Gurukul's principal.",
-  "glimpses_section_heading": "Glimpses of Gurukula Life",
-  "gurukul_address": "Bhaktivedanta Vidyabhavan Gurukula,",
-  "team_section_heading": "Our Dedicated Team",
-  "instagram_link": "https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==",
-  "logo_image": "/images/img-20250707-wa0002.jpg",
-  "maharaj_title": "Dedicated To",
-  "maharaj_image": "/images/whatsapp-image-2025-06-15-at-12.30.38-pm.jpeg",
-  "copyright_note": "Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved. Education for life, grounded in devotion.",
-  "label_child_standard": "Child's Current Standard",
-  "prabhupada_name": "HDG Śrīla Prabhupāda",
-  "slideshow": [
-    {
-      "headline": " ",
-      "subheadline": "Bhaktivedanta Vidyabhavan Gurukul ",
-      "button_text": "Inquire About Admissions",
-      "button_link": "#admissions",
-      "background_image": "/images/1000075158.jpg"
-    }
-  ],
-  "prabhupada_text": "The divine vision for our Gurukula comes from our Founder-Ācārya, who established ISKCON and envisioned schools that expertly balance spiritual values with modern academics.\n\n",
-  "upi_qr_image": "/images/whatsapp-image-2025-06-15-at-12.30.36-pm.jpeg",
-  "contact_phone": "+91 9920071703  +91 9284274077",
-  "footer_address": "ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401",
-  "das_prabhu_name": "HG Das Gadadhar Das Prabhu",
-  "vision_section_heading": "Our Vision",
-  "label_email": "Email Address",
-  "das_prabhu_title": "Dedicated To",
-  "gallery_items": [
-    {
-      "image": "/images/1000074542.jpg",
-      "media_type": "Image",
-      "caption": "Practical Farming"
-    },
-    {
-      "image": "/images/1000093333.jpg",
-      "media_type": "Image",
-      "caption": "Festivals"
-    },
-    {
-      "image": "/images/img-20241207-wa0025.jpg",
-      "media_type": "Image",
-      "caption": "Adventure trips"
-    },
-    {
-      "image": "/images/img-20250317-wa0004.jpg",
-      "media_type": "Image",
-      "caption": "Morning PT"
-    },
-    {
-      "image": "/images/img-20250719-wa0033.jpg",
-      "media_type": "Image",
-      "caption": "Mridanga Workshop"
-    },
-    {
-      "media_type": "Image",
-      "image": "/images/img-20241207-wa0029.jpg",
-      "caption": "Village Sankirtan"
-    },
-    {
-      "media_type": "Image",
-      "image": "/images/img-20250315-wa0014.jpg",
-      "caption": "Deity Worship"
-    },
-    {
-      "media_type": "Image",
-      "image": "/images/img20240921171935.jpg",
-      "caption": "Wrestling classes"
-    },
-    {
-      "media_type": "Image",
-      "image": "/images/img20240325093347.jpg",
-      "caption": "Festivals"
-    },
-    {
-      "media_type": "Image",
-      "image": "/images/img_20241207_20552034.jpeg"
-    }
-  ],
-  "about_us_heading": "About Our Gurukula",
-  "facebook_link": "https://www.facebook.com/share/1Ys7H3f4t6/",
-  "admissions_section_heading": "Admissions Inquiry",
-  "das_prabhu_text": "Under the expert guidance of our Shiksha Guru, we provide a nurturing ashram environment where boys build a foundation of character, competence, and lifelong devotion.\n\n",
-  "lineage_section_heading": "Our Lineage & Inspiration",
-  "label_parent_name": "Parent's Name",
-  "das_prabhu_image": "/images/whatsapp-image-2025-06-15-at-12.30.40-pm.jpeg",
-  "youtube_link": "https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx",
-  "team_members": [
-    {
-      "photo": "/images/whatsapp-image-2025-06-12-at-10.19.35-am.jpeg",
-      "name": "HG Sarvabhuta Devi Dasi",
-      "description": "HG Sarvabhuta Devi Dasi (wife of HG Rasanath Das) born and brought up in Kalyan - Maharashtra, Sarvabhuta Mataji is a disciple of HH Bhakti Raghav Swami Maharaj (HDGSP), she is an experienced and trained teacher having more than 15 years of experience in teaching, she has completed her Msc in Environment Science and BEd (Science & Maths) from Mumbai University, \nPrior to working as a teacher, she was working with one of the leading home automation company in the capacity of CDM (clean development management) program manager.\nShe is now serving as the Principal of BVG (Murbad) where she looks after the education and wellbeing of our kids."
-    },
-    {
-      "photo": "/images/whatsapp-image-2025-06-12-at-10.19.35-am.jpeg",
-      "name": "HG Rasanath Das",
-      "description": "Rasanath Das also born and brought up in Kalyan - Maharashtra, is also a disciple of HH Bhakti Raghav Swami Maharaj (HDGSP), he has completed his Graduation in Physics (Mumbai University) and post-graduation in finance (Welingkar institute of Management, Mumbai), he is currently serving in one of the leading investment banks, \nHe takes care of the administrative seva in the Gurukul along with teaching kids spiritual subjects like Srimad Bhagavad Gita and Srila Prabhupada's books."
-    },
-    {
-      "name": "Bhakt Prasad Barakade",
-      "photo": "/images/img-20250720-wa0003.jpg",
-      "description": "Prasad Prabhu hails from Satara - Maharashtra, he is currently pursuing Graduation in Samskrit from IGNOU, he is engaged as a full time teacher in the Gurukul, covering subjects like Marathi and Hindi for students of std-5 to std-8, he is also a district level sportsperson (Wrestling) and looks after the physical fitness of our kids."
-    },
-    {
-      "name": "Bhakt Harsh Sharma",
-      "photo": "/images/whatsapp-image-2025-06-12-at-10.19.35-am.jpeg"
-    }
-  ],
-  "prabhupada_title": "Our Inspiration",
-  "admissions_intro": "Take the first step in your child's transformative education. Fill out the form below to connect with us.",
-  "bank_donation_info": "Bank name - Indian overseas Bank ,kamre,Ranchi.\nAccount name - Bhakti vedanta Vidyabhavan Trust\nA/C no - 379101000001800\nIFSC code -IOBA0003791",
-  "label_child_board": "Medium of Education",
-  "inkind_note": "We gratefully accept donations of grains, vegetables, and other essential supplies for the students. Your contribution helps us provide nutritious prasadam daily.\n\nYou can also volunteer as per your capacity and interest for following seva:\n1. Teaching (Academics)\n2. Skill Development classes (pottery, carpentry, electrical, farming)\n3. Spoken Language (any Indian language)\n4. Sports training.\n5. Music (vocals, instruments)\n",
-  "footer_description": "Bhaktivedanta Vidyabhavan Gurukula, Murbad - Maharashtra\n",
-  "vision_1": "We believe that education should be available to all and should be devoid of any forceful cost.\n",
-  "prabhupada_image": "/images/prabhupada.jpeg",
-  "newsletters": [
-    {
-      "pdf": "/images/bvg-newsletter.pdf",
-      "title": "bvg-newsletter",
-      "cover_image": "/images/img-20250707-wa0002.jpg"
-    }
-  ],
-  "vision_2": "The kind of education one receives must impart a sense of duty towards elders, family and should be beneficial for human society at large.\n",
-  "donation_section_heading": "Support Our Seva",
-  "maharaj_name": "HH Bhakti Raghava Swami Maharaj",
-  "vision_3": "We believe that education should develop a character who is selfless, compassionate and sees every living being with equal vision.",
-  "about_us_text": "We provide Both Spiritual and Material Education, to nurture the body, mind, and soul of our students.\n\nTo provide academic education, we follow the MSBOS & NIOS boards of Education.\n- For Std. 5th to Std. 8th - MSBOS Board (Maharashtra State Board for Open Schooling)\n- For Std. 10th - NIOS Board (National Institute of Open Schooling)\n\nAs followers of Shri Bramha Madhva Gaudiya Sampradaya, we also teach our kids the rich tradition of spiritual knowledge handed over to us by our revered Guru Shishya Parampara, by covering the subject matter given by HDG A.C. Bhaktivedanta Swami Srila Prabhupada.\n\nSpiritual syllabus for the whole year covers following Topics:\n- Srimad Bhagavad Gita\n- Srimad Bhagavatam\n- Mahabharata, Ramayan\n- Isopanishad (Commented by Srila Prabhupada)\n- Pranam Mantras and Stotras\n\nAlong with classroom teachings, kids also enthusiastically do Harinam Sankirtan in nearby villages, and try to uplift the spiritual environment of the nearby areas.\n\nGurukul also strives to teach practical Farming, Sports, Music & Cooking as well, with a view to create an environment where kids with different abilities can learn and grow up as a positive contributor towards society in general.",
-  "contact_email": "-",
-  "maharaj_text": "Our Gurukula is dedicated in service to our revered Guru Maharaj, whose teachings and blessings are the foundation of our mission to nurture the next generation of devotees.\n\n",
-  "child_standard_options": [
-    "5th - Standard",
-    "6th - Standard",
-    "7th - Standard",
-    "8th - Standard"
-  ]
+  "seo_title_home": "Bhaktivedanta Vidyabhavan Gurukula, Murbad | BVG Murbad",
+  "seo_desc_home": "A traditional Gurukula providing holistic education that balances modern academics with timeless spiritual wisdom. Nurturing character, competence, and compassion.",
+  "hero_headline": "Education for Life, Grounded in Devotion",
+  "hero_subheadline": "Nurturing character, competence, and compassion in the next generation of leaders.",
+  "hero_bg_image": "/images/1000075158.jpg",
+  "philosophy_title_home": "Rooted in a Sacred Lineage",
+  "philosophy_text_home": "Our mission is guided by the timeless wisdom of our revered ācāryas.",
+  "academics_title_home": "A Holistic Education",
+  "academics_text_home": "We expertly balance modern academics (NIOS & MSBOS) with the timeless spiritual wisdom of Vedic literature to build a strong moral and intellectual foundation for our students.",
+  "academics_image_home": "/images/img-20250719-wa0033.jpg",
+  "gallery_title_home": "Life at the Gurukula",
+  "gallery_text_home": "A nurturing environment of learning, seva, and joyful spiritual practice.",
+  "projects_title_home": "Building a Foundation for the Future",
+  "projects_text_home": "To provide the best environment for our students, we are expanding our facilities. Key projects like a new Gaushala, dedicated teachers' rooms, and a sacred Yagyashala are our immediate priorities.",
+  "projects_image_home": "/images/1000074542.jpg",
+  "donate_title_home": "Join Our Mission",
+  "donate_text_home": "Your support helps us provide education, shelter, and spiritual nourishment to our students. Every contribution, big or small, makes a profound difference."
 }
+
