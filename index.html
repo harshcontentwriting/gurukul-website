@@ -81,7 +81,6 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 id="philosophy_title_home" class="text-3xl font-bold text-gray-900 mb-4"></h2>
                 <p id="philosophy_text_home" class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-12"></p>
-                <!-- This section will be populated from about.json on the about page -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                     <div><img src="https://bvgmurbad.org/images/prabhupada.jpeg" class="w-24 h-24 rounded-full mx-auto mb-2 shadow-lg object-cover" alt="Srila Prabhupada"><h3 class="font-semibold text-lg">HDG Śrīla Prabhupāda</h3><p class="text-gray-600">Our Inspiration</p></div>
                     <div><img src="https://bvgmurbad.org/images/whatsapp-image-2025-06-15-at-12.30.38-pm.jpeg" class="w-24 h-24 rounded-full mx-auto mb-2 shadow-lg object-cover" alt="Guru Maharaj"><h3 class="font-semibold text-lg">HH Bhakti Raghava Swami</h3><p class="text-gray-600">Our Spiritual Guide</p></div>
@@ -145,9 +144,38 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER SECTION ADDED -->
     <footer class="bg-gray-900 text-white">
-       <!-- Footer will be a reusable component added later -->
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula</h3>
+                    <p class="text-gray-400 text-sm">ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="/academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
+                        <li><a href="/projects.html" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="/admissions.html" class="text-gray-400 hover:text-white transition">Admissions</a></li>
+                        <li><a href="/donate.html" class="text-gray-400 hover:text-white transition">Donate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                    </div>
+                    <p class="text-sm text-gray-300">Phone: <span id="contact_phone">+91 9920071703</span></p>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; <span id="year"></span> Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -179,15 +207,20 @@
                     
                     document.getElementById('gallery_title_home').textContent = data.gallery_title_home;
                     document.getElementById('gallery_text_home').textContent = data.gallery_text_home;
-                    
+
                     document.getElementById('projects_title_home').textContent = data.projects_title_home;
                     document.getElementById('projects_text_home').textContent = data.projects_text_home;
                     document.getElementById('projects_image_home').src = data.projects_image_home;
                     
                     document.getElementById('donate_title_home').textContent = data.donate_title_home;
                     document.getElementById('donate_text_home').textContent = data.donate_text_home;
+
+                    // Note: Footer content is hardcoded for consistency, but we could fetch parts if needed
                 })
                 .catch(err => console.error("Error loading homepage content:", err));
+            
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
 
             lucide.createIcons();
         });
