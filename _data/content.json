@@ -99,7 +99,7 @@
   "faq": [
     {
       "question": "What are the fees for the Gurukula?",
-      "answer": "In line with our guiding vision that education should be available to all, we do not charge any mandatory or forceful fees for tuition or boarding. Our Gurukula operates on the principles of seva and heartfelt contributions from the community."
+      "answer": "In line with our guiding vision that education should be available to all, we do not charge any mandatory or forceful fees for tuition or boarding. Our Gurukul operates on the principles of seva and heartfelt contributions from the community."
     },
     {
       "question": "How can parents contribute to their child's education?",
@@ -148,6 +148,61 @@
   "upi_qr_image": "/images/whatsapp-image-2025-06-15-at-12.30.36-pm.jpeg",
   "upi_note": "Please note: Our trust formation is currently in process. These donations are directed to the personal UPI of the Gurukul's principal.",
   "bank_donation_info": "Bank name - Indian overseas Bank ,kamre,Ranchi.\nAccount name - Bhakti vedanta Vidyabhavan Trust\nA/C no - 379101000001800\nIFSC code -IOBA0003791",
-  "inkind_note": "We gratefully accept donations of grains, vegetables, and other essential supplies for the students. Your contribution helps us provide nutritious prasadam daily.\n\nYou can also volunteer as per your capacity and interest for following seva:\n1. Teaching (Academics)\n2. Skill Development classes (pottery, carpentry, electrical, farming)\n3. Spoken Language (any Indian language)\n4. Sports training.\n5. Music (vocals, instruments)\n"
+  "inkind_note": "We gratefully accept donations of grains, vegetables, and other essential supplies for the students. Your contribution helps us provide nutritious prasadam daily.\n\nYou can also volunteer as per your capacity and interest for following seva:\n1. Teaching (Academics)\n2. Skill Development classes (pottery, carpentry, electrical, farming)\n3. Spoken Language (any Indian language)\n4. Sports training.\n5. Music (vocals, instruments)\n",
+  "gallery_items": [
+    {
+      "image": "/images/1000074542.jpg",
+      "media_type": "Image",
+      "caption": "Practical Farming"
+    },
+    {
+      "image": "/images/1000093333.jpg",
+      "media_type": "Image",
+      "caption": "Festivals"
+    },
+    {
+      "image": "/images/img-20241207-wa0025.jpg",
+      "media_type": "Image",
+      "caption": "Adventure trips"
+    },
+    {
+      "image": "/images/img-20250317-wa0004.jpg",
+      "media_type": "Image",
+      "caption": "Morning PT"
+    },
+    {
+      "image": "/images/img-20250719-wa0033.jpg",
+      "media_type": "Image",
+      "caption": "Mridanga Workshop"
+    },
+    {
+      "media_type": "Image",
+      "image": "/images/img-20241207-wa0029.jpg",
+      "caption": "Village Sankirtan"
+    },
+    {
+      "media_type": "Image",
+      "image": "/images/img-20250315-wa0014.jpg",
+      "caption": "Deity Worship"
+    },
+    {
+      "media_type": "Image",
+      "image": "/images/img20240921171935.jpg",
+      "caption": "Wrestling classes"
+    },
+    {
+      "media_type": "Image",
+      "image": "/images/img20240325093347.jpg",
+      "caption": "Festivals"
+    },
+    {
+      "media_type": "Image",
+      "image": "/images/img_20241207_20552034.jpeg"
+    }
+  ],
+  "seo_title_gallery": "Gurukul Gallery | BVG Murbad",
+  "seo_description_gallery": "View photos and videos of daily life, festivals, and activities at Bhaktivedanta Vidyabhavan Gurukula.",
+  "gallery_title": "Glimpses of Gurukul Life",
+  "gallery_subtitle": "A collection of moments from our daily spiritual and academic life."
 }
 
