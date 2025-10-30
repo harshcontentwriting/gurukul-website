@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | BVG Murbad</title>
-    <meta name="description" content="Learn about our sacred lineage, our inspiration from Srila Prabhupada, and meet the dedicated team of teachers at Bhaktivedanta Vidyabhavan Gurukula.">
+    <title id="seo_title_about">About Us | BVG Murbad</title>
+    <meta id="seo_description_about" name="description" content="Learn about our sacred lineage, our dedicated team of mentors, and the philosophy behind our Gurukula.">
     
     <link rel="icon" href="/images/logo.png" type="image/png">
 
@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         :root {
@@ -25,14 +26,14 @@
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
-        p, li { text-align: left; line-height: 1.7; }
+        .hero-bg { background-size: cover; background-position: center; }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out; }
         .accordion-content.open { max-height: 1000px; padding-top: 1rem; padding-bottom: 1rem; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
+    <!-- UPDATED HEADER -->
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
@@ -46,11 +47,12 @@
                     <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
                     <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
                     <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
-                    <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+                    <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg transition-transform transform hover:scale-105">Donate</a>
                 </nav>
                 <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
             </div>
         </div>
+        <!-- UPDATED MOBILE MENU -->
         <div id="mobile-menu" class="hidden md:hidden">
             <nav class="flex flex-col items-center space-y-4 p-4">
                  <a href="/" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
@@ -63,39 +65,53 @@
         </div>
     </header>
 
+    <!-- Main Content -->
     <main>
+
         <!-- Page Header -->
-        <section class="relative bg-gray-700 py-24 text-white text-center">
-            <img src="https://placehold.co/1200x400/0D9488/FFFFFF?text=Gurukul+Campus" alt="Gurukul Campus" class="absolute inset-0 w-full h-full object-cover opacity-30">
-            <div class="relative z-10 container mx-auto px-6">
-                <h1 class="text-4xl md:text-5xl font-bold">About Our Gurukula</h1>
-                <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mt-4">Nurturing the body, mind, and soul of our students through a unique blend of spiritual and material education.</p>
+        <section id="about_header_image" class="h-[40vh] hero-bg flex items-center justify-center text-center text-white relative">
+            <div class="absolute inset-0 bg-black/50 z-10"></div>
+            <div class="container mx-auto px-6 z-20 relative">
+                <h1 id="about_title" class="text-4xl md:text-6xl font-bold" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);"></h1>
+                <p id="about_subtitle" class="text-xl md:text-2xl font-light mt-4" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.7);"></p>
             </div>
         </section>
 
-        <!-- Lineage Section -->
+        <!-- Introduction Section -->
         <section class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Sacred Lineage & Inspiration</h2>
-                    <p class="text-lg text-gray-700 leading-relaxed">As followers of the Shri Brahma Madhva Gaudiya Sampradaya, we teach our students the rich tradition of spiritual knowledge handed down by our revered Guru-Shishya Parampara, as presented by His Divine Grace A.C. Bhaktivedanta Swami Srila Prabhupada.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-10 mt-16">
-                    <div class="text-center p-6"><img src="https://bvgmurbad.org/images/prabhupada.jpeg" alt="HDG Śrīla Prabhupāda" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg border-4 border-white object-cover"><h3 class="text-2xl font-semibold text-gray-800">HDG Śrīla Prabhupāda</h3><p class="text-teal-600 font-semibold mt-1">Our Inspiration</p><p class="text-gray-600 mt-4 text-sm leading-relaxed">The divine vision for our Gurukula comes from our Founder-Ācārya, who established ISKCON and envisioned schools that expertly balance spiritual values with modern academics.</p></div>
-                    <div class="text-center p-6"><img src="https://bvgmurbad.org/images/whatsapp-image-2025-06-15-at-12.30.38-pm.jpeg" alt="HH Bhakti Raghava Swami Maharaj" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg border-4 border-white object-cover"><h3 class="text-2xl font-semibold text-gray-800">HH Bhakti Raghava Swami</h3><p class="text-teal-600 font-semibold mt-1">Dedicated To</p><p class="text-gray-600 mt-4 text-sm leading-relaxed">Our Gurukula is dedicated in service to our revered Guru Maharaj, whose teachings and blessings are the foundation of our mission to nurture the next generation of devotees.</p></div>
-                    <div class="text-center p-6"><img src="https://bvgmurbad.org/images/whatsapp-image-2025-06-15-at-12.30.40-pm.jpeg" alt="HG Das Gadadhar Das Prabhu" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg border-4 border-white object-cover"><h3 class="text-2xl font-semibold text-gray-800">HG Das Gadadhar Das</h3><p class="text-teal-600 font-semibold mt-1">Dedicated To</p><p class="text-gray-600 mt-4 text-sm leading-relaxed">Under the expert guidance of our Shiksha Guru, we provide a nurturing ashram environment where boys build a foundation of character, competence, and lifelong devotion.</p></div>
+                <div class="max-w-4xl mx-auto">
+                    <p id="about_intro_text" class="text-xl text-gray-700 leading-relaxed mb-12"></p>
+                    
+                    <div class="grid md:grid-cols-3 gap-10">
+                        <div class="text-center p-6">
+                            <img id="prabhupada_image" src="" alt="HDG Śrīla Prabhupāda" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover">
+                            <h3 id="prabhupada_name" class="text-2xl font-semibold text-gray-800"></h3>
+                            <p id="prabhupada_title" class="text-teal-600 font-semibold mt-1"></p>
+                            <p id="about_prabhupada_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p>
+                        </div>
+                        <div class="text-center p-6">
+                            <img id="maharaj_image" src="" alt="HH Bhakti Raghava Swami Maharaj" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover">
+                            <h3 id="maharaj_name" class="text-2xl font-semibold text-gray-800"></h3>
+                            <p id="maharaj_title" class="text-teal-600 font-semibold mt-1"></p>
+                            <p id="about_maharaj_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p>
+                        </div>
+                        <div class="text-center p-6">
+                            <img id="das_prabhu_image" src="" alt="HG Das Gadadhar Das Prabhu" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover">
+                            <h3 id="das_prabhu_name" class="text-2xl font-semibold text-gray-800"></h3>
+                            <p id="das_prabhu_title" class="text-teal-600 font-semibold mt-1"></p>
+                            <p id="about_das_prabhu_text" class="text-gray-600 mt-4 text-sm leading-relaxed"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Team Section -->
-        <section class="py-20 md:py-28">
+        <section class="py-20 md:py-28 bg-gray-50">
             <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Dedicated Team</h2>
-                    <p class="text-lg text-gray-700 leading-relaxed">Meet the mentors and teachers who are committed to the holistic development of our students.</p>
-                </div>
-                <div id="team-accordion-wrapper" class="space-y-4 max-w-4xl mx-auto mt-16">
+                <h2 id="about_team_heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"></h2>
+                <div id="team-accordion-wrapper" class="space-y-4 max-w-4xl mx-auto">
                     <!-- Team members will be loaded here by JavaScript -->
                 </div>
             </div>
@@ -108,81 +124,128 @@
         <div class="container mx-auto px-6 py-16">
             <div class="grid md:grid-cols-4 gap-10">
                 <div class="md:col-span-2">
-                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula</h3>
-                    <p class="text-gray-400 text-sm">ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401</p>
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4">BVG Murbad</h3>
+                    <p id="footer_address" class="text-gray-400 text-sm mt-2"></p>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3>
                     <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition">Home</a></li>
                         <li><a href="/about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
                         <li><a href="/academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
                         <li><a href="/projects.html" class="text-gray-400 hover:text-white transition">Projects</a></li>
                         <li><a href="/admissions.html" class="text-gray-400 hover:text-white transition">Admissions</a></li>
-                        <li><a href="/donate.html" class="text-gray-400 hover:text-white transition">Donate</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
                     <div class="flex space-x-4 mb-4">
-                        <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
-                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a id="youtube_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a id="instagram_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a id="facebook_link" href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
                     </div>
-                    <p class="text-sm text-gray-300">Phone: <span id="contact_phone">+91 9920071703</span></p>
+                    <p class="text-sm text-gray-300">Phone: <span id="contact_phone"></span></p>
                 </div>
             </div>
             <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
-                <p>&copy; <span id="year"></span> Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved.</p>
+                <p>&copy; <span id="year"></span> <span id="copyright_note"></span></p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            fetch('/_data/content.json?v=' + new Date().getTime())
+                .then(response => response.ok ? response.json() : Promise.reject('Failed to load content.json'))
+                .then(data => {
+                    if (data) {
+                        populateGlobalContent(data.global);
+                        populateLineage(data.lineage);
+                        populateAboutPage(data.about);
+                        setSeoContent(data);
+                    }
+                })
+                .catch(err => console.error("Error loading content:", err));
+            
             lucide.createIcons();
+            document.getElementById('year').textContent = new Date().getFullYear();
 
-            // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
-
-            // Set current year in footer
-            document.getElementById('year').textContent = new Date().getFullYear();
-
-            // Fetch content and populate team members
-            fetch('/_data/content.json?v=' + new Date().getTime())
-                .then(response => response.json())
-                .then(data => {
-                    if(data.team_members) {
-                        populateTeam(data.team_members);
-                    }
-                });
         });
 
-        function populateTeam(members) {
-            const wrapper = document.getElementById('team-accordion-.wrapper');
-            if (!wrapper) return;
-            wrapper.innerHTML = '';
-            members.forEach(member => {
-                const memberEl = document.createElement('div');
-                memberEl.className = 'bg-white rounded-lg shadow-md';
-                memberEl.innerHTML = `
-                    <button class="accordion-button w-full flex items-center justify-between p-4 text-left">
-                        <div class="flex items-center space-x-4">
-                            <img loading="lazy" src="${member.photo}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover">
-                            <span class="text-lg font-semibold text-gray-800">${member.name}</span>
+        const setContent = (id, value) => { const el = document.getElementById(id); if (el) el.innerHTML = value || ''; };
+        const setImage = (id, src, alt) => { const el = document.getElementById(id); if (el) { el.src = src || ''; el.alt = alt || ''; } };
+        const setLink = (id, href) => { const el = document.getElementById(id); if (el) el.href = href || '#'; };
+        const setBgImage = (id, src) => { const el = document.getElementById(id); if (el) el.style.backgroundImage = `url('${src}')`; };
+        const setSeo = (id, value) => { const el = document.getElementById(id); if (el) el.content = value || ''; };
+
+        function setSeoContent(data) {
+            document.title = data.seo_title_about || 'About Us | BVG Murbad';
+            setSeo('seo_description_about', data.seo_description_about);
+        }
+        
+        function populateGlobalContent(global) {
+            if (!global) return;
+            setContent('footer_address', global.footer_address);
+            setContent('contact_phone', global.contact_phone);
+            setContent('copyright_note', global.copyright_note);
+            setLink('youtube_link', global.youtube_link);
+            setLink('instagram_link', global.instagram_link);
+            setLink('facebook_link', global.facebook_link);
+        }
+
+        function populateLineage(lineage) {
+            if (!lineage) return;
+            setImage('prabhupada_image', lineage.prabhupada_image, lineage.prabhupada_name);
+            setContent('prabhupada_name', lineage.prabhupada_name);
+            setContent('prabhupada_title', lineage.prabhupada_title);
+            setImage('maharaj_image', lineage.maharaj_image, lineage.maharaj_name);
+            setContent('maharaj_name', lineage.maharaj_name);
+            setContent('maharaj_title', lineage.maharaj_title);
+            setImage('das_prabhu_image', lineage.das_prabhu_image, lineage.das_prabhu_name);
+            setContent('das_prabhu_name', lineage.das_prabhu_name);
+            setContent('das_prabhu_title', lineage.das_prabhu_title);
+        }
+
+        function populateAboutPage(about) {
+            if (!about) return;
+            setBgImage('about_header_image', about.header_image);
+            setContent('about_title', about.title);
+            setContent('about_subtitle', about.subtitle);
+            setContent('about_intro_text', marked.parse(about.intro_text || ''));
+            setContent('about_prabhupada_text', about.prabhupada_text);
+            setContent('about_maharaj_text', about.maharaj_text);
+            setContent('about_das_prabhu_text', about.das_prabhu_text);
+            setContent('about_team_heading', about.team_heading);
+            
+            const wrapper = document.getElementById('team-accordion-wrapper');
+            if (wrapper && about.team_members) {
+                wrapper.innerHTML = '';
+                about.team_members.forEach(member => {
+                    const memberEl = document.createElement('div');
+                    memberEl.className = 'bg-white rounded-lg shadow-md';
+                    memberEl.innerHTML = `
+                        <button class="accordion-button w-full flex items-center justify-between p-4 text-left">
+                            <div class="flex items-center space-x-4">
+                                <img loading="lazy" src="${member.photo}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover">
+                                <span class="text-lg font-semibold text-gray-800">${member.name}</span>
+                            </div>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-teal-600 transition-transform transform"></i>
+                        </button>
+                        <div class="accordion-content px-4 text-gray-600">
+                            ${marked.parse(member.description || '')}
                         </div>
-                        <i data-lucide="chevron-down" class="w-6 h-6 text-teal-600 transition-transform transform"></i>
-                    </button>
-                    <div class="accordion-content px-4 text-gray-600">
-                       <p class="pt-4 pb-4">${member.description || ''}</p>
-                    </div>`;
-                wrapper.appendChild(memberEl);
-            });
-            lucide.createIcons();
-            addAccordionListeners();
+                    `;
+                    wrapper.appendChild(memberEl);
+                });
+                lucide.createIcons();
+                addAccordionListeners();
+            }
         }
 
         function addAccordionListeners() {
@@ -190,14 +253,6 @@
                 button.addEventListener('click', () => {
                     const content = button.nextElementSibling;
                     const icon = button.querySelector('i');
-                    
-                    document.querySelectorAll('.accordion-content').forEach(c => {
-                        if (c !== content) {
-                            c.classList.remove('open');
-                            c.previousElementSibling.querySelector('i').classList.remove('rotate-180');
-                        }
-                    });
-
                     content.classList.toggle('open');
                     icon.classList.toggle('rotate-180');
                 });
@@ -206,3 +261,4 @@
     </script>
 </body>
 </html>
+
