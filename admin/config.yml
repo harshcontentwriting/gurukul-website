@@ -35,6 +35,20 @@ collections:
               - {label: "Das Prabhu Image", name: "das_prabhu_image", widget: "image"}
               - {label: "Das Prabhu Name", name: "das_prabhu_name", widget: "string"}
               - {label: "Das Prabhu Title", name: "das_prabhu_title", widget: "string"}
+          - label: "Homepage Gallery Photos"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - label: "Gallery Items"
+                name: "gallery_items"
+                widget: "list"
+                summary: "{{fields.caption}} ({{fields.media_type}})"
+                fields:
+                  - {label: "Media Type", name: "media_type", widget: "select", options: ["Image", "Video"]}
+                  - {label: "Image / Video Cover", name: "image", widget: "image", hint: "This is the image shown in the grid. For videos, this is the cover image."}
+                  - {label: "Video File (MP4)", name: "video", widget: "file", required: false, hint: "Upload the video file if this is a video."}
+                  - {label: "Caption", name: "caption", widget: "string", required: false}
+
 
       - label: "About Page"
         name: "aboutpage"
@@ -171,7 +185,7 @@ collections:
                   - {label: "Description", name: "description", widget: "string"}
                   - {label: "Suggested Amount", name: "amount", widget: "string"}
               - {label: "Other Ways Heading", name: "other_ways_heading", widget: "string"}
-              - {label: "UPI Image", name: "upi_qr_image", widget: "image"}
+              - {label:S: "UPI Image", name: "upi_qr_image", widget: "image"}
               - {label: "UPI Note", name: "upi_note", widget: "text"}
               - {label: "Bank Info", name: "bank_donation_info", widget: "text"}
               - {label: "In-Kind Note", name: "inkind_note", widget: "text"}
@@ -193,25 +207,4 @@ collections:
               - {label: "Instagram Link", name: "instagram_link", widget: "string"}
               - {label: "Facebook Link", name: "facebook_link", widget: "string"}
               - {label: "Copyright Note", name: "copyright_note", widget: "string"}
-
-  - name: "gallery"
-    label: "Gallery Photos"
-    files:
-      - label: "Gallery"
-        name: "gallery"
-        file: "_data/content.json"
-        fields:
-          - label: "Gallery Items (Homepage)"
-            name: "gallery"
-            widget: "object"
-            fields:
-              - label: "Gallery Items"
-                name: "gallery_items"
-                widget: "list"
-                summary: "{{fields.caption}} ({{fields.media_type}})"
-                fields:
-                  - {label: "Media Type", name: "media_type", widget: "select", options: ["Image", "Video"]}
-                  - {label: "Image / Video Cover", name: "image", widget: "image", hint: "This is the image shown in the grid. For videos, this is the cover image."}
-                  - {label: "Video File (MP4)", name: "video", widget: "file", required: false, hint: "Upload the video file if this is a video."}
-                  - {label: "Caption", name: "caption", widget: "string", required: false}
 
