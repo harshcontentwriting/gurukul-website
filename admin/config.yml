@@ -7,99 +7,211 @@ public_folder: "/images"
 
 collections:
   - name: "pages"
-    label: "Website Pages"
+    label: "Page Content"
     files:
       - label: "Homepage"
         name: "homepage"
         file: "_data/content.json"
         fields:
-          - {label: "SEO Title", name: "seo_title_home", widget: "string"}
-          - {label: "SEO Description", name: "seo_description_home", widget: "string"}
-          - {label: "Hero Image", name: "hero_image", widget: "image"}
-          - {label: "Hero Headline", name: "hero_headline", widget: "string"}
-          - {label: "Hero Subheadline", name: "hero_subheadline", widget: "string"}
-      - label: "Projects Page"
-        name: "projects_page"
-        file: "_data/content.json"
-        fields:
-          - {label: "SEO Title", name: "seo_title_projects", widget: "string"}
-          - {label: "SEO Description", name: "seo_description_projects", widget: "string"}
+          - {label: "SEO Title", name: "seo_title_home", widget: "string", hint: "Title for the browser tab and Google search."}
+          - {label: "SEO Description", name: "seo_description_home", widget: "string", hint: "Short description for Google search."}
+          - label: "Hero Section"
+            name: "homepage"
+            widget: "object"
+            fields:
+              - {label: "Hero Background Image", name: "hero_image", widget: "image"}
+              - {label: "Headline", name: "hero_headline", widget: "string"}
+              - {label: "Sub-headline", name: "hero_subheadline", widget: "string"}
+          - label: "Lineage Section (Shared)"
+            name: "lineage"
+            widget: "object"
+            fields:
+              - {label: "Prabhupada Image", name: "prabhupada_image", widget: "image"}
+              - {label: "Prabhupada Name", name: "prabhupada_name", widget: "string"}
+              - {label: "Prabhupada Title", name: "prabhupada_title", widget: "string"}
+              - {label: "Maharaj Image", name: "maharaj_image", widget: "image"}
+              - {label: "Maharaj Name", name: "maharaj_name", widget: "string"}
+              - {label: "Maharaj Title", name: "maharaj_title", widget: "string"}
+              - {label: "Das Prabhu Image", name: "das_prabhu_image", widget: "image"}
+              - {label: "Das Prabhu Name", name: "das_prabhu_name", widget: "string"}
+              - {label: "Das Prabhu Title", name: "das_prabhu_title", widget: "string"}
+
       - label: "About Page"
-        name: "about_page"
+        name: "aboutpage"
         file: "_data/content.json"
         fields:
-          - {label: "SEO Title", name: "seo_title_about", widget: "string"}
-          - {label: "SEO Description", name: "seo_description_about", widget: "string"}
+          - {label: "SEO Title", name: "seo_title_about", widget: "string", hint: "Title for the browser tab and Google search."}
+          - {label: "SEO Description", name: "seo_description_about", widget: "string", hint: "Short description for Google search."}
+          - label: "About Page Content"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Header Image", name: "header_image", widget: "image"}
+              - {label: "Page Title", name: "title", widget: "string"}
+              - {label: "Page Subtitle", name: "subtitle", widget: "string"}
+              - {label: "Introduction Text", name: "intro_text", widget: "text"}
+              - {label: "Prabhupada Text", name: "prabhupada_text", widget: "text"}
+              - {label: "Maharaj Text", name: "maharaj_text", widget: "text"}
+              - {label: "Das Prabhu Text", name: "das_prabhu_text", widget: "text"}
+              - {label: "Team Section Heading", name: "team_heading", widget: "string"}
+              - label: "Team Members"
+                name: "team_members"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - {label: "Photo", name: "photo", widget: "image"}
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+      
       - label: "Academics Page"
-        name: "academics_page"
+        name: "academicspage"
         file: "_data/content.json"
         fields:
-          - {label: "SEO Title", name: "seo_title_academics", widget: "string"}
-          - {label: "SEO Description", name: "seo_description_academics", widget: "string"}
-          - {label: "Header Image", name: "academics_header_image", widget: "image"}
-          - {label: "Spiritual Curriculum Title", name: "spiritual_curriculum_title", widget: "string"}
-          - {label: "Spiritual Curriculum Text", name: "spiritual_curriculum_text", widget: "markdown"}
-          - {label: "Academic Curriculum Title", name: "academic_curriculum_title", widget: "string"}
-          - {label: "Academic Curriculum Text", name: "academic_curriculum_text", widget: "markdown"}
-          - {label: "Practical Skills Title", name: "practical_skills_title", widget: "string"}
-          - {label: "Practical Skills Text", name: "practical_skills_text", widget: "markdown"}
-          - label: "Daily Schedule"
-            name: "daily_schedule"
-            widget: "list"
-            summary: "{{fields.time}} - {{fields.activity}}"
+          - {label: "SEO Title", name: "seo_title_academics", widget: "string", hint: "Title for the browser tab and Google search."}
+          - {label: "SEO Description", name: "seo_description_academics", widget: "string", hint: "Short description for Google search."}
+          - label: "Academics Page Content"
+            name: "academics"
+            widget: "object"
             fields:
-              - {label: "Time", name: "time", widget: "string"}
-              - {label: "Activity", name: "activity", widget: "string"}
-              - {label: "Icon", name: "icon", widget: "select", options: ["Sunrise", "BookOpen", "Book", "Utensils", "Wrench", "Play", "Users", "Bed"]}
+              - {label: "Page Title", name: "title", widget: "string"}
+              - {label: "Page Subtitle", name: "subtitle", widget: "string"}
+              - label: "Vision Statements"
+                name: "vision_statements"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Icon", name: "icon", widget: "string", hint: "e.g., Book, Heart, Users"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+              - {label: "Curriculum Title", name: "curriculum_title", widget: "string"}
+              - {label: "Spiritual Syllabus Text", name: "spiritual_text", widget: "text"}
+              - {label: "Academic Syllabus Text", name: "academic_text", widget: "text"}
+              - {label: "Practical Skills Text", name: "skills_text", widget: "text"}
+              - {label: "Daily Schedule Title", name: "schedule_title", widget: "string"}
+              - label: "Daily Schedule"
+                name: "daily_schedule"
+                widget: "list"
+                summary: "{{fields.time}} - {{fields.activity}}"
+                fields:
+                  - {label: "Time", name: "time", widget: "string"}
+                  - {label: "Activity", name: "activity", widget: "string"}
+                  - {label: "Icon", name: "icon", widget: "string", hint: "e.g., Sunrise, BookOpen, Utensils"}
+
+      - label: "Projects Page"
+        name: "projectspage"
+        file: "_data/content.json"
+        fields:
+          - {label: "SEO Title", name: "seo_title_projects", widget: "string", hint: "Title for the browser tab and Google search."}
+          - {label: "SEO Description", name: "seo_description_projects", widget: "string", hint: "Short description for Google search."}
+          - label: "Projects Page Content"
+            name: "projects"
+            widget: "object"
+            fields:
+              - {label: "Page Title", name: "title", widget: "string"}
+              - {label: "Page Subtitle", name: "subtitle", widget: "string"}
+              - label: "Projects List"
+                name: "projects"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Summary (for Homepage)", name: "summary", widget: "string"}
+                  - {label: "Full Description", name: "description", widget: "text"}
+                  
       - label: "Admissions Page"
-        name: "admissions_page"
+        name: "admissionspage"
         file: "_data/content.json"
         fields:
-          - {label: "SEO Title", name: "seo_title_admissions", widget: "string"}
-          - {label: "SEO Description", name: "seo_description_admissions", widget: "string"}
-          - {label: "Header Image", name: "admissions_header_image", widget: "image"}
-          - {label: "Intro Title", name: "admissions_intro_title", widget: "string"}
-          - {label: "Intro Text", name: "admissions_intro_text", widget: "string"}
-          - label: "FAQ"
-            name: "faq"
-            widget: "list"
-            summary: "{{fields.question}}"
+          - {label: "SEO Title", name: "seo_title_admissions", widget: "string", hint: "Title for the browser tab and Google search."}
+          - {label: "SEO Description", name: "seo_description_admissions", widget: "string", hint: "Short description for Google search."}
+          - label: "Admissions Page Content"
+            name: "admissions"
+            widget: "object"
             fields:
-              - {label: "Question", name: "question", widget: "string"}
-              - {label: "Answer", name: "answer", widget: "markdown"}
+              - {label: "Page Title", name: "title", widget: "string"}
+              - {label: "Page Subtitle", name: "subtitle", widget: "string"}
+              - {label: "Form Heading", name: "form_heading", widget: "string"}
+              - {label: "FAQ Heading", name: "faq_heading", widget: "string"}
+              - label: "FAQ Items"
+                name: "faq_items"
+                widget: "list"
+                summary: "{{fields.question}}"
+                fields:
+                  - {label: "Question", name: "question", widget: "string"}
+                  - {label: "Answer", name: "answer", widget: "text"}
+              - {label: "Label for Parent's Name", name: "label_parent_name", widget: "string"}
+              - {label: "Label for Email", name: "label_email", widget: "string"}
+              - {label: "Label for Phone", name: "label_phone", widget: "string"}
+              - {label: "Label for Child's Standard", name: "label_child_standard", widget: "string"}
+              - {label: "Child Standard Options", name: "child_standard_options", widget: "list"}
+              - {label: "Label for Child's Board", name: "label_child_board", widget: "string"}
+              - {label: "Child Board Options", name: "child_board_options", widget: "list"}
+
       - label: "Donate Page"
-        name: "donate_page"
+        name: "donatepage"
         file: "_data/content.json"
         fields:
-          - {label: "SEO Title", name: "seo_title_donate", widget: "string"}
-          - {label: "SEO Description", name: "seo_description_donate", widget: "string"}
-          - {label: "Header Image", name: "donate_header_image", widget: "image"}
-          - {label: "Intro Title", name: "donate_intro_title", widget: "string"}
-          - {label: "Intro Text", name: "donate_intro_text", widget: "markdown"}
-          - label: "Sponsor a Seva Options"
-            name: "sponsor_options"
-            widget: "list"
-            summary: "{{fields.title}}"
+          - {label: "SEO Title", name: "seo_title_donate", widget: "string", hint: "Title for the browser tab and Google search."}
+          - {label: "SEO Description", name: "seo_description_donate", widget: "string", hint: "Short description for Google search."}
+          - label: "Donate Page Content"
+            name: "donate"
+            widget: "object"
             fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "string"}
-              - {label: "Suggested Amount", name: "amount", widget: "string"}
-              - {label: "Icon", name: "icon", widget: "select", options: ["Utensils", "Book", "UserCheck", "HeartHandshake"]}
-      - label: "Gallery Page"
-        name: "gallery_page"
+              - {label: "Page Title", name: "title", widget: "string"}
+              - {label: "Page Subtitle", name: "subtitle", widget: "string"}
+              - {label: "Sponsor Seva Heading", name: "seva_heading", widget: "string"}
+              - label: "Sponsor Seva Options"
+                name: "seva_options"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Icon", name: "icon", widget: "string", hint: "e.g., Wheat, BookOpen, User"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "string"}
+                  - {label: "Suggested Amount", name: "amount", widget: "string"}
+              - {label: "Other Ways Heading", name: "other_ways_heading", widget: "string"}
+              - {label: "UPI Image", name: "upi_qr_image", widget: "image"}
+              - {label: "UPI Note", name: "upi_note", widget: "text"}
+              - {label: "Bank Info", name: "bank_donation_info", widget: "text"}
+              - {label: "In-Kind Note", name: "inkind_note", widget: "text"}
+
+  - name: "global"
+    label: "Global Settings"
+    files:
+      - label: "Site Info"
+        name: "site-info"
         file: "_data/content.json"
         fields:
-          - {label: "SEO Title", name: "seo_title_gallery", widget: "string"}
-          - {label: "SEO Description", name: "seo_description_gallery", widget: "string"}
-          - {label: "Page Title", name: "gallery_title", widget: "string"}
-          - {label: "Page Subtitle", name: "gallery_subtitle", widget: "string"}
-          - label: "Gallery Items"
-            name: "gallery_items"
-            widget: "list"
-            summary: "{{fields.caption}} ({{fields.media_type}})"
+          - label: "Global Info (Footer/Contact)"
+            name: "global"
+            widget: "object"
             fields:
-              - {label: "Media Type", name: "media_type", widget: "select", options: ["Image", "Video"]}
-              - {label: "Image File", name: "image", widget: "image", required: false}
-              - {label: "Video File (MP4)", name: "video", widget: "file", required: false}
-              - {label: "Caption", name: "caption", widget: "string", required: false}
+              - {label: "Main Phone", name: "contact_phone", widget: "string"}
+              - {label: "Main Address", name: "footer_address", widget: "string"}
+              - {label: "YouTube Link", name: "youtube_link", widget: "string"}
+              - {label: "Instagram Link", name: "instagram_link", widget: "string"}
+              - {label: "Facebook Link", name: "facebook_link", widget: "string"}
+              - {label: "Copyright Note", name: "copyright_note", widget: "string"}
+
+  - name: "gallery"
+    label: "Gallery Photos"
+    files:
+      - label: "Gallery"
+        name: "gallery"
+        file: "_data/content.json"
+        fields:
+          - label: "Gallery Items (Homepage)"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - label: "Gallery Items"
+                name: "gallery_items"
+                widget: "list"
+                summary: "{{fields.caption}} ({{fields.media_type}})"
+                fields:
+                  - {label: "Media Type", name: "media_type", widget: "select", options: ["Image", "Video"]}
+                  - {label: "Image / Video Cover", name: "image", widget: "image", hint: "This is the image shown in the grid. For videos, this is the cover image."}
+                  - {label: "Video File (MP4)", name: "video", widget: "file", required: false, hint: "Upload the video file if this is a video."}
+                  - {label: "Caption", name: "caption", widget: "string", required: false}
 
