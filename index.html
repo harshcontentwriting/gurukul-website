@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="seo_title_home">Bhaktivedanta Vidyabhavan Gurukula, Murbad | BVG Murbad</title>
-    <meta name="description" id="seo_desc_home" content="">
+    <meta id="seo_description_home" name="description" content="Official website for the Bhaktivedanta Vidyabhavan Gurukula (BVG Murbad), a traditional school balancing spiritual values with modern academics.">
     
     <link rel="icon" href="/images/logo.png" type="image/png">
 
@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         :root {
@@ -25,9 +26,20 @@
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
-        p, li { text-align: left; line-height: 1.7; }
-        .cta-button { transition: transform 0.2s ease-in-out; }
-        .cta-button:hover { transform: scale(1.05); }
+        .hero-bg { background-size: cover; background-position: center; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 4px solid var(--bg-color);
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -40,121 +52,171 @@
                     <img id="logo_image_header" src="/images/logo.png" alt="BVG Logo" class="h-12 w-12 rounded-full">
                     <a href="/" class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight">BVG Murbad</a>
                 </div>
+                <!-- UPDATED NAVIGATION (GALLERY REMOVED) -->
                 <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
                     <a href="/" class="text-teal-600 font-semibold">Home</a>
                     <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
                     <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
                     <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
                     <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
-                    <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+                    <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg transition-transform transform hover:scale-105">Donate</a>
                 </nav>
                 <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
             </div>
         </div>
+        <!-- UPDATED MOBILE MENU (GALLERY REMOVED) -->
         <div id="mobile-menu" class="hidden md:hidden">
             <nav class="flex flex-col items-center space-y-4 p-4">
-                <a href="/" class="text-teal-600 font-semibold">Home</a>
-                <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
-                <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
-                <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
-                <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
-                <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
+                 <a href="/" class="text-teal-600 font-semibold">Home</a>
+                 <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                 <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
+                 <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
+                 <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
+                 <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
             </nav>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main>
+        
         <!-- Hero Section -->
-        <section class="relative w-full h-[70vh] md:h-[90vh] bg-gray-800 text-white flex items-center justify-center text-center">
-             <img id="hero_bg_image" src="" class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Gurukul Background">
-             <div class="absolute inset-0 bg-black/50"></div>
-             <div class="relative z-10 p-6">
-                <h1 id="hero_headline" class="text-4xl md:text-6xl font-bold leading-tight mb-4"></h1>
-                <p id="hero_subheadline" class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto"></p>
-                <a href="/admissions.html" class="cta-button bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-2xl">Inquire About Admissions</a>
-             </div>
+        <section id="hero-section" class="h-[70vh] md:h-[90vh] hero-bg flex items-center justify-center text-center text-white relative">
+            <div class="absolute inset-0 bg-black/50 z-10"></div>
+            <div class="container mx-auto px-6 z-20 relative">
+                <h1 id="hero_headline" class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4" style="text-shadow: 2px 2px 10px rgba(0,0,0,0.7);"></h1>
+                <p id="hero_subheadline" class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.7);"></p>
+                <a href="/admissions.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-2xl transition-transform transform hover:scale-105">Inquire About Admissions</a>
+            </div>
+        </section>
+
+        <!-- Lineage Section (Homepage Summary) -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Sacred Lineage & Inspiration</h2>
+                    <p class="text-lg text-gray-600">Our Gurukula is established on the divine vision of our revered spiritual masters, balancing timeless wisdom with modern education.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                        <img id="prabhupada_image" src="" alt="HDG Śrīla Prabhupāda" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover">
+                        <h3 id="prabhupada_name" class="text-2xl font-semibold text-gray-800"></h3>
+                        <p id="prabhupada_title" class="text-teal-600 font-semibold mt-1"></p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                        <img id="maharaj_image" src="" alt="HH Bhakti Raghava Swami Maharaj" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover">
+                        <h3 id="maharaj_name" class="text-2xl font-semibold text-gray-800"></h3>
+                        <p id="maharaj_title" class="text-teal-600 font-semibold mt-1"></p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                        <img id="das_prabhu_image" src="" alt="HG Das Gadadhar Das Prabhu" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md border-4 border-white object-cover">
+                        <h3 id="das_prabhu_name" class="text-2xl font-semibold text-gray-800"></h3>
+                        <p id="das_prabhu_title" class="text-teal-600 font-semibold mt-1"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Life Section (Homepage Summary) -->
+        <section class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">A Day in the Life</h2>
+                    <p class="text-lg text-gray-600">Our daily schedule is designed to nurture the mind, body, and soul, providing a balanced routine of spiritual practice, academic study, and practical skills.</p>
+                </div>
+                
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="absolute left-0 top-0 h-full w-0.5 bg-teal-200" style="left: 10px;"></div>
+                    <div id="daily_schedule_wrapper" class="space-y-12">
+                        <!-- Schedule items will be loaded here by JavaScript -->
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="/academics.html" class="text-teal-600 hover:text-teal-700 font-semibold text-lg">See the Full Curriculum <i data-lucide="arrow-right" class="inline w-5 h-5"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Projects Section (Homepage Summary) -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Help Us Build the Future</h2>
+                    <p class="text-lg text-gray-600">We are growing, and with your help, we can build essential facilities to support our students and teachers. These are our most urgent needs.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Project Cards -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform">
+                        <img id="project_card_1_image" src="https://placehold.co/600x400/0D9488/FFFFFF?text=Gaushala" alt="Gaushala" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 id="project_card_1_title" class="text-2xl font-semibold text-gray-800 mb-2">New Gaushala</h3>
+                            <p id="project_card_1_text" class="text-gray-600 mb-4">A safe, rain-proof shelter for our beloved cows with fans, lights, and proper fodder storage.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform">
+                        <img id="project_card_2_image" src="https://placehold.co/600x400/0D9488/FFFFFF?text=Teachers+Room" alt="Teachers Room" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 id="project_card_2_title" class="text-2xl font-semibold text-gray-800 mb-2">Teachers' Quarters</h3>
+                            <p id="project_card_2_text" class="text-gray-600 mb-4">Simple, dignified living spaces for our dedicated teachers, empowering them to focus on their seva.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform">
+                        <img id="project_card_3_image" src="https://placehold.co/600x400/0D9488/FFFFFF?text=Yagyashala" alt="Yagyashala" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 id="project_card_3_title" class="text-2xl font-semibold text-gray-800 mb-2">Yagyashala</h3>
+                            <p id="project_card_3_text" class="text-gray-600 mb-4">A sacred space for teaching students the vital science of yagya, essential for their spiritual education.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform">
+                        <img id="project_card_4_image" src="https://placehold.co/600x400/0D9488/FFFFFF?text=Guest+Room" alt="Guest Room" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 id="project_card_4_title" class="text-2xl font-semibold text-gray-800 mb-2">Guest Rooms</h3>
+                            <p id="project_card_4_text" class="text-gray-600 mb-4">Simple, clean rooms to host visiting devotees, parents, and scholars who wish to serve the Gurukula.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="/projects.html" class="text-teal-600 hover:text-teal-700 font-semibold text-lg">See All 8 Upcoming Projects <i data-lucide="arrow-right" class="inline w-5 h-5"></i></a>
+                </div>
+            </div>
         </section>
         
-        <!-- Homepage Content Sections -->
-        <section class="py-20 md:py-28 space-y-20">
-            <!-- Philosophy Summary -->
-            <div class="container mx-auto px-6 text-center">
-                <h2 id="philosophy_title_home" class="text-3xl font-bold text-gray-900 mb-4"></h2>
-                <p id="philosophy_text_home" class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-12"></p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div><img src="https://bvgmurbad.org/images/prabhupada.jpeg" class="w-24 h-24 rounded-full mx-auto mb-2 shadow-lg object-cover" alt="Srila Prabhupada"><h3 class="font-semibold text-lg">HDG Śrīla Prabhupāda</h3><p class="text-gray-600">Our Inspiration</p></div>
-                    <div><img src="https://bvgmurbad.org/images/whatsapp-image-2025-06-15-at-12.30.38-pm.jpeg" class="w-24 h-24 rounded-full mx-auto mb-2 shadow-lg object-cover" alt="Guru Maharaj"><h3 class="font-semibold text-lg">HH Bhakti Raghava Swami</h3><p class="text-gray-600">Our Spiritual Guide</p></div>
-                    <div><img src="https://bvgmurbad.org/images/whatsapp-image-2025-06-15-at-12.30.40-pm.jpeg" class="w-24 h-24 rounded-full mx-auto mb-2 shadow-lg object-cover" alt="Das Gadadhar Das Prabhu"><h3 class="font-semibold text-lg">HG Das Gadadhar Das</h3><p class="text-gray-600">Our Shiksha Guru</p></div>
-                </div>
-                <a href="/about.html" class="font-bold text-teal-600 hover:text-teal-800 text-lg mt-12 inline-block">Learn More About Our Philosophy <i data-lucide="arrow-right" class="inline w-5 h-5"></i></a>
-            </div>
-
-            <!-- Academics & Daily Life Summary -->
+        <!-- Gallery Preview Section (Homepage Summary) -->
+        <section class="py-20 md:py-28 bg-gray-50">
             <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <img id="academics_image_home" src="" class="rounded-xl shadow-2xl w-full h-full object-cover" alt="Students studying">
-                    <div>
-                        <h2 id="academics_title_home" class="text-3xl font-bold text-gray-900 mb-4"></h2>
-                        <p id="academics_text_home" class="text-lg text-gray-700 leading-relaxed mb-6"></p>
-                        <h4 class="font-bold text-gray-800 mb-4 mt-8">A Glimpse of Our Day:</h4>
-                        <div class="space-y-2 text-gray-700">
-                            <p><i data-lucide="sunrise" class="inline w-5 h-5 mr-2 text-teal-600"></i>5:00 AM: Mangal Arati & Japa</p>
-                            <p><i data-lucide="pencil-ruler" class="inline w-5 h-5 mr-2 text-teal-600"></i>9:00 AM: Academic Studies</p>
-                            <p><i data-lucide="utensils" class="inline w-5 h-5 mr-2 text-teal-600"></i>12:30 PM: Prasadam</p>
-                        </div>
-                        <a href="/academics.html" class="font-bold text-teal-600 hover:text-teal-800 text-lg mt-8 inline-block">See the Full Curriculum <i data-lucide="arrow-right" class="inline w-5 h-5"></i></a>
-                    </div>
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Glimpses of Gurukul Life</h2>
+                    <p class="text-lg text-gray-600">A brief look into the vibrant spiritual, academic, and practical life of our students.</p>
                 </div>
-            </div>
-            
-            <!-- Gallery Preview -->
-            <div class="container mx-auto px-6 text-center">
-                <h2 id="gallery_title_home" class="text-3xl font-bold text-gray-900 mb-4"></h2>
-                <p id="gallery_text_home" class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-12"></p>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <img src="https://bvgmurbad.org/images/1000074542.jpg" class="rounded-lg shadow-lg aspect-square object-cover" alt="Gallery photo 1">
-                    <img src="https://bvgmurbad.org/images/1000093333.jpg" class="rounded-lg shadow-lg aspect-square object-cover" alt="Gallery photo 2">
-                    <img src="https://bvgmurbad.org/images/img-20241207-wa0025.jpg" class="rounded-lg shadow-lg aspect-square object-cover" alt="Gallery photo 3">
-                    <img src="https://bvgmurbad.org/images/img-20250317-wa0004.jpg" class="rounded-lg shadow-lg aspect-square object-cover" alt="Gallery photo 4">
-                </div>
-            </div>
-
-            <!-- Projects Summary -->
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="md:order-2">
-                         <img id="projects_image_home" src="" class="rounded-xl shadow-2xl w-full h-full object-cover" alt="Cow">
-                    </div>
-                    <div class="md:order-1">
-                        <h2 id="projects_title_home" class="text-3xl font-bold text-gray-900 mb-4"></h2>
-                        <p id="projects_text_home" class="text-lg text-gray-700 leading-relaxed mb-6"></p>
-                        <a href="/projects.html" class="font-bold text-teal-600 hover:text-teal-800 text-lg">See Our Upcoming Projects <i data-lucide="arrow-right" class="inline w-5 h-5"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Donate Call to Action Section -->
-            <div class="container mx-auto px-6">
-                <div class="bg-teal-700 text-white rounded-2xl shadow-2xl p-10 md:p-16 text-center">
-                    <h2 id="donate_title_home" class="text-3xl md:text-4xl font-bold mb-4"></h2>
-                    <p id="donate_text_home" class="text-lg text-teal-100 max-w-2xl mx-auto mb-8"></p>
-                    <a href="/donate.html" class="cta-button bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-xl inline-block">Donate Now</a>
+                <div id="gallery_preview_wrapper" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Gallery preview images will be loaded here -->
                 </div>
             </div>
         </section>
+
+        <!-- Join Our Mission (Homepage CTA) -->
+        <section class="py-20 md:py-28 bg-teal-700 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Join Our Mission</h2>
+                <p class="text-lg md:text-xl text-teal-100 max-w-3xl mx-auto mb-10">Your support, whether through donations or seva, is vital for the growth of the Gurukula and the flourishing of our students. Help us empower the next generation.</p>
+                <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-2xl transition-transform transform hover:scale-105">Support Our Seva</a>
+            </div>
+        </section>
+
     </main>
 
-    <!-- FOOTER SECTION ADDED -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-16">
             <div class="grid md:grid-cols-4 gap-10">
                 <div class="md:col-span-2">
                     <h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula</h3>
-                    <p class="text-gray-400 text-sm">ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401</p>
+                    <p id="footer_address" class="text-gray-400 text-sm"></p>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3>
                     <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition">Home</a></li>
                         <li><a href="/about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
                         <li><a href="/academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
                         <li><a href="/projects.html" class="text-gray-400 hover:text-white transition">Projects</a></li>
@@ -165,21 +227,23 @@
                 <div>
                     <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
                     <div class="flex space-x-4 mb-4">
-                        <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
-                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a id="youtube_link" href="#" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a id="instagram_link" href="#" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a id="facebook_link" href="#" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
                     </div>
-                    <p class="text-sm text-gray-300">Phone: <span id="contact_phone">+91 9920071703</span></p>
+                    <p class="text-sm text-gray-300">Phone: <span id="contact_phone"></span></p>
                 </div>
             </div>
             <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
-                <p>&copy; <span id="year"></span> Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved.</p>
+                <p>&copy; <span id="year"></span> <span id="copyright_note"></span></p>
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -187,43 +251,147 @@
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Fetch and populate content for the homepage
+            // Set current year
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Fetch and populate content
             fetch('/_data/content.json?v=' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('seo_title_home').textContent = data.seo_title_home || 'BVG Murbad';
-                    document.getElementById('seo_desc_home').setAttribute('content', data.seo_desc_home || '');
-                    
-                    document.getElementById('hero_headline').textContent = data.hero_headline;
-                    document.getElementById('hero_subheadline').textContent = data.hero_subheadline;
-                    document.getElementById('hero_bg_image').src = data.hero_bg_image;
-                    
-                    document.getElementById('philosophy_title_home').textContent = data.philosophy_title_home;
-                    document.getElementById('philosophy_text_home').textContent = data.philosophy_text_home;
-                    
-                    document.getElementById('academics_title_home').textContent = data.academics_title_home;
-                    document.getElementById('academics_text_home').textContent = data.academics_text_home;
-                    document.getElementById('academics_image_home').src = data.academics_image_home;
-                    
-                    document.getElementById('gallery_title_home').textContent = data.gallery_title_home;
-                    document.getElementById('gallery_text_home').textContent = data.gallery_text_home;
-
-                    document.getElementById('projects_title_home').textContent = data.projects_title_home;
-                    document.getElementById('projects_text_home').textContent = data.projects_text_home;
-                    document.getElementById('projects_image_home').src = data.projects_image_home;
-                    
-                    document.getElementById('donate_title_home').textContent = data.donate_title_home;
-                    document.getElementById('donate_text_home').textContent = data.donate_text_home;
-
-                    // Note: Footer content is hardcoded for consistency, but we could fetch parts if needed
+                    populateGlobalContent(data.global);
+                    populateHomepageContent(data.homepage, data.academics, data.projects, data.gallery);
                 })
-                .catch(err => console.error("Error loading homepage content:", err));
-            
-            // Set current year in footer
-            document.getElementById('year').textContent = new Date().getFullYear();
-
-            lucide.createIcons();
+                .catch(err => console.error("Error loading content:", err));
         });
+
+        // Helper function to set text content
+        const setContent = (id, value) => {
+            const el = document.getElementById(id);
+            if (el) el.innerHTML = value || '';
+        };
+
+        // Helper function to set image src and alt
+        const setImage = (id, src, alt = '') => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.src = src || '';
+                if (alt) el.alt = alt;
+            }
+        };
+        
+        // Helper function to set link href
+        const setLink = (id, href) => {
+            const el = document.getElementById(id);
+            if (el) el.href = href || '#';
+        };
+
+        // Populate content that is the same on every page
+        function populateGlobalContent(data) {
+            if (!data) return;
+            setLink('youtube_link', data.youtube_link);
+            setLink('instagram_link', data.instagram_link);
+            setLink('facebook_link', data.facebook_link);
+            setContent('contact_phone', data.contact_phone);
+            setContent('copyright_note', data.copyright_note);
+            setContent('footer_address', data.footer_address);
+        }
+
+        // Populate content specific to the homepage
+        function populateHomepageContent(data, academicsData, projectsData, galleryData) {
+            if (!data) return;
+            
+            // SEO
+            if(data.seo_title_home) document.title = data.seo_title_home;
+            const seoDesc = document.getElementById('seo_description_home');
+            if(seoDesc && data.seo_description_home) seoDesc.setAttribute('content', data.seo_description_home);
+
+            // Hero
+            const hero = document.getElementById('hero-section');
+            if(hero && data.hero_image) hero.style.backgroundImage = `url('${data.hero_image}')`;
+            setContent('hero_headline', data.hero_headline);
+            setContent('hero_subheadline', data.hero_subheadline);
+
+            // Lineage
+            if (data.lineage) {
+                setImage('prabhupada_image', data.lineage.prabhupada_image, data.lineage.prabhupada_name);
+                setContent('prabhupada_name', data.lineage.prabhupada_name);
+                setContent('prabhupada_title', data.lineage.prabhupada_title);
+                
+                setImage('maharaj_image', data.lineage.maharaj_image, data.lineage.maharaj_name);
+                setContent('maharaj_name', data.lineage.maharaj_name);
+                setContent('maharaj_title', data.lineage.maharaj_title);
+
+                setImage('das_prabhu_image', data.lineage.das_prabhu_image, data.lineage.das_prabhu_name);
+                setContent('das_prabhu_name', data.lineage.das_prabhu_name);
+                setContent('das_prabhu_title', data.lineage.das_prabhu_title);
+            }
+
+            // Daily Schedule (from academicsData)
+            if (academicsData && academicsData.daily_schedule) {
+                const scheduleWrapper = document.getElementById('daily_schedule_wrapper');
+                scheduleWrapper.innerHTML = ''; // Clear existing
+                // Show only 4 items for the homepage summary
+                academicsData.daily_schedule.slice(0, 4).forEach(item => {
+                    const el = document.createElement('div');
+                    el.className = 'relative pl-8 timeline-item';
+                    el.innerHTML = `
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="${item.icon.toLowerCase()}" class="w-6 h-6 text-teal-600"></i>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">${item.time}</h4>
+                                <p class="text-gray-600">${item.activity}</p>
+                            </div>
+                        </div>
+                    `;
+                    scheduleWrapper.appendChild(el);
+                });
+                lucide.createIcons();
+            }
+
+            // Projects Preview (from projectsData)
+            if (projectsData && projectsData.projects) {
+                const project1 = projectsData.projects[0];
+                if (project1) {
+                    setImage('project_card_1_image', project1.image, project1.title);
+                    setContent('project_card_1_title', project1.title);
+                    setContent('project_card_1_text', project1.summary);
+                }
+                const project2 = projectsData.projects[1];
+                if (project2) {
+                    setImage('project_card_2_image', project2.image, project2.title);
+                    setContent('project_card_2_title', project2.title);
+                    setContent('project_card_2_text', project2.summary);
+                }
+                const project3 = projectsData.projects[2];
+                if (project3) {
+                    setImage('project_card_3_image', project3.image, project3.title);
+                    setContent('project_card_3_title', project3.title);
+                    setContent('project_card_3_text', project3.summary);
+                }
+                const project4 = projectsData.projects[3];
+                if (project4) {
+                    setImage('project_card_4_image', project4.image, project4.title);
+                    setContent('project_card_4_title', project4.title);
+                    setContent('project_card_4_text', project4.summary);
+                }
+            }
+            
+            // Gallery Preview (from galleryData)
+            if (galleryData && galleryData.gallery_items) {
+                const galleryWrapper = document.getElementById('gallery_preview_wrapper');
+                galleryWrapper.innerHTML = '';
+                // Show only 4 items
+                galleryData.gallery_items.slice(0, 4).forEach(item => {
+                    const el = document.createElement('a');
+                    el.href = '/gallery.html'; // Link to the full gallery page
+                    el.className = 'aspect-square bg-gray-200 rounded-lg overflow-hidden shadow-md transform hover:scale-105 transition-transform';
+                    let img_src = (item.media_type === 'Video' && item.image) ? item.image : item.image;
+                    if (!img_src) img_src = 'https://placehold.co/400x400/0D9488/FFFFFF?text=Gurukul+Life';
+                    el.innerHTML = `<img src="${img_src}" alt="${item.caption || 'Gurukul Life'}" class="w-full h-full object-cover">`;
+                    galleryWrapper.appendChild(el);
+                });
+            }
+        }
     </script>
 </body>
 </html>
