@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="seo_title_donate">Donate | BVG Murbad</title>
-    <meta id="seo_description_donate" name="description" content="Support the seva at Bhaktivedanta Vidyabhavan Gurukula.">
+    <title>Donate & Support | BVG Murbad</title>
+    <meta name="description" content="Support the Bhaktivedanta Vidyabhavan Gurukula mission. Sponsor a student's meal, a cow, or contribute to our essential projects.">
     
     <link rel="icon" href="/images/logo.png" type="image/png">
 
@@ -13,29 +13,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         :root {
             --bg-color: #fdfaf6;
             --text-color: #374151;
-            --primary-color: #0D9488;
+            --primary-color: #0D9488; /* Teal */
             --primary-hover: #0F766E;
-            --accent-color: #F59E0B;
+            --accent-color: #F59E0B; /* Amber */
             --accent-hover: #D97706;
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
+        .seva-card { transition: transform 0.3s ease-in-out; }
+        .seva-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <img id="logo_image_header" src="/images/logo.png" alt="BVG Logo" class="h-12 w-12 rounded-full">
+                    <img src="/images/logo.png" alt="BVG Logo" class="h-12 w-12 rounded-full">
                     <a href="/" class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight">BVG Murbad</a>
                 </div>
                 <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
@@ -44,7 +44,7 @@
                     <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
                     <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
                     <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
-                    <a href="/donate.html" class="text-teal-600 font-semibold">Donate</a>
+                    <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
                 </nav>
                 <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
             </div>
@@ -56,63 +56,111 @@
                  <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
                  <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
                  <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
-                 <a href="/donate.html" class="text-teal-600 font-semibold">Donate</a>
+                 <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Page Header -->
-        <section class="relative bg-gray-700 py-24 text-white text-center">
-            <img id="donate_header_image" src="" alt="Students at Gurukul" class="absolute inset-0 w-full h-full object-cover opacity-30">
-            <div class="relative z-10 container mx-auto px-6">
-                <h1 id="donate_intro_title" class="text-4xl md:text-5xl font-bold"></h1>
-                <div id="donate_intro_text" class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mt-4"></div>
-            </div>
-        </section>
-        
-        <!-- Sponsor a Seva Section -->
-        <section class="py-20 md:py-28">
+        <section class="bg-gray-800 text-white text-center py-20">
             <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Sponsor a Seva</h2>
-                    <p class="mt-4 text-lg text-gray-600">Your contribution can make a direct and meaningful impact. Choose a seva that resonates with your heart and help us provide the best for our students.</p>
+                <h1 class="text-4xl md:text-5xl font-bold">Offer Your Seva, Support Our Mission</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-4">Your contribution is vital for nurturing the next generation of devotees and strengthening the Gurukula's foundation.</p>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Sponsor a Seva</h2>
+                <p class="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">Choose a direct seva that resonates with your heart and make an immediate impact on a student or a cow.</p>
+
+                <div id="seva-tiers" class="grid md:grid-cols-3 gap-8">
+                    <div class="seva-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-teal-600 flex flex-col items-center text-center">
+                        <i data-lucide="soup" class="w-12 h-12 text-teal-600 mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Daily Student Prasadam</h3>
+                        <p class="text-gray-600 flex-grow mb-4">Nourish the students! Your donation provides a single, nutritious, and sanctified meal for one Gurukula student.</p>
+                        <p class="text-3xl font-bold text-teal-700 mb-6">₹<span id="amount-meals"></span></p>
+                        <a href="#payment-methods" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full w-full transition">Sponsor a Meal</a>
+                    </div>
+
+                    <div class="seva-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-teal-600 flex flex-col items-center text-center">
+                        <i data-lucide="paw-print" class="w-12 h-12 text-teal-600 mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Daily Gau Seva</h3>
+                        <p class="text-gray-600 flex-grow mb-4">Support cow protection for one of our 6 beloved cows (5 cows & 1 Nandi) by providing them with high-quality fodder and care.</p>
+                        <p class="text-3xl font-bold text-teal-700 mb-6">₹<span id="amount-gau"></span></p>
+                        <a href="#payment-methods" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full w-full transition">Sponsor a Cow</a>
+                    </div>
+
+                    <div class="seva-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-teal-600 flex flex-col items-center text-center">
+                        <i data-lucide="book-open-text" class="w-12 h-12 text-teal-600 mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Academic Kit for Students</h3>
+                        <p class="text-gray-600 flex-grow mb-4">Contribute to the student's learning by providing an essential kit of spiritual and academic books and supplies for the year.</p>
+                        <p class="text-3xl font-bold text-teal-700 mb-6">₹<span id="amount-tools"></span></p>
+                        <a href="#payment-methods" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full w-full transition">Sponsor a Kit</a>
+                    </div>
                 </div>
 
-                <div id="sponsor_wrapper" class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Sponsor options will be loaded here by JavaScript -->
+                <div class="text-center mt-12">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Want to support a bigger project?</h4>
+                    <a href="/projects.html" class="inline-block text-teal-600 hover:text-teal-700 font-bold border-b-2 border-teal-600 pb-1">See Our Upcoming Projects &rarr;</a>
                 </div>
             </div>
         </section>
 
-        <!-- Other Ways to Give Section -->
-        <section class="bg-white py-20 md:py-28 border-t">
-             <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Other Ways to Contribute</h2>
-                    <p class="mt-4 text-lg text-gray-600">We are grateful for support in all forms. Below are other ways you can contribute to the Gurukula's mission.</p>
-                </div>
-                <div class="grid lg:grid-cols-2 gap-12 items-start mt-16">
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg text-center">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Direct UPI Donation</h3>
-                        <p class="text-gray-600 mb-4">You can scan the QR code below with any UPI app to contribute.</p>
-                        <div class="flex justify-center mb-4"><img id="upi_qr_image" loading="lazy" src="" alt="UPI QR Code" class="w-56 h-56 rounded-lg shadow-md border"></div>
-                        <p id="upi_note" class="text-sm text-gray-500"></p>
+        <section id="payment-methods" class="py-20 bg-gray-50 border-t">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Other Ways to Contribute</h2>
+
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="space-y-10">
+                        <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-500">
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center"><i data-lucide="scan" class="w-6 h-6 mr-3 text-amber-500"></i> Direct UPI Donation</h3>
+                            <p class="text-gray-600 mb-6">You can scan the QR code below with any UPI app to contribute.</p>
+                            
+                            <div class="flex flex-col items-center text-center">
+                                <img src="/images/upi-qr-code.png" alt="UPI QR Code" class="w-48 h-48 border border-gray-300 p-2 rounded-lg mb-3">
+                                <p class="text-sm font-medium text-gray-700">Recipient: Shishlata Shukla</p>
+                                <p class="text-xs text-red-500 mt-2 italic max-w-xs">
+                                    Please note: Our trust formation is currently in process. These donations are directed to the personal UPI of the Gurukula's principal.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-teal-600">
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center"><i data-lucide="hand" class="w-6 h-6 mr-3 text-teal-600"></i> Foodstuffs & Supplies (In-Kind)</h3>
+                            <p class="text-gray-600 mb-4">We gratefully accept donations of grains, vegetables, and other essential supplies for the students' prasadam.</p>
+                            <h4 class="font-semibold text-gray-800 mb-2">Volunteer Opportunities:</h4>
+                            <ul class="text-gray-700 space-y-1 ml-4 list-disc text-sm">
+                                <li>Teaching (Academics)</li>
+                                <li>Skill Development classes (pottery, carpentry, electrical, farming)</li>
+                                <li>Spoken Language (any Indian language)</li>
+                                <li>Sports training</li>
+                                <li>Music (vocals, instruments)</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Bank & In-Kind Donations</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start space-x-4"><div class="bg-indigo-100 p-3 rounded-full mt-1"><i data-lucide="landmark" class="w-6 h-6 text-indigo-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">For 80G Receipt (Bank Transfer)</h4><p id="bank_donation_info" class="text-gray-600 whitespace-pre-wrap"></p></div></div>
-                            <div class="flex items-start space-x-4"><div class="bg-amber-100 p-3 rounded-full mt-1"><i data-lucide="package-check" class="w-6 h-6 text-amber-600"></i></div><div><h4 class="font-semibold text-lg text-gray-700">Foodstuff & Supplies (In-Kind)</h4><p id="inkind_note" class="text-gray-600"></p></div></div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-teal-600 h-fit">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center"><i data-lucide="banknote" class="w-6 h-6 mr-3 text-teal-600"></i> Bank Transfer (80G Receipt)</h3>
+                        <p class="text-gray-600 mb-6">For donations eligible for an **80G Tax Receipt**, please use the bank details below. Kindly inform us after the transfer for the receipt.</p>
+                        
+                        <div class="space-y-3 bg-gray-50 p-4 rounded-lg border">
+                            <p><span class="font-bold block text-sm text-teal-700">Account Name:</span> Bhakti vedanta vidyabhavan Trust</p>
+                            <p><span class="font-bold block text-sm text-teal-700">Bank Name:</span> Indian Overseas Bank, Kamre, Ranchi</p>
+                            <p><span class="font-bold block text-sm text-teal-700">A/C No:</span> 379101000001800</p>
+                            <p><span class="font-bold block text-sm text-teal-700">IFSC Code:</span> IOBA0003791</p>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-gray-800 mb-2 flex items-center"><i data-lucide="send" class="w-5 h-5 mr-2 text-teal-600"></i> Deliver or Post Supplies:</h4>
+                            <p class="text-gray-700">Bhaktivedanta Vidyabhavan Gurukula,<br>Sakurli Village, Mhasa, Murbad, Maharashtra - 421401</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-16">
             <div class="grid md:grid-cols-4 gap-10">
@@ -127,17 +175,17 @@
                         <li><a href="/academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
                         <li><a href="/projects.html" class="text-gray-400 hover:text-white transition">Projects</a></li>
                         <li><a href="/admissions.html" class="text-gray-400 hover:text-white transition">Admissions</a></li>
-                        <li><a href="/donate.html" class="text-gray-400 hover:text-white transition">Donate</a></li>
+                        <li><a href="/donate.html" class="text-amber-400 font-semibold transition">Donate</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
                     <div class="flex space-x-4 mb-4">
-                        <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
-                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                         <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
                     </div>
-                    <p class="text-sm text-gray-300">Phone: <span id="contact_phone">+91 9920071703</span></p>
+                    <p class="text-sm text-gray-300">Phone: <span id="contact_phone">+91 9920071703 / +91 9284274077</span></p>
                 </div>
             </div>
             <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
@@ -147,63 +195,34 @@
     </footer>
 
     <script>
+        // --- START: EDITABLE AMOUNTS ---
+        // Change these values to update the donation amounts on the page.
+        const donationAmounts = {
+            meals: 200, // Daily Student Meal Cost
+            gau: 101,   // Daily Gau Seva Cost
+            tools: 300  // Academic Tools Kit Cost
+        };
+        // --- END: EDITABLE AMOUNTS ---
+
         document.addEventListener('DOMContentLoaded', function() {
+            // Function to set the amounts from the editable object
+            document.getElementById('amount-meals').textContent = donationAmounts.meals;
+            document.getElementById('amount-gau').textContent = donationAmounts.gau;
+            document.getElementById('amount-tools').textContent = donationAmounts.tools;
+
+            // Initialize Lucide Icons
             lucide.createIcons();
 
+            // Mobile menu toggle (Reused for consistency)
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
 
+            // Set current year in footer
             document.getElementById('year').textContent = new Date().getFullYear();
-
-            fetch('/_data/content.json?v=' + new Date().getTime())
-                .then(response => response.json())
-                .then(data => {
-                    const setContent = (id, value) => { const el = document.getElementById(id); if (el) el.innerHTML = value || ''; };
-                    const setImage = (id, src) => { const el = document.getElementById(id); if (el) el.src = src || ''; };
-                    
-                    if(data.seo_title_donate) document.title = data.seo_title_donate;
-                    const seoDesc = document.getElementById('seo_description_donate');
-                    if(seoDesc && data.seo_description_donate) seoDesc.setAttribute('content', data.seo_description_donate);
-
-                    setImage('donate_header_image', data.donate_header_image);
-                    setContent('donate_intro_title', data.donate_intro_title);
-                    setContent('donate_intro_text', marked.parse(data.donate_intro_text || ''));
-
-                    if(data.sponsor_options) {
-                        populateSponsorOptions(data.sponsor_options);
-                    }
-
-                    setImage('upi_qr_image', data.upi_qr_image);
-                    setContent('upi_note', data.upi_note);
-                    setContent('bank_donation_info', data.bank_donation_info);
-                    setContent('inkind_note', data.inkind_note);
-                });
         });
-
-        function populateSponsorOptions(options) {
-            const wrapper = document.getElementById('sponsor_wrapper');
-            if (!wrapper) return;
-            wrapper.innerHTML = '';
-            options.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-teal-600';
-                card.innerHTML = `
-                    <div class="flex justify-center mb-4">
-                        <div class="bg-teal-100 p-4 rounded-full">
-                            <i data-lucide="${item.icon.toLowerCase()}" class="w-8 h-8 text-teal-600"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800">${item.title}</h3>
-                    <p class="text-gray-600 mt-2">${item.description}</p>
-                    <p class="text-2xl font-bold text-teal-600 mt-4">${item.amount}</p>
-                `;
-                wrapper.appendChild(card);
-            });
-            lucide.createIcons();
-        }
     </script>
 </body>
 </html>
