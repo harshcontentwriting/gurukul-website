@@ -113,14 +113,16 @@
 
                 <div class="grid md:grid-cols-2 gap-10">
                     <div class="space-y-10">
-                        <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-500">
-                            <h3 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center"><i data-lucide="scan" class="w-6 h-6 mr-3 text-amber-500"></i> Direct UPI Donation</h3>
+                        <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-500 text-center md:text-left">
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center justify-center md:justify-start">
+                                <i data-lucide="scan" class="w-6 h-6 mr-3 text-amber-500"></i> Direct UPI Donation
+                            </h3>
                             <p class="text-gray-600 mb-6">You can scan the QR code below with any UPI app to contribute.</p>
                             
-                            <div class="flex flex-col items-center text-center">
-                                <img src="/images/upi-qr-code.png" alt="UPI QR Code" class="w-48 h-48 border border-gray-300 p-2 rounded-lg mb-3">
+                            <div class="flex flex-col items-center">
+                                <img src="/images/upi-qr-code.jpg" alt="UPI QR Code" class="w-64 h-64 border border-gray-300 p-2 rounded-lg mb-3 shadow-md bg-white">
                                 <p class="text-sm font-medium text-gray-700">Recipient: Shishlata Shukla</p>
-                                <p class="text-xs text-red-500 mt-2 italic max-w-xs">
+                                <p class="text-xs text-red-500 mt-2 italic max-w-xs text-center">
                                     Please note: Our trust formation is currently in process. These donations are directed to the personal UPI of the Gurukula's principal.
                                 </p>
                             </div>
@@ -164,11 +166,11 @@
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-16">
             <div class="grid md:grid-cols-4 gap-10">
-                <div class="md:col-span-2">
+                <div class="md:col-span-2 text-center md:text-left">
                     <h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula</h3>
                     <p class="text-gray-400 text-sm">ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401</p>
                 </div>
-                <div>
+                <div class="text-center md:text-left">
                     <h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="/about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
@@ -178,12 +180,12 @@
                         <li><a href="/donate.html" class="text-amber-400 font-semibold transition">Donate</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="text-center md:text-left">
                     <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
-                    <div class="flex space-x-4 mb-4">
+                    <div class="flex justify-center md:justify-start space-x-4 mb-4">
                          <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
-                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
                     </div>
                     <p class="text-sm text-gray-300">Phone: <span id="contact_phone">+91 9920071703 / +91 9284274077</span></p>
                 </div>
@@ -213,12 +215,14 @@
             // Initialize Lucide Icons
             lucide.createIcons();
 
-            // Mobile menu toggle (Reused for consistency)
+            // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
 
             // Set current year in footer
             document.getElementById('year').textContent = new Date().getFullYear();
