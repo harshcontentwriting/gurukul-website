@@ -13,7 +13,7 @@ collections:
         label: "About Us Page"
         name: "about"
         fields:
-          # Adding 'required: false' lets you publish even with empty boxes
+          # We added 'required: false' so you can publish one photo at a time!
           - {label: "Rasanath Das Photo", name: "rasanath_img", widget: "image", required: false}
           - {label: "Sarvabhuta Dasi Photo", name: "sarvabhuta_img", widget: "image", required: false}
           - {label: "Prasad Barakade Photo", name: "prasad_img", widget: "image", required: false}
