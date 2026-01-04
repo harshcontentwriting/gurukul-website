@@ -2,7 +2,6 @@ backend:
   name: git-gateway
   branch: main
 
-# This part tells the CMS where to save your photos
 media_folder: "images"
 public_folder: "/images"
 
@@ -14,21 +13,22 @@ collections:
         label: "About Us Page"
         name: "about"
         fields:
-          - {label: "Rasanath Das Photo", name: "rasanath_img", widget: "image"}
-          - {label: "Sarvabhuta Dasi Photo", name: "sarvabhuta_img", widget: "image"}
-          - {label: "Prasad Barakade Photo", name: "prasad_img", widget: "image"}
-          - {label: "Harsh Sharma Photo", name: "harsh_img", widget: "image"}
+          # Adding 'required: false' allows you to publish even if these are empty
+          - {label: "Rasanath Das Photo", name: "rasanath_img", widget: "image", required: false}
+          - {label: "Sarvabhuta Dasi Photo", name: "sarvabhuta_img", widget: "image", required: false}
+          - {label: "Prasad Barakade Photo", name: "prasad_img", widget: "image", required: false}
+          - {label: "Harsh Sharma Photo", name: "harsh_img", widget: "image", required: false}
 
       - file: "index.html"
         label: "Home Page"
         name: "home"
         fields:
-          - {label: "Srila Prabhupada Photo", name: "prabhupada_img", widget: "image"}
-          - {label: "Bhakti Raghava Swami Photo", name: "maharaj_img", widget: "image"}
-          - {label: "Gadadhar Das Photo", name: "gadadhar_img", widget: "image"}
+          - {label: "Srila Prabhupada Photo", name: "prabhupada_img", widget: "image", required: false}
+          - {label: "Bhakti Raghava Swami Photo", name: "maharaj_img", widget: "image", required: false}
+          - {label: "Gadadhar Das Photo", name: "gadadhar_img", widget: "image", required: false}
 
       - file: "donate.html"
         label: "Donate Page"
         name: "donate"
         fields:
-          - {label: "UPI QR Code", name: "qr_code_img", widget: "image"}
+          - {label: "UPI QR Code", name: "qr_code_img", widget: "image", required: false}
