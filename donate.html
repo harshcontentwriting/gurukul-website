@@ -1,6 +1,6 @@
 ---
 layout: default
-qr_code_image: /images/upi-qr-code.jpg
+qr_code_img: "/images/upi-qr-code.jpg"
 ---
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -8,63 +8,51 @@ qr_code_image: /images/upi-qr-code.jpg
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate & Support | BVG Murbad</title>
-    <link rel="icon" href="/images/logo.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fdfaf6; color: #374151; }
+        body { font-family: 'Inter', sans-serif; background-color: #fdfaf6; }
         h1, h2, h3 { font-family: 'Lora', serif; }
     </style>
 </head>
-<body class="antialiased">
-
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <img src="/images/logo.png" alt="Logo" class="h-12 w-12 rounded-full">
-                <a href="/" class="text-xl font-bold text-gray-800">BVG Murbad</a>
+<body>
+    <header class="bg-white shadow-md p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="/images/logo.png" class="h-10 w-10 rounded-full">
+                <span class="font-bold text-xl text-gray-800">BVG Murbad</span>
             </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="/" class="text-gray-600 font-medium">Home</a>
-                <a href="/about.html" class="text-gray-600 font-medium">About Us</a>
-                <a href="/donate.html" class="bg-amber-500 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
-            </nav>
+            <a href="/" class="text-teal-600 font-medium">Back to Home</a>
         </div>
     </header>
 
-    <main class="py-16">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl font-bold mb-12">Support Our Mission</h1>
-            
-            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-amber-500">
-                    <h2 class="text-2xl font-bold mb-6">Direct UPI Donation</h2>
-                    
-                    <div class="flex justify-center mb-6">
-                        <img src="{{ page.qr_code_image }}" alt="Scan to Donate" class="w-64 h-64 border p-2 rounded-lg shadow-sm">
-                    </div>
-                    
-                    <p class="font-bold text-lg">Recipient: Shishlata Shukla</p>
-                    <p class="text-red-500 text-sm italic mt-2">Trust formation in process.</p>
+    <main class="py-20 container mx-auto px-6">
+        <h1 class="text-4xl font-bold text-center mb-12">Support Our Gurukula</h1>
+        
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-amber-500 text-center">
+                <h2 class="text-2xl font-bold mb-6">Direct UPI</h2>
+                
+                <div class="flex justify-center mb-6">
+                    <img src="{{ page.qr_code_img }}" alt="UPI QR Code" class="w-64 h-64 border rounded-lg shadow-sm object-contain bg-white">
                 </div>
+                
+                <p class="font-bold">Recipient: Shishlata Shukla</p>
+                <p class="text-red-500 text-xs italic mt-2">Trust formation in process.</p>
+            </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-teal-500 text-left">
-                    <h2 class="text-2xl font-bold mb-6 text-center">Bank Transfer</h2>
-                    <div class="space-y-4">
-                        <p><strong>Account Name:</strong> Bhakti vedanta vidyabhavan Trust</p>
-                        <p><strong>Bank:</strong> Indian Overseas Bank</p>
-                        <p><strong>A/C:</strong> 379101000001800</p>
-                        <p><strong>IFSC:</strong> IOBA0003791</p>
-                    </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-teal-600">
+                <h2 class="text-2xl font-bold mb-6 text-center">Bank Transfer</h2>
+                <div class="space-y-4 text-gray-700">
+                    <p><strong>Name:</strong> Bhakti vedanta vidyabhavan Trust</p>
+                    <p><strong>Bank:</strong> Indian Overseas Bank</p>
+                    <p><strong>A/C:</strong> 379101000001800</p>
+                    <p><strong>IFSC:</strong> IOBA0003791</p>
                 </div>
             </div>
         </div>
     </main>
-
-    <footer class="bg-gray-900 text-white py-12 text-center text-sm">
-        <p>&copy; 2025 Bhaktivedanta Vidyabhavan Gurukula. All Rights Reserved.</p>
-    </footer>
 
     <script>lucide.createIcons();</script>
 </body>
