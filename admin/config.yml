@@ -13,19 +13,11 @@ collections:
         label: "About Us Page"
         name: "about"
         fields:
-          # Adding 'required: false' allows you to publish even if these are empty
+          # Adding 'required: false' lets you publish even with empty boxes
           - {label: "Rasanath Das Photo", name: "rasanath_img", widget: "image", required: false}
           - {label: "Sarvabhuta Dasi Photo", name: "sarvabhuta_img", widget: "image", required: false}
           - {label: "Prasad Barakade Photo", name: "prasad_img", widget: "image", required: false}
           - {label: "Harsh Sharma Photo", name: "harsh_img", widget: "image", required: false}
-
-      - file: "index.html"
-        label: "Home Page"
-        name: "home"
-        fields:
-          - {label: "Srila Prabhupada Photo", name: "prabhupada_img", widget: "image", required: false}
-          - {label: "Bhakti Raghava Swami Photo", name: "maharaj_img", widget: "image", required: false}
-          - {label: "Gadadhar Das Photo", name: "gadadhar_img", widget: "image", required: false}
 
       - file: "donate.html"
         label: "Donate Page"
