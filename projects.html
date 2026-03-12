@@ -3,234 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcoming Projects & Seva | BVG Murbad</title>
-    <meta name="description" content="Support the development of our Gurukul. See our upcoming projects including a new Gaushala, teacher's quarters, Yagyashala, and more.">
-    
-    <link rel="icon" href="/images/logo.png" type="image/png">
-
+    <title>Upcoming Projects | BVG Murbad</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
     <style>
-        :root {
-            --bg-color: #fdfaf6;
-            --text-color: #374151;
-            --primary-color: #0D9488; /* Teal */
-            --accent-color: #F59E0B; /* Amber */
-        }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
-        .project-card ul { list-style-type: none; padding-left: 0; }
-        .project-card li { display: flex; align-items: start; margin-bottom: 0.5rem; }
-        .project-card li i { margin-top: 5px; margin-right: 0.75rem; color: var(--primary-color); flex-shrink: 0; }
-        .project-card:hover { transform: translateY(-5px); transition: transform 0.3s ease-in-out; }
+        body { font-family: 'Inter', sans-serif; background-color: #fdfaf6; }
+        h1, h2, h3 { font-family: 'Lora', serif; }
+        .project-card:hover { transform: translateY(-5px); transition: 0.3s; }
     </style>
 </head>
 <body class="antialiased">
-
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <img src="/images/logo.png" alt="BVG Logo" class="h-12 w-12 rounded-full">
-                    <a href="/" class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight">BVG Murbad</a>
-                </div>
-                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="/" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
-                    <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
-                    <a href="/academics.html" class="text-gray-600 hover:text-teal-600 font-medium">Academics</a>
-                    <a href="/projects.html" class="text-teal-600 font-bold border-b-2 border-teal-600">Projects</a>
-                    <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
-                    <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
-                </nav>
-                <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="/images/logo.png" alt="BVG Logo" class="h-12 w-12 rounded-full">
+                <a href="/" class="text-xl font-bold text-gray-800">BVG Murbad</a>
             </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <nav class="flex flex-col items-center space-y-4 p-4">
-                 </nav>
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="text-gray-600 hover:text-teal-600">Home</a>
+                <a href="/about.html" class="text-gray-600 hover:text-teal-600">About Us</a>
+                <a href="/academics.html" class="text-gray-600 hover:text-teal-600">Academics</a>
+                <a href="/projects.html" class="text-teal-600 font-bold border-b-2 border-teal-600">Projects</a>
+                <a href="/admissions.html" class="text-gray-600 hover:text-teal-600">Admissions</a>
+                <a href="/donate.html" class="bg-amber-500 text-white font-bold py-2 px-5 rounded-full">Donate</a>
+            </nav>
         </div>
     </header>
 
     <main>
-        <section class="bg-teal-700 text-white text-center py-20" style="background-blend-mode: multiply; background-color: rgba(13, 148, 136, 0.8);">
+        <section class="bg-teal-700 text-white text-center py-20">
             <div class="container mx-auto px-6">
-                <p class="text-sm uppercase tracking-widest text-teal-200 font-semibold mb-2">Help Us Build the Future</p>
-                <h1 class="text-4xl md:text-5xl font-bold">Our Upcoming Projects</h1>
-                <p class="text-lg md:text-xl text-teal-100 max-w-3xl mx-auto mt-4">Your support helps us build a brighter future for our students. Explore our current needs and join us in our seva.</p>
+                <h1 id="projects-title" class="text-4xl font-bold">Our Upcoming Projects</h1>
+                <p id="projects-subtitle" class="text-lg mt-4 max-w-3xl mx-auto">Loading...</p>
             </div>
         </section>
 
-        <section class="py-20 md:py-28 bg-gray-50">
+        <section class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-500">
-                        <img src="/images/gaushala-cows.jpg" alt="Cows at the Gaushala" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">1. Gaushala Development</h3>
-                            <p class="text-gray-700 mb-4 flex-grow">A well-equipped shelter to provide our cows with a safe, comfortable, and all-weather home, essential for Gau Seva.</p>
-                            <h4 class="font-semibold text-gray-800 mb-2">Key Requirements:</h4>
-                            <ul>
-                                <li><i data-lucide="check-circle"></i>Exhaust and ceiling fans for proper ventilation.</li>
-                                <li><i data-lucide="check-circle"></i>Warm lighting and comfortable cow mats.</li>
-                                <li><i data-lucide="check-circle"></i>Dedicated water tank and fodder storage.</li>
-                            </ul>
-                            <a href="/donate.html" class="mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-center">Sponsor this Seva</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-500">
-                        <img src="/images/teachers-quarters.jpg" alt="Simple and clean teachers' room" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">2. Empowering Our Teachers</h3>
-                            <p class="text-gray-700 mb-4 flex-grow">Providing humble, dignified living spaces for our dedicated teachers, empowering them to focus fully on Shiksha, Sadhana, and Seva.</p>
-                            <h4 class="font-semibold text-gray-800 mb-2">A Humble Space for Seva:</h4>
-                            <ul>
-                                <li><i data-lucide="check-circle"></i>Attached toilet and bathroom.</li>
-                                <li><i data-lucide="check-circle"></i>Basic furniture (almira, bed, table, chair).</li>
-                                <li><i data-lucide="check-circle"></i>Essential amenities (fan, light, Wi-Fi connection).</li>
-                            </ul>
-                            <a href="/donate.html" class="mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-center">Support Our Teachers</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-500">
-                        <img src="/images/yagya-ceremony.jpg" alt="Yagya ceremony" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">3. Yagyashala Construction</h3>
-                            <p class="text-gray-700 mb-4 flex-grow">A sacred space essential for our students' *sadhana*, allowing them to learn and perform Vedic yagya ceremonies.</p>
-                            <h4 class="font-semibold text-gray-800 mb-2">Needs for Sacred Space:</h4>
-                            <ul>
-                                <li><i data-lucide="check-circle"></i>Construction of a dedicated Yagyashala structure.</li>
-                                <li><i data-lucide="check-circle"></i>Procurement of yagya equipment and *patras*.</li>
-                                <li><i data-lucide="check-circle"></i>Stocking of yagya *paraphernalia* for future ceremonies.</li>
-                            </ul>
-                            <a href="/donate.html" class="mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-center">Contribute to Sadhana</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-500">
-                        <img src="/images/guest-room.jpg" alt="Simple and clean guest room" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">4. Guest Rooms</h3>
-                            <p class="text-gray-700 mb-4 flex-grow">Providing simple, clean, and humble accommodation for visiting devotees, parents, and scholars.</p>
-                            <h4 class="font-semibold text-gray-800 mb-2">Room Facilities:</h4>
-                            <ul>
-                                <li><i data-lucide="check-circle"></i>Simple rooms with attached toilet and bathroom.</li>
-                                <li><i data-lucide="check-circle"></i>Basic furniture (table and chair).</li>
-                                <li><i data-lucide="check-circle"></i>Simple bed for Matajis, *chatai* (mats) for Prabhujis.</li>
-                            </ul>
-                           <a href="/donate.html" class="mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-center">Help Welcome Guests</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-500">
-                        <img src="/images/temple-hall-render.jpg" alt="Render of a simple temple hall" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">5. Temple Hall</h3>
-                            <p class="text-gray-700 mb-4 flex-grow">Constructing a dedicated and inspiring space for our beloved Deities, daily worship, and large devotional gatherings.</p>
-                            <h4 class="font-semibold text-gray-800 mb-2">Key Requirements:</h4>
-                            <ul>
-                                <li><i data-lucide="check-circle"></i>Construction of a dedicated space for the Deities.</li>
-                                <li><i data-lucide="check-circle"></i>Required *Arati* paraphernalia (bells, lamps, etc.).</li>
-                                <li><i data-lucide="check-circle"></i>High-quality, easy-to-clean marble or tiled flooring.</li>
-                            </ul>
-                            <a href="/donate.html" class="mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-center">Sponsor the Temple</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-500">
-                        <img src="/images/vegetable-farm.jpg" alt="Organic vegetable garden" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">6. Setting up Vegetable Farms</h3>
-                            <p class="text-gray-700 mb-4 flex-grow">Developing our surrounding land to grow our own organic vegetables and grains, promoting a self-sufficient community (Go-rakshya & Krishi).</p>
-                            <h4 class="font-semibold text-gray-800 mb-2">Needs for Organic Farming:</h4>
-                            <ul>
-                                <li><i data-lucide="check-circle"></i>Organic seeds and necessary gardening tools.</li>
-                                <li><i data-lucide="check-circle"></i>Installation of an efficient water irrigation system.</li>
-                                <li><i data-lucide="check-circle"></i>Secure fencing to protect crops from wild animals.</li>
-                            </ul>
-                            <a href="/donate.html" class="mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-center">Support Self-Sufficiency</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-500">
-                        <img src="/images/library-shelves.jpg" alt="Empty library shelves" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">7. Library for Students</h3>
-                            <p class="text-gray-700 mb-4 flex-grow">Creating a dedicated and peaceful space for students to study, research, and gain access to essential spiritual and academic texts.</p>
-                            <h4 class="font-semibold text-gray-800 mb-2">Key Requirements:</h4>
-                            <ul>
-                                <li><i data-lucide="check-circle"></i>New shelving units, tables, and seating.</li>
-                                <li><i data-lucide="check-circle"></i>Procurement of diverse book collection (Vedic/Academic).</li>
-                                <li><i data-lucide="check-circle"></i>Basic digital tools for student research.</li>
-                            </ul>
-                            <a href="/donate.html" class="mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-center">Sponsor a Book</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-500">
-                        <img src="/images/varnashrama-community.jpg" alt="Render of a simple rural community" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">8. Varnashrama Community</h3>
-                            <p class="text-gray-700 mb-4 flex-grow">The long-term vision of developing a sustainable, spiritually centered community based on Vedic principles (Go, Krishi, and Grāma).</p>
-                            <h4 class="font-semibold text-gray-800 mb-2">Development Needs:</h4>
-                            <ul>
-                                <li><i data-lucide="check-circle"></i>Land planning and preparation/zoning.</li>
-                                <li><i data-lucide="check-circle"></i>Construction of simple, eco-friendly housing models.</li>
-                                <li><i data-lucide="check-circle"></i>Community borewell and water storage solution.</li>
-                            </ul>
-                            <a href="/donate.html" class="mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-center">Support the Vision</a>
-                        </div>
-                    </div>
-
-                </div>
+                <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-white">
-        <div class="container mx-auto px-6 py-16">
-            <div class="grid md:grid-cols-4 gap-10">
-                <div class="md:col-span-2">
-                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula</h3>
-                    <p class="text-gray-400 text-sm">ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="/academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
-                        <li><a href="/projects.html" class="text-amber-400 font-semibold transition">Projects</a></li>
-                        <li><a href="/admissions.html" class="text-gray-400 hover:text-white transition">Admissions</a></li>
-                        <li><a href="/donate.html" class="text-gray-400 hover:text-white transition">Donate</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
-                    <div class="flex space-x-4 mb-4">
-                        <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
-                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
-                    </div>
-                    <p class="text-sm text-gray-300">Phone: +91 9920071703 / +91 9284274077</p>
-                </div>
-            </div>
-            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
-                <p>&copy; <span id="year"></span> Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved.</p>
-            </div>
-        </div>
+    <footer class="bg-gray-900 text-white py-10 text-center text-sm">
+        <p>&copy; 2026 Bhaktivedanta Vidyabhavan Gurukula. All Rights Reserved.</p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            lucide.createIcons();
-            document.getElementById('year').textContent = new Date().getFullYear();
+        fetch('/_data/content.json').then(res => res.json()).then(data => {
+            document.getElementById('projects-title').innerText = data.projects.title;
+            document.getElementById('projects-subtitle').innerText = data.projects.subtitle;
+            const container = document.getElementById('projects-container');
+            container.innerHTML = '';
+            data.projects.projects.forEach(project => {
+                container.innerHTML += `
+                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-500">
+                        <img src="${project.image}" alt="${project.title}" class="w-full h-52 object-cover">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2">${project.title}</h3>
+                            <p class="text-gray-600 text-sm mb-6 flex-grow">${project.description}</p>
+                            <a href="/donate.html" class="bg-teal-600 text-white font-bold py-3 px-6 rounded-full text-center">Support Seva</a>
+                        </div>
+                    </div>
+                `;
+            });
         });
+        lucide.createIcons();
     </script>
 </body>
 </html>
