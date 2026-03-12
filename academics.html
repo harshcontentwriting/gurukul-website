@@ -3,274 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academics & Curriculum | BVG Murbad</title>
-    <meta name="description" content="Discover the balanced curriculum at BVG Murbad, integrating Vedic wisdom, modern academics (MSBOS/NIOS), and practical Varnashrama skills.">
-    
-    <link rel="icon" href="/images/logo.png" type="image/png">
-
+    <title>Academics | BVG Murbad</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
     <style>
-        :root {
-            --bg-color: #fdfaf6;
-            --text-color: #374151;
-            --primary-color: #0D9488; /* Teal */
-            --accent-color: #F59E0B; /* Amber */
-        }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
+        :root { --bg-color: #fdfaf6; --primary-color: #0D9488; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: #374151; }
+        h1, h2, h3, h4 { font-family: 'Lora', serif; }
         .timeline-item { position: relative; padding-left: 2rem; padding-bottom: 2.5rem; }
         .timeline-dot { position: absolute; left: 0; top: 0; height: 0.75rem; width: 0.75rem; background-color: var(--primary-color); border-radius: 9999px; }
         .timeline-line { position: absolute; left: 0.35rem; top: 0; bottom: 0; width: 2px; background-color: #E5E7EB; }
     </style>
 </head>
 <body class="antialiased">
-
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <img src="/images/logo.png" alt="BVG Logo" class="h-12 w-12 rounded-full">
-                    <a href="/" class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight">BVG Murbad</a>
-                </div>
-                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="/" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
-                    <a href="/about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
-                    <a href="/academics.html" class="text-teal-600 font-bold border-b-2 border-teal-600">Academics</a>
-                    <a href="/projects.html" class="text-gray-600 hover:text-teal-600 font-medium">Projects</a>
-                    <a href="/admissions.html" class="text-gray-600 hover:text-teal-600 font-medium">Admissions</a>
-                    <a href="/donate.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow-lg">Donate</a>
-                </nav>
-                <button id="mobile-menu-button" class="md:hidden text-gray-700"><i data-lucide="menu" class="w-7 h-7"></i></button>
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="/images/logo.png" alt="BVG Logo" class="h-12 w-12 rounded-full">
+                <a href="/" class="text-xl font-bold">BVG Murbad</a>
             </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <nav class="flex flex-col items-center space-y-4 p-4">
-                 </nav>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="/" class="hover:text-teal-600">Home</a>
+                <a href="/about.html" class="hover:text-teal-600">About Us</a>
+                <a href="/academics.html" class="text-teal-600 font-bold border-b-2 border-teal-600">Academics</a>
+                <a href="/projects.html" class="hover:text-teal-600">Projects</a>
+                <a href="/admissions.html" class="hover:text-teal-600">Admissions</a>
+                <a href="/donate.html" class="bg-amber-500 text-white py-2 px-5 rounded-full">Donate</a>
+            </nav>
         </div>
     </header>
 
     <main>
-        <section class="bg-gray-800 text-white text-center py-20" style="background-image: url('/images/students-studying-bg.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: rgba(4, 57, 51, 0.7);">
-            <div class="container mx-auto px-6">
-                <p class="text-sm uppercase tracking-widest text-teal-300 font-semibold mb-2">Students at Gurukula!</p>
-                <h1 class="text-4xl md:text-5xl font-bold">Our Philosophy & Curriculum</h1>
-                <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mt-4">Discover our unique approach to education, designed to cultivate character, competence, and a lifelong commitment to spiritual values.</p>
-            </div>
+        <section class="bg-teal-900 text-white text-center py-20">
+            <h1 id="academics-title" class="text-4xl md:text-5xl font-bold">Curriculum & Daily Life</h1>
+            <p id="academics-subtitle" class="text-lg mt-4 max-w-3xl mx-auto">Loading...</p>
         </section>
 
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Guiding Vision</h2>
-                
-                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-md border-t-4 border-amber-500 text-center">
-                        <i data-lucide="heart" class="w-8 h-8 text-amber-500 mb-3 mx-auto"></i>
-                        <p class="text-gray-700 font-medium">Education should be available to all, devoid of any forceful cost, developing selfless and **compassionate character**.</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-md border-t-4 border-amber-500 text-center">
-                        <i data-lucide="users" class="w-8 h-8 text-amber-500 mb-3 mx-auto"></i>
-                        <p class="text-gray-700 font-medium">Education must impart a sense of **duty** towards elders and family, benefiting human society at large.</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-md border-t-4 border-amber-500 text-center">
-                        <i data-lucide="eye" class="w-8 h-8 text-amber-500 mb-3 mx-auto"></i>
-                        <p class="text-gray-700 font-medium">Education should foster a character who sees every living being with **equal vision**.</p>
-                    </div>
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">A Day in the Life</h2>
+                <div class="max-w-2xl mx-auto relative">
+                    <div class="timeline-line"></div>
+                    <div id="schedule-container"></div>
                 </div>
             </div>
         </section>
-        
-        <section class="py-20 md:py-28 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">A Balanced Curriculum</h2>
-                <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Our curriculum is carefully designed to provide a holistic education, integrating timeless spiritual wisdom with modern academic knowledge.</p>
-
-                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-teal-600">
-                        <h3 class="text-2xl font-semibold text-teal-700 mb-3 flex items-center"><i data-lucide="hand-heart" class="w-6 h-6 mr-3"></i> Spiritual Studies (Vedic Wisdom)</h3>
-                        <p class="text-gray-600 mb-4">Immersion in the teachings of the **Gaudiya Vaishnava Sampradaya** forms the core of character development.</p>
-                        <ul class="space-y-1 text-gray-700 ml-4 list-disc text-sm">
-                            <li>**Sanskrit** (Grammar & Recitation)</li>
-                            <li>**Bhagavad Gītā** and **Śrīmad Bhāgavatam** Philosophy</li>
-                            <li>Other Gaudiya Vaishnava Scriptures & History</li>
-                            <li>Vaiṣṇava Etiquette (Sadachar)</li>
-                            <li>**Kirtan, Bhajan, and Instrument** Training</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-teal-600">
-                        <h3 class="text-2xl font-semibold text-teal-700 mb-3 flex items-center"><i data-lucide="graduation-cap" class="w-6 h-6 mr-3"></i> Academic Studies (Modern Knowledge)</h3>
-                        <p class="text-gray-600 mb-4">We follow the recognized **MSBOS/NIOS** curriculum to ensure students are prepared for the world.</p>
-                        <ul class="space-y-1 text-gray-700 ml-4 list-disc text-sm">
-                            <li>**Mathematics** & Logical Reasoning</li>
-                            <li>**Science** (Physics, Chemistry, Biology)</li>
-                            <li>**Social Studies** (History, Geography)</li>
-                            <li>**Languages** (English, Hindi/Regional Language)</li>
-                            <li>Basic **Computer Literacy**</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-teal-600">
-                        <h3 class="text-2xl font-semibold text-teal-700 mb-3 flex items-center"><i data-lucide="wrench" class="w-6 h-6 mr-3"></i> Practical Skills (Varnashrama Seva)</h3>
-                        <p class="text-gray-600 mb-4">Training in hands-on skills to foster self-reliance, responsibility, and service to the community.</p>
-                        <ul class="space-y-1 text-gray-700 ml-4 list-disc text-sm">
-                            <li>**Cow Care** (Gau Seva) & Dairy Management</li>
-                            <li>**Organic Farming** & Garden Maintenance</li>
-                            <li>**Cooking** (Prasadam preparation)</li>
-                            <li>Basic Maintenance (Plumbing, Electrical)</li>
-                            <li>**Singing** and Music Instruction</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">A Day in the Life at the Gurukula</h2>
-                <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Our daily schedule is thoughtfully structured to create a disciplined, nurturing, and spiritually enlivening atmosphere for our students.</p>
-
-                <div class="max-w-2xl mx-auto">
-                    <div class="relative">
-                        <div class="timeline-line"></div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">4:30 AM</h4>
-                            <p class="text-gray-700">Wake Up & Morning Duties</p>
-                            <p class="text-sm text-gray-500 italic">Discipline & Preparation</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">5:00 AM</h4>
-                            <p class="text-gray-700">**Mangal Arati & Japa Meditation**</p>
-                            <p class="text-sm text-gray-500 italic">Core Spiritual Practice (Sadhana)</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">7:30 AM</h4>
-                            <p class="text-gray-700">Śrīmad Bhāgavatam Class</p>
-                            <p class="text-sm text-gray-500 italic">Vedic Philosophy (Shiksha)</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">8:30 AM</h4>
-                            <p class="text-gray-700">Breakfast Prasadam & Morning Seva</p>
-                            <p class="text-sm text-gray-500 italic">Health & Service</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">9:00 AM</h4>
-                            <p class="text-gray-700">**Academic Studies (MSBOS/NIOS)**</p>
-                            <p class="text-sm text-gray-500 italic">Modern Education</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">1:00 PM</h4>
-                            <p class="text-gray-700">Lunch Prasadam</p>
-                            <p class="text-sm text-gray-500 italic">Midday Meal</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">2:00 PM</h4>
-                            <p class="text-gray-700">Rest/Short Free Time</p>
-                            <p class="text-sm text-gray-500 italic">Recuperation</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">3:00 PM</h4>
-                            <p class="text-gray-700">**Practical Skills Training**</p>
-                            <p class="text-sm text-gray-500 italic">Varnashrama (Cow Care, Farming, Cooking)</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">4:30 PM</h4>
-                            <p class="text-gray-700">Sports & Games / Physical Activity</p>
-                            <p class="text-sm text-gray-500 italic">Health & Teamwork</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">6:00 PM</h4>
-                            <p class="text-gray-700">Gaura Arati (Evening Worship)</p>
-                            <p class="text-sm text-gray-500 italic">Sadhana</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">7:30 PM</h4>
-                            <p class="text-gray-700">Evening Prasadam (Dinner)</p>
-                            <p class="text-sm text-gray-500 italic">Evening Meal</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">8:00 PM</h4>
-                            <p class="text-gray-700">Evening Study / Review Time</p>
-                            <p class="text-sm text-gray-500 italic">Academic Focus</p>
-                        </div>
-
-                        <div class="timeline-item pb-0">
-                            <div class="timeline-dot"></div>
-                            <h4 class="font-bold text-teal-700">9:30 PM</h4>
-                            <p class="text-gray-700">Lights Out / Rest</p>
-                            <p class="text-sm text-gray-500 italic">Discipline & Sleep</p>
-                        </div>
-
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-        
     </main>
 
-    <footer class="bg-gray-900 text-white">
-        <div class="container mx-auto px-6 py-16">
-            <div class="grid md:grid-cols-4 gap-10">
-                <div class="md:col-span-2">
-                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Bhaktivedanta Vidyabhavan Gurukula</h3>
-                    <p class="text-gray-400 text-sm">ADD: Bhaktivedanta Vidyabhavan Gurukul, Sakurli Village, Mhasa, Murbad, Maharashtra - 421401</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Navigate</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="/academics.html" class="text-amber-400 font-semibold transition">Academics</a></li>
-                        <li><a href="/projects.html" class="text-gray-400 hover:text-white transition">Projects</a></li>
-                        <li><a href="/admissions.html" class="text-gray-400 hover:text-white transition">Admissions</a></li>
-                        <li><a href="/donate.html" class="text-gray-400 hover:text-white transition">Donate</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-amber-400 mb-4">Connect With Us</h3>
-                    <div class="flex space-x-4 mb-4">
-                         <a href="https://youtube.com/@bhaktivedantavidyabhavan-i9q?si=HhehchIIlrC2bcGx" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
-                        <a href="https://www.instagram.com/bvgsakurli?igsh=MXF5ZnptbHoxdzA2MQ==" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                        <a href="https://www.facebook.com/share/1Ys7H3f4t6/" target="_blank" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
-                    </div>
-                    <p class="text-sm text-gray-300">Phone: +91 9920071703 / +91 9284274077</p>
-                </div>
-            </div>
-            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
-                <p>&copy; 2025 Bhaktivedanta Vidyabhavan Gurukula, Murbad. All Rights Reserved.</p>
-            </div>
-        </div>
+    <footer class="bg-gray-900 text-white py-10 text-center text-sm">
+        <p>&copy; 2026 Bhaktivedanta Vidyabhavan Gurukula. All Rights Reserved.</p>
     </footer>
 
     <script>
+        fetch('/_data/content.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('academics-title').innerText = data.academics.title;
+                document.getElementById('academics-subtitle').innerText = data.academics.subtitle;
+
+                const container = document.getElementById('schedule-container');
+                container.innerHTML = '';
+                data.academics.daily_schedule.forEach(item => {
+                    container.innerHTML += `
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-teal-700">${item.time}</h4>
+                            <p class="text-gray-700 font-semibold">${item.activity}</p>
+                        </div>
+                    `;
+                });
+            });
         lucide.createIcons();
     </script>
 </body>
