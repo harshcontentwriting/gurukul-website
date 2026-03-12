@@ -6,20 +6,72 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "pages"
-    label: "Website Pages"
+  - name: "content"
+    label: "Global Content Manager"
+    delete: false
+    editor:
+      preview: false
     files:
-      - file: "about.html"
-        label: "About Us Page"
-        name: "about"
+      - name: "site_content"
+        label: "Edit All Website Text & Images"
+        file: "_data/content.json"
         fields:
-          - {label: "Rasanath Das Photo", name: "rasanath_img", widget: "image", required: false}
-          - {label: "Sarvabhuta Dasi Photo", name: "sarvabhuta_img", widget: "image", required: false}
-          - {label: "Prasad Barakade Photo", name: "prasad_img", widget: "image", required: false}
-          - {label: "Harsh Sharma Photo", name: "harsh_img", widget: "image", required: false}
+          - label: "Global Settings"
+            name: "global"
+            widget: "object"
+            fields:
+              - {label: "Contact Phone", name: "contact_phone", widget: "string"}
+              - {label: "Footer Address", name: "footer_address", widget: "string"}
+              - {label: "YouTube Link", name: "youtube_link", widget: "string"}
+              - {label: "Instagram Link", name: "instagram_link", widget: "string"}
+              - {label: "Facebook Link", name: "facebook_link", widget: "string"}
 
-      - file: "donate.html"
-        label: "Donate Page"
-        name: "donate"
-        fields:
-          - {label: "UPI QR Code", name: "qr_code_img", widget: "image", required: false}
+          - label: "Homepage Hero"
+            name: "homepage"
+            widget: "object"
+            fields:
+              - {label: "Hero Image", name: "hero_image", widget: "image"}
+              - {label: "Hero Headline", name: "hero_headline", widget: "string"}
+              - {label: "Hero Sub-headline", name: "hero_subheadline", widget: "text"}
+
+          - label: "Our Lineage"
+            name: "lineage"
+            widget: "object"
+            fields:
+              - {label: "Prabhupada Image", name: "prabhupada_image", widget: "image"}
+              - {label: "Prabhupada Name", name: "prabhupada_name", widget: "string"}
+              - {label: "Maharaj Image", name: "maharaj_image", widget: "image"}
+              - {label: "Maharaj Name", name: "maharaj_name", widget: "string"}
+
+          - label: "Upcoming Projects"
+            name: "projects"
+            widget: "object"
+            fields:
+              - label: "Project List"
+                name: "projects"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Summary", name: "summary", widget: "string"}
+                  - {label: "Full Description", name: "description", widget: "text"}
+                  - {label: "Project Image", name: "image", widget: "image"}
+
+          - label: "Team Members"
+            name: "about"
+            widget: "object"
+            fields:
+              - label: "The Team"
+                name: "team_members"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Photo", name: "photo", widget: "image"}
+                  - {label: "Description/Bio", name: "description", widget: "text"}
+
+          - label: "Donation Info"
+            name: "donate"
+            widget: "object"
+            fields:
+              - {label: "UPI QR Code", name: "upi_qr_image", widget: "image"}
+              - {label: "Bank Details", name: "bank_donation_info", widget: "text"}
+              - {label: "Important Note/Disclaimer", name: "upi_note", widget: "text"}
