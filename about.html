@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us & Our Mission | BVG Murbad</title>
+    <title>About Us | BVG Murbad</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:wght@600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -14,16 +14,15 @@
     </style>
 </head>
 <body>
-
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <img src="/images/logo.png" alt="Logo" class="h-12 w-12 rounded-full">
-                <span class="text-xl font-bold">BVG Murbad</span>
+                <span class="text-xl font-bold text-gray-800">BVG Murbad</span>
             </div>
             <nav class="hidden md:flex space-x-6">
                 <a href="/" class="hover:text-teal-600">Home</a>
-                <a href="/about.html" class="text-teal-600 font-bold">About Us</a>
+                <a href="/about.html" class="text-teal-600 font-bold border-b-2 border-teal-600">About Us</a>
                 <a href="/academics.html" class="hover:text-teal-600">Academics</a>
                 <a href="/projects.html" class="hover:text-teal-600">Projects</a>
                 <a href="/admissions.html" class="hover:text-teal-600">Admissions</a>
@@ -34,48 +33,45 @@
 
     <main>
         <section class="bg-teal-900 text-white py-20 text-center">
-            <h1 class="text-4xl font-bold">About Our Gurukula</h1>
-            <p class="mt-4 text-lg">Nurturing souls in the sacred Vedic tradition.</p>
+            <h1 id="about-title" class="text-4xl font-bold">About Our Gurukula</h1>
+            <p id="about-subtitle" class="mt-4 text-lg">Loading mission statement...</p>
         </section>
 
         <section class="py-20 bg-gray-50">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold mb-12">Our Dedicated Team</h2>
-                <div class="grid md:grid-cols-4 gap-8">
-                    
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <img src="/images/rasanath-das.jpg" alt="Rasanath Das" class="team-photo mx-auto mb-4">
-                        <h3 class="text-xl font-bold">HG Rasanath Das</h3>
-                        <p class="text-amber-600 font-semibold">Administrator / Principal</p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <img src="/images/sarvabhuta-dasi.jpg" alt="Sarvabhuta Devi Dasi" class="team-photo mx-auto mb-4">
-                        <h3 class="text-xl font-bold">HG Sarvabhuta Devi Dasi</h3>
-                        <p class="text-teal-600 font-semibold">Head Educator / Shiksha Guru</p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <img src="/images/prasad-barakade.jpg" alt="Prasad Barakade" class="team-photo mx-auto mb-4">
-                        <h3 class="text-xl font-bold">Bhakt Prasad Barakade</h3>
-                        <p class="text-teal-600 font-semibold">Academic Instructor</p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <img src="/images/harsh-sharma.jpg" alt="Harsh Sharma" class="team-photo mx-auto mb-4">
-                        <h3 class="text-xl font-bold">Bhakt Harsh Sharma</h3>
-                        <p class="text-amber-600 font-semibold">Gau Seva & Farm Lead</p>
-                    </div>
-
+                <div id="team-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <p>Loading the team from Murbad...</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="bg-gray-900 text-white py-10 text-center text-sm">
-        <p>&copy; 2025 Bhaktivedanta Vidyabhavan Gurukula. All Rights Reserved.</p>
+        <p id="footer-copy">&copy; 2026 Bhaktivedanta Vidyabhavan Gurukula. All Rights Reserved.</p>
     </footer>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        fetch('/_data/content.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('about-title').innerText = data.about.title;
+                document.getElementById('about-subtitle').innerText = data.about.subtitle;
+                
+                const container = document.getElementById('team-container');
+                container.innerHTML = ''; 
+
+                data.about.team_members.forEach(member => {
+                    container.innerHTML += `
+                        <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                            <img src="${member.photo}" alt="${member.name}" class="team-photo mb-4">
+                            <h3 class="text-xl font-bold">${member.name}</h3>
+                            <p class="text-gray-600 text-sm mt-2">${member.description || ''}</p>
+                        </div>
+                    `;
+                });
+            });
+        lucide.createIcons();
+    </script>
 </body>
 </html>
