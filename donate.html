@@ -1,19 +1,15 @@
----
-layout: default
-qr_code_img: "/images/upi-qr-code.jpg"
----
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate & Support | BVG Murbad</title>
+    <title>Donate | BVG Murbad</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fdfaf6; }
-        h1, h2, h3 { font-family: 'Lora', serif; }
+        h1, h2 { font-family: 'Lora', serif; }
     </style>
 </head>
 <body>
@@ -27,33 +23,32 @@ qr_code_img: "/images/upi-qr-code.jpg"
         </div>
     </header>
 
-    <main class="py-20 container mx-auto px-6">
-        <h1 class="text-4xl font-bold text-center mb-12">Support Our Gurukula</h1>
-        
-        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
-            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-amber-500 text-center">
-                <h2 class="text-2xl font-bold mb-6">Direct UPI</h2>
-                
-                <div class="flex justify-center mb-6">
-                    <img src="{{ page.qr_code_img }}" alt="UPI QR Code" class="w-64 h-64 border rounded-lg shadow-sm object-contain bg-white">
-                </div>
-                
-                <p class="font-bold">Recipient: Shishlata Shukla</p>
-                <p class="text-red-500 text-xs italic mt-2">Trust formation in process.</p>
-            </div>
+    <main class="py-16 container mx-auto px-6 max-w-4xl text-center">
+        <h1 id="donate-title" class="text-4xl font-bold mb-4">Support Our Seva</h1>
+        <p id="donate-subtitle" class="text-gray-600 mb-12"></p>
 
-            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-teal-600">
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-amber-500">
+                <h2 class="text-2xl font-bold mb-6">Direct UPI</h2>
+                <img id="upi-qr" src="" class="w-64 h-64 mx-auto border rounded-lg p-2 mb-4 bg-white">
+                <p id="upi-note" class="text-gray-500 text-xs italic"></p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-teal-600 text-left">
                 <h2 class="text-2xl font-bold mb-6 text-center">Bank Transfer</h2>
-                <div class="space-y-4 text-gray-700">
-                    <p><strong>Name:</strong> Bhakti vedanta vidyabhavan Trust</p>
-                    <p><strong>Bank:</strong> Indian Overseas Bank</p>
-                    <p><strong>A/C:</strong> 379101000001800</p>
-                    <p><strong>IFSC:</strong> IOBA0003791</p>
-                </div>
+                <div id="bank-info" class="text-gray-700 whitespace-pre-line text-sm"></div>
             </div>
         </div>
     </main>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        fetch('/_data/content.json').then(res => res.json()).then(data => {
+            const d = data.donate;
+            document.getElementById('donate-title').innerText = d.title;
+            document.getElementById('donate-subtitle').innerText = d.subtitle;
+            document.getElementById('upi-qr').src = d.upi_qr_image;
+            document.getElementById('upi-note').innerText = d.upi_note;
+            document.getElementById('bank-info').innerText = d.bank_donation_info;
+        });
+    </script>
 </body>
 </html>
